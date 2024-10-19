@@ -1,3 +1,5 @@
+using Symbolics
+
 """
     nth_root(x,n) → c
 Calculate nth root of x handling negative x properly
