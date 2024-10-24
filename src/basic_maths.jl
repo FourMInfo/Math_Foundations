@@ -1,4 +1,7 @@
 using Symbolics
+using Plots; gr
+using LaTeXStrings
+using Dates
 
 """
     nth_root(x,n) → c
@@ -14,4 +17,13 @@ function nth_root(x, n)
     else
         x^(1/n)
     end
+end
+
+function plot_parabola(a::Number, n::Number)
+    gr()
+    @variables x
+    f = a*x^n
+    plot(f,legend=false)
+    title!(L"Plot\ of %$a * x^%$n")
+    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabola.png")
 end
