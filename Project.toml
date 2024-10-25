@@ -2,6 +2,7 @@ name = "Math_Foundations"
 authors = ["Aron T"]
 
 [deps]
+AMRVW = "233ec0c9-6b8d-4766-b9a2-a16e389fc38a"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
 FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
