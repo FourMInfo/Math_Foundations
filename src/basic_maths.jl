@@ -1,5 +1,6 @@
 using Symbolics
 using Plots; gr
+using Latexify
 using LaTeXStrings
 using Dates
 # using AMRVW
@@ -52,3 +53,16 @@ function plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaPoly.png")
     r3
 end
+"""
+    function plot_hyperbola(n::Integer)
+plot hyperbola 1/x^n
+"""
+function plot_hyperbola(n::Integer)
+    @variables x
+    f = 1/(x^n)
+    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
+    title!(L"Plot\ of\ 1/x^%$n")
+    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+end
+
+expa2x(a,x) = a^x
