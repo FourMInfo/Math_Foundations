@@ -64,5 +64,18 @@ function plot_hyperbola(n::Integer)
     title!(L"Plot\ of\ 1/x^%$n")
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
 end
-
-expa2x(a,x) = a^x
+"""
+    expa2x(a::Real,x::Real)
+exponential function where a > 0 and x is any Real
+"""
+expa2x(a::Real,x::Real) = a>0 ? a^x : println("a must be a positive real")
+"""
+    function accrued_apr(i::Real,p::Real,c::Int64) -> Float64
+i is interest, p is period (1 = one year), c is capital
+return accrued value using daily apr for interest
+"""
+function accrued_apr(i::Real,p::Real,c::Int64)
+    # calculate daily apr interest rate for a year
+    apr = expa2x(1+(i/100)/365,365)
+    c * expa2x(apr,p)
+end
