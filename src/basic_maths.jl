@@ -79,3 +79,11 @@ function accrued_apr(i::Real,p::Real,c::Int64)
     apr = expa2x(1+(i/100)/365,365)
     c * expa2x(apr,p)
 end
+"""
+    function accrued(i::Real,p::Real,c::Int64) -> Float64
+i is interest, p is period (1 = one year), c is capital
+return accrued value
+"""
+function accrued(i::Real,p::Real,c::Int64)
+    c * expa2x(1+(i/100),p)
+end
