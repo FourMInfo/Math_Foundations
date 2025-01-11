@@ -1,9 +1,10 @@
 using Symbolics
+using Nemo
 using Plots; gr
 using Latexify
 using LaTeXStrings
 using Dates
-# using AMRVW
+using AMRVW
 using Polynomials
 
 """
