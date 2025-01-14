@@ -88,3 +88,18 @@ return accrued value
 function accrued(i::Real,p::Real,c::Int64)
     c * expa2x(1+(i/100),p)
 end
+
+"""
+    triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Float64
+
+    Calculate  ρ, area and perimeter of a triangle using Heron's formula
+"""
+function triangle_area_perim(a::Float64, b::Float64, c::Float64)
+    s = (a + b + c) / 2
+    ρ = sqrt(((s - a) * (s - b) * (s - c))/s)
+    area = ρ * s
+    #   area = sqrt(s * (s - a) * (s - b) * (s - c))    
+    #   area = 0.25 * sqrt((a + b + c) * (b + c - a) * (a + c- b) * (a + b- c))
+    perimeter = a + b + c
+    return ρ, area, perimeter
+end
