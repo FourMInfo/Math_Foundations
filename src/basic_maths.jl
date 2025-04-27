@@ -45,19 +45,29 @@ Polynomial version of plotting parabola with roots
 """
 function plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
     gr()
-    @variables x
-    f = a₂*x^2 + a₁*x + a₀
-    r3 = round.(roots(Polynomial([a₀,a₁,a₂], :x)), digits=12)
-    plot(f,legend=false,xlims=[-4,4],ylims=[-4,4],framestyle = :origin)
+    p = Polynomials.Polynomial([a₀, a₁, a₂])  # Create polynomial instance
+    r3 = round.(Polynomials.roots(p); digits=12)
+
+    # Plot the parabola
+    plt = plot(p, legend=false, xlims=[-4, 4], ylims=[-4, 4], framestyle=:origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
-    scatter!(r3,series_annotations = text.(r3, 8, :bottom))
+
+    # Plot the roots at y=0 (where the parabola crosses the x-axis)
+    # We need to ensure we're plotting points exactly on the curve
+    scatter!(r3, zeros(length(r3)), markersize=6, color=:red)
+
+    # Add text annotations for the root values
+    annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in r3])
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaPoly.png")
-    r3
+    # Return the roots
+    round.(r3, digits=12)
 end
 """
-    function plot_hyperbola(n::Integer)
-plot hyperbola 1/x^n
+    plot_hyperbola(n::Integer)
+Plot hyperbola of the form 1/x^n
+n is a positive integer
 """
+
 function plot_hyperbola(n::Integer)
     @variables x
     f = 1/(x^n)
