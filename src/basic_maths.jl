@@ -35,7 +35,14 @@ function plot_parabola_roots_1(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0
     r3 = round.(Float64.(r3c),digits=12)
     plot(f,legend=false,xlims=[-4,4],ylims=[-4,4],framestyle = :origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
-    scatter!(r3c,series_annotations = text.(r3, 8, :bottom))
+
+    # Plot the roots at y=0 (where the parabola crosses the x-axis)
+    # We need to ensure we're plotting points exactly on the curve
+    scatter!(r3, zeros(length(r3)), markersize=6, color=:red)
+
+    # Add text annotations for the root values
+    annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in r3])
+
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaAMRVW.png")
     r3c
 end
