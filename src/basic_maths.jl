@@ -32,19 +32,26 @@ function plot_parabola_roots_1(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0
     @variables x
     f = a₂*x^2 + a₁*x + a₀
     r3c = AMRVW.roots([a₀,a₁,a₂])
-    r3 = round.(Float64.(r3c),digits=12)
+
+    # Filter to get only real roots for plotting
+    real_roots = [real(r) for r in r3c if abs(imag(r)) < 1e-10]
+    # Sort the roots
+    real_roots = sort(real_roots)
+
+    # Plot the parabola
     plot(f,legend=false,xlims=[-4,4],ylims=[-4,4],framestyle = :origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
 
-    # Plot the roots at y=0 (where the parabola crosses the x-axis)
-    # We need to ensure we're plotting points exactly on the curve
-    scatter!(r3, zeros(length(r3)), markersize=6, color=:red)
-
-    # Add text annotations for the root values
-    annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in r3])
+    if !isempty(real_roots)
+        # Plot the roots at y=0 (where the parabola crosses the x-axis)
+        # We need to ensure we're plotting points exactly on the curve
+        scatter!(real_roots, zeros(length(real_roots)), markersize=6, color=:red)
+        # Add text annotations for the root values
+        annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in real_roots])
+    end
 
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaAMRVW.png")
-    r3c
+    real_roots
 end
 """
     plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
@@ -53,21 +60,28 @@ Polynomial version of plotting parabola with roots
 function plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
     gr()
     p = Polynomials.Polynomial([a₀, a₁, a₂])  # Create polynomial instance
-    r3 = round.(Polynomials.roots(p); digits=12)
+    r3 = Polynomials.roots(p)
+
+    # Filter to get only real roots for plotting
+    real_roots = [real(r) for r in r3 if abs(imag(r)) < 1e-10]
+    # Sort the roots
+    real_roots = sort(real_roots)
 
     # Plot the parabola
     plt = plot(p, legend=false, xlims=[-4, 4], ylims=[-4, 4], framestyle=:origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
 
-    # Plot the roots at y=0 (where the parabola crosses the x-axis)
-    # We need to ensure we're plotting points exactly on the curve
-    scatter!(r3, zeros(length(r3)), markersize=6, color=:red)
+    if !isempty(real_roots)
+        # Plot the roots at y=0 (where the parabola crosses the x-axis)
+        # We need to ensure we're plotting points exactly on the curve
+        scatter!(real_roots, zeros(length(real_roots)), markersize=6, color=:red)
+        # Add text annotations for the root values
+        annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in real_roots])
+    end
 
-    # Add text annotations for the root values
-    annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in r3])
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaPoly.png")
     # Return the roots
-    round.(r3, digits=12)
+    real_roots
 end
 """
     plot_hyperbola(n::Integer)
