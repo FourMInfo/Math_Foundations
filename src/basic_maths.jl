@@ -24,39 +24,60 @@ function nth_root(x, n)
 end
 
 """
-    plot_parabola_roots_1(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
+    plot_parabola_roots_amrvw(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
 AMRVW version of plotting parabola with roots
 """
-function plot_parabola_roots_1(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
-    gr()
+function plot_parabola_roots_amrvw(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
     @variables x
     f = a₂*x^2 + a₁*x + a₀
     r3c = AMRVW.roots([a₀,a₁,a₂])
 
-    # Filter to get only real roots for plotting
-    real_roots = [real(r) for r in r3c if abs(imag(r)) < 1e-10]
-    # Sort the roots
-    real_roots = sort(real_roots)
     # Plot the parabola
-    plot_parabola(f, real_roots, a₂, a₁, a₀, "AMRVW")
+    plot_parabola(f, r3c, a₂, a₁, a₀, "AMRVW")
 end
 """
-    plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
+    plot_parabola_roots_polynomial(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
 Polynomial version of plotting parabola with roots
 """
-function plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
-    gr()
+function plot_parabola_roots_polynomial(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
     p = Polynomials.Polynomial([a₀, a₁, a₂])  # Create polynomial instance
     r3 = Polynomials.roots(p)
 
-    # Filter to get only real roots for plotting
-    real_roots = [real(r) for r in r3 if abs(imag(r)) < 1e-10]
-    # Sort the roots
-    real_roots = sort(real_roots)
-    plot_parabola(p, real_roots, a₂, a₁, a₀, "Poly")
+    plot_parabola(p, r3, a₂, a₁, a₀, "Poly")
 
 end
-function plot_parabola(p, real_roots::Vector{Float64}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
+
+"""
+    plot_parabola_roots_quadratic(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
+Quadratic formula version of plotting parabola with roots
+"""
+function plot_parabola_roots_quadratic(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
+    # Calculate roots using the quadratic formula
+    discriminant = a₁^2 - 4 * a₂ * a₀
+    root1 = (-a₁ + sqrt(Complex(discriminant))) / (2 * a₂)
+    root2 = (-a₁ - sqrt(Complex(discriminant))) / (2 * a₂)
+    roots = [root1, root2]
+
+    # Define the parabola function
+    @variables x
+    f = a₂ * x^2 + a₁ * x + a₀
+
+    # Plot the parabola
+    plot_parabola(f, roots, a₂, a₁, a₀, "Quadratic")
+end
+"""
+    plot_parabola(p::Polynomial, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
+Plot the parabola using the given polynomial and its roots
+"""
+function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
+    gr()
+
+    # Filter to get only real roots for plotting
+    real_roots = [real(r) for r in r3 if abs(imag(r)) < 1e-10]
+    
+    # Sort the roots
+    real_roots = sort(real_roots)
+
     # Plot the parabola
     plt = plot(p, legend=false, xlims=[-4, 4], ylims=[-4, 4], framestyle=:origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
