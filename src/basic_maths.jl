@@ -32,12 +32,26 @@ function plot_parabola_roots_1(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0
     @variables x
     f = a₂*x^2 + a₁*x + a₀
     r3c = AMRVW.roots([a₀,a₁,a₂])
-    r3 = round.(Float64.(r3c),digits=12)
+
+    # Filter to get only real roots for plotting
+    real_roots = [real(r) for r in r3c if abs(imag(r)) < 1e-10]
+    # Sort the roots
+    real_roots = sort(real_roots)
+
+    # Plot the parabola
     plot(f,legend=false,xlims=[-4,4],ylims=[-4,4],framestyle = :origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
-    scatter!(r3c,series_annotations = text.(r3, 8, :bottom))
+
+    if !isempty(real_roots)
+        # Plot the roots at y=0 (where the parabola crosses the x-axis)
+        # We need to ensure we're plotting points exactly on the curve
+        scatter!(real_roots, zeros(length(real_roots)), markersize=6, color=:red)
+        # Add text annotations for the root values
+        annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in real_roots])
+    end
+
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaAMRVW.png")
-    r3c
+    real_roots
 end
 """
     plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> [ComplexF64, ComplexF64]
@@ -45,19 +59,36 @@ Polynomial version of plotting parabola with roots
 """
 function plot_parabola_roots_2(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0)
     gr()
-    @variables x
-    f = a₂*x^2 + a₁*x + a₀
-    r3 = round.(roots(Polynomial([a₀,a₁,a₂], :x)), digits=12)
-    plot(f,legend=false,xlims=[-4,4],ylims=[-4,4],framestyle = :origin)
+    p = Polynomials.Polynomial([a₀, a₁, a₂])  # Create polynomial instance
+    r3 = Polynomials.roots(p)
+
+    # Filter to get only real roots for plotting
+    real_roots = [real(r) for r in r3 if abs(imag(r)) < 1e-10]
+    # Sort the roots
+    real_roots = sort(real_roots)
+
+    # Plot the parabola
+    plt = plot(p, legend=false, xlims=[-4, 4], ylims=[-4, 4], framestyle=:origin)
     title!(L"Plot\ of\ %$a₂ * x^2 + %$a₁ * x + %$a₀\\")
-    scatter!(r3,series_annotations = text.(r3, 8, :bottom))
+
+    if !isempty(real_roots)
+        # Plot the roots at y=0 (where the parabola crosses the x-axis)
+        # We need to ensure we're plotting points exactly on the curve
+        scatter!(real_roots, zeros(length(real_roots)), markersize=6, color=:red)
+        # Add text annotations for the root values
+        annotate!([(r, -0.2, text(round(r, digits=4), 8, :top)) for r in real_roots])
+    end
+
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "parabolaPoly.png")
-    r3
+    # Return the roots
+    real_roots
 end
 """
-    function plot_hyperbola(n::Integer)
-plot hyperbola 1/x^n
+    plot_hyperbola(n::Integer)
+Plot hyperbola of the form 1/x^n
+n is a positive integer
 """
+
 function plot_hyperbola(n::Integer)
     @variables x
     f = 1/(x^n)
@@ -87,4 +118,19 @@ return accrued value
 """
 function accrued(i::Real,p::Real,c::Int64)
     c * expa2x(1+(i/100),p)
+end
+
+"""
+    triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Float64
+
+    Calculate  ρ, area and perimeter of a triangle using Heron's formula
+"""
+function triangle_area_perim(a::Float64, b::Float64, c::Float64)
+    s = (a + b + c) / 2
+    ρ = sqrt(((s - a) * (s - b) * (s - c))/s)
+    area = ρ * s
+    #   area = sqrt(s * (s - a) * (s - b) * (s - c))    
+    #   area = 0.25 * sqrt((a + b + c) * (b + c - a) * (a + c- b) * (a + b- c))
+    perimeter = a + b + c
+    return ρ, area, perimeter
 end
