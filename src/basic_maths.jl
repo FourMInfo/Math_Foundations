@@ -96,17 +96,31 @@ function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::F
 end
 """
     plot_hyperbola(n::Integer)
-Plot hyperbola of the form 1/x^n
-n is a positive integer
+Plot hyperbola with parameter n
 """
-
 function plot_hyperbola(n::Integer)
     @variables x
-    f = 1/(x^n)
+    f = sqrt(1 + x^2)
     plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
-    title!(L"Plot\ of\ 1/x^%$n")
+    plot!(-f, label=false)
+    title!(L"Plot\ of\ hyperbola\ x^2 - y^2 = 1")
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
 end
+
+"""
+    plot_hyperbola_axes(a::Float64, b::Float64)
+Plot hyperbola of the form (x²/a²) - (y²/b²) = 1
+a and b are the semi-major and semi-minor axes
+"""
+function plot_hyperbola_axes(a::Float64, b::Float64)
+    @variables x
+    f = b * sqrt(1 + (x^2)/(a^2))
+    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
+    plot!(-f, label=false)
+    title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
+    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+end
+
 """
     expa2x(a::Real,x::Real)
 exponential function where a > 0 and x is any Real
