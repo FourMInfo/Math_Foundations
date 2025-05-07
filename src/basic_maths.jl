@@ -144,6 +144,7 @@ function plot_hyperbola_axes(a::Float64, b::Float64)
     plot!(-f, label=false)
     title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+    return plt
 end
 
 """
