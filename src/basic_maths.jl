@@ -98,13 +98,38 @@ end
     plot_hyperbola(n::Integer)
 Plot hyperbola with parameter n
 """
-function plot_hyperbola(n::Integer)
-    @variables x
-    f = sqrt(1 + x^2)
-    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
-    plot!(-f, label=false)
-    title!(L"Plot\ of\ hyperbola\ x^2 - y^2 = 1")
-    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+
+"""
+    p
+    plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
+Plot hyperbola with equation y = a/(x-h) + b, where a,h and k are scaling parameters
+"""
+function plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
+    # Define ranges for x, avoiding x - h = 0 where function is undefined
+    x_left = range(-10, h - 0.01, length=100)
+    x_right = range(h + 0.01, 10, length=100)
+
+    # Calculate y values using y = a/x + b
+    y_left = [(a / (x - h))  + k for x in x_left]
+    y_right = [(a / (x - h )) + k for x in x_right]
+
+    # Create the plot
+    plt = plot(
+        xlims=(-10, 10),
+        ylims=(-10, 10),
+        aspect_ratio=:equal,
+        framestyle=:origin,
+        legend=false
+    )
+
+    # Plot each branch
+    plot!(plt, x_left, y_left, color=:blue, linewidth=2)
+    plot!(plt, x_right, y_right, color=:blue, linewidth=2)
+
+    title!(L"Plot\ of\ hyperbola\ y = \frac{%$a}{x-%$h} + %$k")
+    savefig("plots/" * Dates.format(now(), "yyyymmdd-HHMMSS") * "hyperbola" * string(a) * "_" * string(h) * "_" * string(k) * ".png")
+
+    return plt
 end
 
 """
