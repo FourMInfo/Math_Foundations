@@ -23,9 +23,9 @@ if CI
     deploydocs(
         # `repo` MUST be set correctly. Once your GitHub name is set
         # the auto-generated documentation will be hosted at:
-        # https://AronTTLV.github.io/Math_Foundations/dev/
+        # https://FourMInfo.github.io/Math_Foundations/dev/
         # (assuming you have enabled `gh-pages` deployment)
-        repo = "github.com/AronTTLV/Math_Foundations.git",
+        repo = "github.com/FourMInfo/Math_Foundations.git",
         target = "build",
         push_preview = true,
         devbranch = "main",
