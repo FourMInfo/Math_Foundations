@@ -133,17 +133,52 @@ function plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
 end
 
 """
-    plot_hyperbola_axes(a::Float64, b::Float64)
+    plot_hyperbola_axes_varx(a::Float64, b::Float64)
 Plot hyperbola of the form (x²/a²) - (y²/b²) = 1
 a and b are the semi-major and semi-minor axes
 """
-function plot_hyperbola_axes(a::Float64, b::Float64)
+function plot_hyperbola_axes_varx(a::Float64, b::Float64)
     @variables x
     f = b * sqrt(1 + (x^2)/(a^2))
     plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
     plot!(-f, label=false)
     title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+    return plt
+end
+
+"""
+    plot_hyperbola_axes_direct(a::Float64, b::Float64)
+Plot hyperbola of the form (x²/a²) - (y²/b²) = 1
+a and b are the semi-major and semi-minor axes
+"""
+function plot_hyperbola_axes_direct(a::Float64, b::Float64)
+    # Define x values for plotting
+    x_vals = range(-6, 6, length=500)
+
+    # Define the hyperbola function directly
+    f(x) = b * sqrt(1 + (x^2) / (a^2))
+
+    # Calculate y values for both branches
+    y_upper = [f(x) for x in x_vals]
+    y_lower = [-f(x) for x in x_vals]
+
+    # Create the plot
+    plt = plot(
+        xlims=(-6, 6),
+        ylims=(-6, 6),
+        aspect_ratio=:equal,
+        framestyle=:origin,
+        legend=false
+    )
+
+    # Plot both branches
+    plot!(plt, x_vals, y_upper, color=:blue, linewidth=2)
+    plot!(plt, x_vals, y_lower, color=:blue, linewidth=2)
+
+    title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
+    savefig("plots/" * Dates.format(now(), "yyyymmdd-HHMMSS") * "hyperbola.png")
+
     return plt
 end
 

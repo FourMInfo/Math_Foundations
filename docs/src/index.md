@@ -1,14 +1,16 @@
 # Math_Foundations
+
 This is the mandatory `index.md` file that is the homepage of the documentation.
 
-Here the documentation string of a function is expanded:
-```@docs
-dummy_project_function
+## Basic Mathematical Functions
+
+```@autodocs
+Modules = [Math_Foundations]
+Order   = [:function, :type]
+Pages   = ["basic_maths.jl"]
 ```
 
-We can link to any subsection name with [Subsection name](@ref).
+## External Documentation
 
-We can link to documentation strings with [`dummy_project_function`](@ref).
-
-## Subsection name
-Test.
+ Geometry
+[Hyperbola](geometry/Hyperbola.md)
