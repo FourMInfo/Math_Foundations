@@ -1,13 +1,13 @@
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
 using DrWatson
-@quickactivate "Math_Foundations"
 using Documenter
+@quickactivate "Math_Foundations"
+using Math_Foundations
 
-# Here you may include files from the source directory
-include(srcdir("basic_maths.jl"))
 
 @info "Building Documentation"
 makedocs(;
+    modules=[Math_Foundations],  # Specify your module here
     sitename = "Math_Foundations",
     # This argument is only so that the sequence of pages in the sidebar is configured
     # By default all markdown files in `docs/src` are expanded and included.
