@@ -96,17 +96,92 @@ function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::F
 end
 """
     plot_hyperbola(n::Integer)
-Plot hyperbola of the form 1/x^n
-n is a positive integer
+Plot hyperbola with parameter n
 """
 
-function plot_hyperbola(n::Integer)
-    @variables x
-    f = 1/(x^n)
-    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
-    title!(L"Plot\ of\ 1/x^%$n")
-    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+"""
+    p
+    plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
+Plot hyperbola with equation y = a/(x-h) + b, where a,h and k are scaling parameters
+"""
+function plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
+    # Define ranges for x, avoiding x - h = 0 where function is undefined
+    x_left = range(-10, h - 0.01, length=100)
+    x_right = range(h + 0.01, 10, length=100)
+
+    # Calculate y values using y = a/x + b
+    y_left = [(a / (x - h))  + k for x in x_left]
+    y_right = [(a / (x - h )) + k for x in x_right]
+
+    # Create the plot
+    plt = plot(
+        xlims=(-10, 10),
+        ylims=(-10, 10),
+        aspect_ratio=:equal,
+        framestyle=:origin,
+        legend=false
+    )
+
+    # Plot each branch
+    plot!(plt, x_left, y_left, color=:blue, linewidth=2)
+    plot!(plt, x_right, y_right, color=:blue, linewidth=2)
+
+    title!(L"Plot\ of\ hyperbola\ y = \frac{%$a}{x-%$h} + %$k")
+    savefig("plots/" * Dates.format(now(), "yyyymmdd-HHMMSS") * "hyperbola" * string(a) * "_" * string(h) * "_" * string(k) * ".png")
+
+    return plt
 end
+
+"""
+    plot_hyperbola_axes_varx(a::Float64, b::Float64)
+Plot hyperbola of the form (x²/a²) - (y²/b²) = 1
+a and b are the semi-major and semi-minor axes
+"""
+function plot_hyperbola_axes_varx(a::Float64, b::Float64)
+    @variables x
+    f = b * sqrt(1 + (x^2)/(a^2))
+    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
+    plot!(-f, label=false)
+    title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
+    savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
+    return plt
+end
+
+"""
+    plot_hyperbola_axes_direct(a::Float64, b::Float64)
+Plot hyperbola of the form (x²/a²) - (y²/b²) = 1
+a and b are the semi-major and semi-minor axes
+"""
+function plot_hyperbola_axes_direct(a::Float64, b::Float64)
+    # Define x values for plotting
+    x_vals = range(-6, 6, length=500)
+
+    # Define the hyperbola function directly
+    f(x) = b * sqrt(1 + (x^2) / (a^2))
+
+    # Calculate y values for both branches
+    y_upper = [f(x) for x in x_vals]
+    y_lower = [-f(x) for x in x_vals]
+
+    # Create the plot
+    plt = plot(
+        xlims=(-6, 6),
+        ylims=(-6, 6),
+        aspect_ratio=:equal,
+        framestyle=:origin,
+        legend=false
+    )
+
+    # Plot both branches
+    plot!(plt, x_vals, y_upper, color=:blue, linewidth=2)
+    plot!(plt, x_vals, y_lower, color=:blue, linewidth=2)
+
+    title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
+    savefig("plots/" * Dates.format(now(), "yyyymmdd-HHMMSS") * "hyperbola.png")
+
+    return plt
+end
+
 """
     expa2x(a::Real,x::Real)
 exponential function where a > 0 and x is any Real
