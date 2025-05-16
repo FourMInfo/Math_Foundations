@@ -1,6 +1,8 @@
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
-@quickactivate "Math_Foundations"
+using Pkg
+Pkg.add("DrWatson")
 using DrWatson
+@quickactivate "Math_Foundations"
 using Documenter
 using Math_Foundations
 
