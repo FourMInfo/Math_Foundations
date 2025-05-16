@@ -13,4 +13,4 @@ Pages   = ["basic_maths.jl"]
 ## External Documentation
 
  Geometry
-[Hyperbola](geometry/Hyperbola.md)
+[Hyperbola](./geometry/Hyperbola.md)
