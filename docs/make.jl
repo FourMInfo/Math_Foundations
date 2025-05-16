@@ -11,11 +11,12 @@ makedocs(;
     sitename = "Math_Foundations",
     # This argument is only so that the sequence of pages in the sidebar is configured
     # By default all markdown files in `docs/src` are expanded and included.
-    pages = [
-        "index.md",
-    ],
+    pages = ["index.md"],
     # Don't worry about what `CI` does in this line.
-    format = Documenter.HTML(prettyurls = CI),
+    format = Documenter.HTML(
+        prettyurls = CI,
+        edit_link = "main"
+    )
 )
 
 @info "Deploying Documentation"
