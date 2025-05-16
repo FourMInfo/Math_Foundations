@@ -1,5 +1,5 @@
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
-using DrWatson, Documentor
+using DrWatson, Documenter
 # using Documenter
 using Math_Foundations
 
