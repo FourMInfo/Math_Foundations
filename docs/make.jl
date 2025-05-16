@@ -1,7 +1,7 @@
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
+@quickactivate "Math_Foundations"
 using DrWatson
 using Documenter
-@quickactivate "Math_Foundations"
 using Math_Foundations
 
 
