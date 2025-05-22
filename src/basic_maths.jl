@@ -140,7 +140,17 @@ a and b are the semi-major and semi-minor axes
 function plot_hyperbola_axes_varx(a::Float64, b::Float64)
     @variables x
     f = b * sqrt(1 + (x^2)/(a^2))
-    plot(f,legend=false, xlims=[-6,6],ylims=[-6,6],framestyle = :origin)
+
+    # Create the plot
+    plt = plot(
+        f,
+        xlims=(-10, 10),
+        ylims=(-10, 10),
+        aspect_ratio=:equal,
+        framestyle=:origin,
+        legend=false
+    )
+    # Plot other branch
     plot!(-f, label=false)
     title!(L"Plot\ of\ hyperbola\ \frac{x^2}{%$a^2} - \frac{y^2}{%$b^2} = 1")
     savefig("plots/"* Dates.format(now(),"yyyymmdd-HHMMSS") * "hyperbola.png")
@@ -165,8 +175,8 @@ function plot_hyperbola_axes_direct(a::Float64, b::Float64)
 
     # Create the plot
     plt = plot(
-        xlims=(-6, 6),
-        ylims=(-6, 6),
+        xlims=(-10, 10),
+        ylims=(-10, 10),
         aspect_ratio=:equal,
         framestyle=:origin,
         legend=false
