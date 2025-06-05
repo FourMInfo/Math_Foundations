@@ -28,6 +28,7 @@ if CI
         target = "build",
         push_preview = true,
         devbranch = "main",
+        dirname = "math_foundations",
     )
 end
 
