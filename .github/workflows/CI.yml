@@ -31,17 +31,19 @@ jobs:
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v1
       - uses: julia-actions/julia-buildpkg@v1
-      - name: Install DrWatson
-        run: julia --project=. -e 'using Pkg; Pkg.add("DrWatson")'
       - name: Run tests
         run: >
           julia --project=. --color=yes test/runtests.jl
 
       - name: Generate documentation and deploy
+        run: >
+          julia --project=. --color=yes docs/make.jl
         env: # needed for pushing to gh-pages branch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >
+          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
           # If your documentation deployment pushes to a protected branch (like gh-pages) and needs to authenticate as more than just the default GitHub Actions bot,
           # or if you want to deploy from forks or private repos, you may need a DOCUMENTER_KEY.
           # For public repos deploying from main with GITHUB_TOKEN, you usually do NOT need DOCUMENTER_KEY.
           # See: https://juliadocs.github.io/Documenter.jl/stable/man/hosting/#GitHub-Actions
+          # Configure the subdirectory for this repository
+          DOCUMENTER_DEPLOY_SUBDIRECTORY: "math_foundations"
