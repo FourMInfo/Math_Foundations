@@ -35,3 +35,25 @@ This section provides links to external documentation that replicates topics cov
 ### Trigonometry
 
 * [Trigonometric Functions](https://math.libretexts.org/Bookshelves/Trigonometry/Book%3A_Trigonometry_(OpenStax)/01%3A_Introduction_to_Trigonometry/1.01%3A_Trigonometric_Functions)
+
+---
+
+## Navigating FourM Study Guides & Documentation Sites
+
+```@raw html
+<div class="site-navigation">
+    <div class="nav-section">
+        <h4>Documentation Sites</h4>
+        <ul>
+            <li><a href="https://study.fourm.info/linear_algebra/">Linear Algebra Docs</a></li>
+            <li><a href="https://study.fourm.info/math_foundations/">Math Foundations Docs (this site)</a></li>
+        </ul>
+    </div>
+    <div class="nav-section">
+        <h4>Related Projects</h4>
+        <ul>
+            <li><a href="https://study.fourm.info/">Main Study Site</a></li>
+        </ul>
+    </div>
+</div>
+```

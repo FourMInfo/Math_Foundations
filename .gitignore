@@ -416,4 +416,14 @@ $RECYCLE.BIN/
 
 /Manifest.toml
 
+################################################################################
+#                            Documentation Build                              #
+################################################################################
+
+# Documentation build output
+build/
+/build/
+**/build/
+docs/build/
+
 
