@@ -18,23 +18,26 @@ Order   = [:function, :type]
 Pages   = ["basic_maths.jl"]
 ```
 
-## External Documentation
+## Documentation
 
-This section provides links to external documentation that replicates topics covered in the book and often provide more details. It is not an exhaustive list, but it does cover many of the important topics. Most of the links are to the [LibreTexts](https://math.libretexts.org/) project, which is a free online library of mathematics textbooks and resources. The links are grouped by topic.
+This section provides links to documentation that replicates topics covered in the book and often provide more details. This documentation is a joint effort of Claude and myself, and is meant to be a resource for anyone who wants to learn or review basic mathematical concepts.
 
-### Basic Computation
+### Algebra
 
-### Functions
+- [Elementary Calculations](Algebra/01 Elementary Calculations.md)
+- [Mathematical Functions](Algebra/02 Mathematical Functions.md)
+- [Solving Equations](Algebra/03 Solving Equations.md)
 
 ### Geometry
 
-* [Parabola](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.03%3A_The_Parabola)
-* [Hyperbola](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.02%3A_The_Hyperbola)
-* [Triangle](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.01%3A_The_Triangle)
-  
+- [Triangles](Geometry/01 Triangles.md)
+- [Angles & Measurements](Geometry/02 Angles & Measurements.md)
+- [Hyperbola](Geometry/Hyperbola.md)
+
 ### Trigonometry
 
-* [Trigonometric Functions](https://math.libretexts.org/Bookshelves/Trigonometry/Book%3A_Trigonometry_(OpenStax)/01%3A_Introduction_to_Trigonometry/1.01%3A_Trigonometric_Functions)
+- [Trigonometric Functions](Trigonometry/01 Trigonometric Functions.md)
+- [Trigonometric Identities](Trigonometry/02 Trigonometric Identities.md)
 
 ---
 

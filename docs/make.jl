@@ -9,7 +9,23 @@ makedocs(;
     sitename = "Math_Foundations",
     # This argument is only so that the sequence of pages in the sidebar is configured
     # By default all markdown files in `docs/src` are expanded and included.
-    pages = ["index.md"],
+    pages = [
+        "index.md",
+        "Algebra" => [
+            "Algebra/01 Elementary Calculations.md",
+            "Algebra/02 Mathematical Functions.md", 
+            "Algebra/03 Solving Equations.md"
+        ],
+        "Geometry" => [
+            "Geometry/01 Triangles.md",
+            "Geometry/02 Angles & Measurements.md",
+            "Geometry/Hyperbola.md"
+        ],
+        "Trigonometry" => [
+            "Trigonometry/01 Trigonometric Functions.md",
+            "Trigonometry/02 Trigonometric Identities.md"
+        ]
+    ],
     # Don't worry about what `CI` does in this line.
     format = Documenter.HTML(
         prettyurls = CI,
