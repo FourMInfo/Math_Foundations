@@ -21,25 +21,26 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 
 ### Types of Polynomials
 
+Polynomials can be classified based on their degree and number of terms:
+
 - **Zero Polynomial**: $P(x) = 0$ (degree undefined)
 - **Monomial**: $P(x) = ax^n$ (degree $n$)
 - **Binomial**: $P(x) = ax^n + bx^m$ (degree $\max(n, m)$)
 - **Trinomial**: $P(x) = ax^n + bx^m + cx^p$ (degree $\max(n, m, p)$)
+- **Polynomial**: General form with any number of terms
 - **Quadrinomial**: $P(x) = ax^n + bx^m + cx^p + dx^q$ (degree $\max(n, m, p, q)$)
 - **Constant**: $P(x) = c$ (degree 0)
 - **Linear**: $P(x) = ax + b$ (degree 1)
 - **Quadratic**: $P(x) = ax^2 + bx + c$ (degree 2)
 - **Cubic**: $P(x) = ax^3 + bx^2 + cx + d$ (degree 3)
 
-### Key Concepts
+### Key Concepts of Polynomials
 
-- **Polynomial**: General form with any number of terms
 - **Degree**: The highest power of $x$ in the polynomial
 - **Leading Coefficient**: The coefficient of the term with the highest degree
 - **Constant Term**: The term with degree 0 (if present)
 - **Roots/Zeros**: Values of $x$ for which $P(x) = 0$
 - **Factoring**: Expressing $P(x)$ as a product of simpler polynomials
-
 
 ### Polynomial Operations
 
@@ -53,7 +54,7 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 Parabolas are the graphs of quadratic functions. The standard form is:
 $$y = ax^2 + bx + c$$
 
-### Key Properties
+### Key Properties of Parabolas
 
 - **Vertex**: The turning point of the parabola
 - **Axis of symmetry**: Vertical line through the vertex
@@ -106,7 +107,7 @@ The general form $y = \frac{a}{x - h} + k$ represents:
 
 Exponential functions have the form $f(x) = a^x$ where $a > 0$ and $a \neq 1$.
 
-### Properties
+### Key Properties of Exponential Functions
 
 - **Domain**: All real numbers
 - **Range**: $(0, \infty)$ for $a > 0$
@@ -121,11 +122,41 @@ Exponential functions have the form $f(x) = a^x$ where $a > 0$ and $a \neq 1$.
 - $a^0 = 1$
 - $a^{-n} = \frac{1}{a^n}$
 
+### Applications of Exponential Functions
+
+- Modeling population growth, radioactive decay, compound interest
+- Solving equations involving exponential growth/decay
+
+#### Half-life Problems
+
+Half-life problems involve exponential decay, where a quantity decreases by half over a fixed period.
+Half-life problems use the exponential decay formula:
+$$N(t) = N_0 \left(\frac{1}{2}\right)^{t/t_{1/2}}$$
+
+where:
+- $N(t)$ is the amount at time $t$
+- $N_0$ is the initial amount
+- $t_{1/2}$ is the half-life period
+
+#### Compound Interest
+
+Compound interest is a common application of exponential functions, where interest is calculated on both the initial principal and the accumulated interest from previous periods.
+Compound interest is calculated using the formula:
+$A = P\left(1 + \frac{r}{n}\right)^{nt}$
+
+where:
+
+- $A$ is the final amount
+- $P$ is the principal
+- $r$ is the annual interest rate
+- $n$ is the number of times interest is compounded per year
+- $t$ is the time in years
+
 ## Logarithmic Functions
 
-Logarithms are the inverse of exponential functions. If $y = a^x$, then $x = \log_a y$.
+Logarithmic functions are the inverses of exponential functions. The logarithm $\log_a x$ is defined as the exponent to which base $a$ must be raised to produce $x$. Hence $\log_a x = y \iff a^y = x$
 
-### Properties
+### Key Properties of Logarithmic Functions
 
 - **Domain**: $(0, \infty)$
 - **Range**: All real numbers
@@ -144,25 +175,12 @@ Logarithms are the inverse of exponential functions. If $y = a^x$, then $x = \lo
 
 $$\log_a x = \frac{\log_b x}{\log_b a}$$
 
-### Applications
+### Applications of Logarithmic Functions
 
-#### Half-life Problems
-Half-life problems use the exponential decay formula:
-$$N(t) = N_0 \left(\frac{1}{2}\right)^{t/t_{1/2}}$$
+Logarithmic functions are used in various fields, including:
 
-where:
-- $N(t)$ is the amount at time $t$
-- $N_0$ is the initial amount
-- $t_{1/2}$ is the half-life period
 
-#### Compound Interest
+- Measuring sound intensity (decibels)
+- pH scale in chemistry
+- Richter scale for earthquake magnitude
 
-$A = P\left(1 + \frac{r}{n}\right)^{nt}$
-
-where:
-
-- $A$ is the final amount
-- $P$ is the principal
-- $r$ is the annual interest rate
-- $n$ is the number of times interest is compounded per year
-- $t$ is the time in years
