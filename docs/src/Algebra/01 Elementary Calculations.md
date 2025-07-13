@@ -42,7 +42,6 @@ In addition to the basic types, there are several extended types of numbers used
 - **Prime Numbers** - Natural numbers greater than 1 with no divisors other than 1 and themselves (e.g., 2, 3, 5, 7, 11, ...)
 - **Composite Numbers** - Natural numbers greater than 1 that are not prime (e.g., 4, 6, 8, 9, 10, ...)
 - **Perfect Numbers** - Positive integers equal to the sum of their proper divisors (e.g., 6, 28, 496)
-- 
 
 ## Arithmetic Operations
 
@@ -390,5 +389,3 @@ Simplify: $(3x + 2)(x - 1) - 2(x^2 - 3x + 1)$
 **Step 1:** Expand $(3x + 2)(x - 1) = 3x^2 - 3x + 2x - 2 = 3x^2 - x - 2$
 **Step 2:** Expand $-2(x^2 - 3x + 1) = -2x^2 + 6x - 2$
 **Step 3:** Combine: $(3x^2 - x - 2) + (-2x^2 + 6x - 2) = x^2 + 5x - 4$
-
-
