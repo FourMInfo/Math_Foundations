@@ -32,6 +32,7 @@ In addition to the basic types, there are several extended types of numbers used
 - **Surreal Numbers** - Class including reals, infinitesimals, and infinite numbers, used in game theory
 - **P-adic Numbers** - Number system based on divisibility by prime $p$, used in number theory
 - **Quaternions** - Four-dimensional extension of complex numbers: $a + bi + cj + dk$
+- **Octonions** - Eight-dimensional extension of quaternions, used in physics and computer graphics
 - **Hypercomplex Numbers** - Generalizations of complex numbers including quaternions and octonions
 - **Dual Numbers** - Extension of reals with infinitesimal unit $\varepsilon$ where $\varepsilon^2 = 0$
 
@@ -109,7 +110,7 @@ Rules for operations with positive and negative numbers:
     - Example: $8 + (-5) = 8 - 5 = 3$
 
 - **Subtraction**
-  - $a - b = a + (-b)$ (subtracting equals adding the opposite)
+  - subtracting equals adding the opposite: $a - b = a + (-b)$
     - Example: $5 - 8 = 5 + (-8) = -3$
     - Example: $(-4) - (-7) = (-4) + 7 = 3$
 
@@ -295,9 +296,7 @@ Rules governing radical operations:
 - **Power Property** - $\sqrt[n]{a^m} = a^{m/n}$
 - **Root of Root** - $\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}$
 
-### Simplifying Radicals
-
-Systematic approach to radical simplification:
+### Systematic Approach to Simplifying Radicals
 
 #### Step 1: Factor out perfect powers
 
@@ -386,6 +385,6 @@ Practical applications with step-by-step solutions:
 
 Simplify: $(3x + 2)(x - 1) - 2(x^2 - 3x + 1)$
 
-**Step 1:** Expand $(3x + 2)(x - 1) = 3x^2 - 3x + 2x - 2 = 3x^2 - x - 2$
-**Step 2:** Expand $-2(x^2 - 3x + 1) = -2x^2 + 6x - 2$
-**Step 3:** Combine: $(3x^2 - x - 2) + (-2x^2 + 6x - 2) = x^2 + 5x - 4$
+- **Step 1:** Expand $(3x + 2)(x - 1) = 3x^2 - 3x + 2x - 2 = 3x^2 - x - 2$
+- **Step 2:** Expand $-2(x^2 - 3x + 1) = -2x^2 + 6x - 2$
+- **Step 3:** Combine: $(3x^2 - x - 2) + (-2x^2 + 6x - 2) = x^2 + 5x - 4$
