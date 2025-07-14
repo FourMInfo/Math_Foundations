@@ -237,20 +237,7 @@ Transform $y = \frac{1}{x}$ to $y = \frac{-2}{x + 3} + 1$:
 
 ### Mathematical Hyperbolic Functions
 
-Mathematical hyperbolic functions are analogs of trigonometric functions based on the hyperbola $x^2 - y^2 = 1$.
-
-#### Basic Hyperbolic Functions
-
-- **Hyperbolic sine**: $\sinh(x) = \frac{e^x - e^{-x}}{2}$
-- **Hyperbolic cosine**: $\cosh(x) = \frac{e^x + e^{-x}}{2}$
-- **Hyperbolic tangent**: $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
-
-#### Key Properties
-
-- **Fundamental hyperbolic identity**: $\cosh^2(x) - \sinh^2(x) = 1$
-- **Initial values**: $\sinh(0) = 0$, $\cosh(0) = 1$
-- **Odd function property**: $\sinh(x)$ is an odd function: $\sinh(-x) = -\sinh(x)$
-- **Even function property**: $\cosh(x)$ is an even function: $\cosh(-x) = \cosh(x)$
+Mathematical hyperbolic functions are closely related to trigonometric functions and are covered in detail in the [Trigonometric Functions](../Trigonometry/01%20Trigonometric%20Functions.md#hyperbolic-functions) section.
 
 ## Exponential Functions
 
