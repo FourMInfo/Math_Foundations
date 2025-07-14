@@ -21,8 +21,43 @@ A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where
 - **One-to-one (injective)**: Each output corresponds to exactly one input
 - **Onto (surjective)**: Every element in the codomain is an output
 - **Bijective**: Both one-to-one and onto
+- **Invertible**: Has an inverse function (equivalent to being bijective)
 
-## Polynomials
+#### Examples of Function Properties
+
+**One-to-one (Injective) Functions:**
+
+- **Example**: $f(x) = 2x + 3$
+  - Different inputs always give different outputs
+  - If $f(a) = f(b)$, then $2a + 3 = 2b + 3$, so $a = b$
+- **Counter-example**: $f(x) = x^2$ (for domain $\mathbb{R}$)
+  - two different inputs give the same output: $f(2) = 4$ and $f(-2) = 4$
+
+**Onto (Surjective) Functions:**
+
+- **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^3$
+  - For any real number $y$, we can find $x = \sqrt[3]{y}$ such that $f(x) = y$
+- **Counter-example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$
+  - Negative numbers in the codomain are never outputs (range is $[0, \infty)$)
+
+**Bijective Functions:**
+
+- **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = 3x - 7$
+  - Both injective and surjective (linear functions with non-zero slope)
+- **Counter-example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = \sin(x)$
+  - Not injective: $\sin(0) = \sin(\pi) = 0$
+  - Not surjective: range is $[-1, 1]$, not all of $\mathbb{R}$
+
+**Invertible Functions:**
+
+- **Example**: $f(x) = 2x + 5$ has inverse $f^{-1}(x) = \frac{x - 5}{2}$
+  - Verify: $f(f^{-1}(x)) = f\left(\frac{x-5}{2}\right) = 2\left(\frac{x-5}{2}\right) + 5 = x$
+  - And: $f^{-1}(f(x)) = f^{-1}(2x + 5) = \frac{(2x + 5) - 5}{2} = x$
+- **Counter-example**: $f(x) = x^2$ (for domain $\mathbb{R}$)
+  - Not bijective, so no inverse exists
+  - However, $f(x) = x^2$ for $x \geq 0$ has inverse $f^{-1}(x) = \sqrt{x}$
+
+## Polynomial Functions
 
 Polynomials are functions of the form: $P(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$
 where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degree).
@@ -36,23 +71,23 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 
 ### Classification by Degree
 
-- **Constant**: $P(x) = c$ (degree 0)
+- **Constant** (degree 0): $P(x) = c$
   - Example: $P(x) = 5$
-- **Linear**: $P(x) = ax + b$ (degree 1)
+- **Linear** (degree 1): $P(x) = ax + b$
   - Example: $P(x) = 3x - 2$
-- **Quadratic**: $P(x) = ax^2 + bx + c$ (degree 2)
+- **Quadratic** (degree 2): $P(x) = ax^2 + bx + c$
   - Example: $P(x) = 2x^2 - 5x + 3$
-- **Cubic**: $P(x) = ax^3 + bx^2 + cx + d$ (degree 3)
+- **Cubic** (degree 3): $P(x) = ax^3 + bx^2 + cx + d$
   - Example: $P(x) = x^3 - 4x^2 + 6x - 8$
 
 ### Classification by Number of Terms
 
-- **Zero Polynomial**: $P(x) = 0$ (degree undefined)
-- **Monomial**: $P(x) = ax^n$ (single term)
+- **Zero Polynomial** (degree undefined): $P(x) = 0$
+- **Monomial** (single term): $P(x) = ax^n$
   - Example: $P(x) = 7x^4$
-- **Binomial**: $P(x) = ax^n + bx^m$ (two terms)
+- **Binomial** (two terms): $P(x) = ax^n + bx^m$
   - Example: $P(x) = 3x^5 - 2x^2$
-- **Trinomial**: $P(x) = ax^n + bx^m + cx^p$ (three terms)
+- **Trinomial** (three terms): $P(x) = ax^n + bx^m + cx^p$
   - Example: $P(x) = x^3 + 4x - 1$
 
 ### Finding Roots and Zeros
@@ -90,10 +125,13 @@ Add or subtract corresponding coefficients of like terms.
 
 Use the distributive property to multiply each term in the first polynomial by each term in the second.
 
-- **Example**: $(x + 2)(x^2 - 3x + 1)$
-- **Example**: $= x(x^2 - 3x + 1) + 2(x^2 - 3x + 1)$
-- **Example**: $= x^3 - 3x^2 + x + 2x^2 - 6x + 2$
-- **Example**: $= x^3 - x^2 - 5x + 2$
+**Example**: $(x + 2)(x^2 - 3x + 1)$
+
+$$\begin{aligned}
+(x + 2)(x^2 - 3x + 1) &= x(x^2 - 3x + 1) + 2(x^2 - 3x + 1) \\
+&= x^3 - 3x^2 + x + 2x^2 - 6x + 2 \\
+&= x^3 - x^2 - 5x + 2
+\end{aligned}$$
 
 #### Division
 
@@ -110,7 +148,7 @@ For polynomials $f(x)$ and $g(x)$, the composition $(f \circ g)(x) = f(g(x))$.
 **Example**:
 
 If $f(x) = x^2 + 1$ and $g(x) = 2x - 1$, then:
-$f(g(x)) = f(2x - 1) = (2x - 1)^2 + 1 = 4x^2 - 4x + 2$
+$$f(g(x)) = f(2x - 1) = (2x - 1)^2 + 1 = 4x^2 - 4x + 1 + 1 = 4x^2 - 4x + 2$$
 
 ## Quadratic Functions and Parabolas
 
@@ -119,8 +157,8 @@ Quadratic functions have the form $f(x) = ax^2 + bx + c$ where $a \neq 0$. Their
 ### Parabola Standard Forms
 
 - **General Form**: $y = ax^2 + bx + c$
-- **Vertex Form**: $y = a(x - h)^2 + k$ where $(h, k)$ is the vertex.
-- **Factored Form**: $y = a(x - r_1)(x - r_2)$ where $r_1$ and $r_2$ are the roots (x-intercepts).
+- **Vertex Form**: $y = a(x - h)^2 + k$ where $(h, k)$ is the vertex
+- **Factored Form**: $y = a(x - r_1)(x - r_2)$ where $r_1$ and $r_2$ are the roots (x-intercepts)
 
 ### Key Properties of Parabolas
 
@@ -155,18 +193,14 @@ Analyze $f(x) = -2x^2 + 8x - 6$
 
 ## Hyperbolic Functions
 
-Hyperbolic functions are analogs of trigonometric functions but based on hyperbolas rather than circles.
-
-### Hyperbola Standard Forms
+### Conic Section Hyperbolas
 
 Hyperbolas are conic sections defined by equations of the form:
 
 - **Horizontal Hyperbola**: $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$
 - **Vertical Hyperbola**: $\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$
-- **General Form**: $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ or $\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$
-- 
 
-## Key Properties of Hyperbolas
+### Key Properties of Conic Hyperbolas
 
 - **Center**: $(0, 0)$ for standard form
 - **Vertices**: $(\pm a, 0)$ for horizontal, $(0, \pm a)$ for vertical
@@ -200,6 +234,23 @@ Transform $y = \frac{1}{x}$ to $y = \frac{-2}{x + 3} + 1$:
 4. Shift 1 unit up: $y = \frac{-2}{x + 3} + 1$
 
 **New asymptotes**: $x = -3$ (vertical), $y = 1$ (horizontal)
+
+### Mathematical Hyperbolic Functions
+
+Mathematical hyperbolic functions are analogs of trigonometric functions based on the hyperbola $x^2 - y^2 = 1$.
+
+#### Basic Hyperbolic Functions
+
+- **Hyperbolic sine**: $\sinh(x) = \frac{e^x - e^{-x}}{2}$
+- **Hyperbolic cosine**: $\cosh(x) = \frac{e^x + e^{-x}}{2}$
+- **Hyperbolic tangent**: $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
+
+#### Key Properties
+
+- **Fundamental hyperbolic identity**: $\cosh^2(x) - \sinh^2(x) = 1$
+- **Initial values**: $\sinh(0) = 0$, $\cosh(0) = 1$
+- **Odd function property**: $\sinh(x)$ is an odd function: $\sinh(-x) = -\sinh(x)$
+- **Even function property**: $\cosh(x)$ is an even function: $\cosh(-x) = \cosh(x)$
 
 ## Exponential Functions
 
@@ -241,7 +292,7 @@ The common exponential function is defined as: $f(x) = 10^x$ (base 10)
 - **Product Rule**: $a^m \cdot a^n = a^{m+n}$
 - **Quotient Rule**: $\frac{a^m}{a^n} = a^{m-n}$
 - **Power Rule**: $(a^m)^n = a^{mn}$
-- **Zero Exponent**: $a^0 = 1$ (for $a \neq 0$)
+- **Zero Exponent** (for $a \neq 0$): $a^0 = 1$
 - **Negative Exponent**: $a^{-n} = \frac{1}{a^n}$
 
 ### Exponential Growth and Decay
@@ -303,14 +354,14 @@ where:
 - the final amount after $t$ years is $A$
 
 **Continuous Compounding Formula:**
-$A = Pe^{rt}$
+$$A = Pe^{rt}$$
 
 where:
 
-- the principal (initial investment) is $P$  
+- the principal (initial investment) is $P$
 - the annual interest rate (decimal) is $r$
-- number of times interest is compounded per year is $n$
-- the final amount after $t$ years is $A$
+- the time in years is $t$
+- the final amount is $A$
 
 **Example:** \$1000 invested at $5%$ annual interest compounded quarterly for $3$ years:
 
@@ -348,15 +399,12 @@ The fundamental properties of logarithms are derived from the properties of expo
 
 ### Base Properties
 
-- the logarithm of 1 to any base is 0: $\log_a(1) = 0$ 
-- the logarithm of a base to itself is 1: $\log_a(a) = 1$
-- the logarithm of a base raised to an exponent is the exponent: $\log_a(a^x) = x$
-- the logarithm of a reciprocal is the negative logarithm: $\log_a\left(\frac{1}{x}\right) = -\log_a(x)$
-- the base raised to the logarithm of a number equals that number: $a^{\log_a(x)} = x$
-- the logarithm of a product is the sum of the logarithms: $\log_a(mn) = \log_a(m) + \log_a(n)$
-- the logarithm of a quotient is the difference of the logarithms: $\log_a\left(\frac{m}{n}\right) = \log_a(m) - \log_a(n)$
-- the logarithm of a power is the exponent times the logarithm of the base: $\log_a(m^n) = n\log_a(m)$
-- the logarithm of a root is the logarithm of the radicand divided by the root: $\log_a(\sqrt[n]{m}) = \frac{1}{n}\log_a(m)$
+- **Logarithm of 1** (to any base is 0): $\log_a(1) = 0$
+- **Logarithm of base** (to itself is 1): $\log_a(a) = 1$
+- **Logarithm of base raised to exponent** (equals the exponent): $\log_a(a^x) = x$
+- **Logarithm of reciprocal** (is the negative logarithm): $\log_a\left(\frac{1}{x}\right) = -\log_a(x)$
+- **Base raised to its logarithm** (equals the original number): $a^{\log_a(x)} = x$
+- **Logarithm of root** (is logarithm of radicand divided by root): $\log_a(\sqrt[n]{m}) = \frac{1}{n}\log_a(m)$
 
 ### Change of Base Formula
 
