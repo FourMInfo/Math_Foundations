@@ -92,26 +92,7 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 
 ### Finding Roots and Zeros
 
-**Roots** or **zeros** are values of $x$ for which $P(x) = 0$.
-
-#### Methods for Finding Roots
-
-1. **Factoring**: Express as product of linear factors
-   - Example: $x^2 - 5x + 6 = (x - 2)(x - 3)$, so roots are $x = 2, 3$
-
-2. **Quadratic Formula**: For $ax^2 + bx + c = 0$
-   $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
-
-3. **Rational Root Theorem**: Possible rational roots are $\pm \frac{p}{q}$ where $p$ divides the constant term and $q$ divides the leading coefficient
-
-#### Example: Finding Roots
-
-Find the roots of $P(x) = 2x^2 - 7x + 3$
-
-Using the quadratic formula:
-$$x = \frac{7 \pm \sqrt{49 - 24}}{4} = \frac{7 \pm \sqrt{25}}{4} = \frac{7 \pm 5}{4}$$
-
-Therefore: $x = 3$ or $x = \frac{1}{2}$
+Finding polynomial roots and zeros is a fundamental problem in algebra. This topic is covered in detail in the [Solving Equations](03%20Solving%20Equations.md#finding-polynomial-roots-and-zeros) section, which includes comprehensive methods and examples for finding roots of polynomial equations.
 
 ### Polynomial Operations
 
