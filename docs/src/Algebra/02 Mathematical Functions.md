@@ -309,7 +309,7 @@ Hyperbolas are conic sections defined by equations of the form:
 - **Vertices**: points where the hyperbola intersects the transverse axis
   - For horizontal hyperbolas: $(\pm a, 0)$
   - For vertical hyperbolas: $(0, \pm a)$
-- **Asymptotes**: the asymptote is the line that the hyperbola approaches but never touches. 
+- **Asymptotes**: the asymptote is the line that the hyperbola approaches but never touches.
   - For horizontal hyperbolas: $y = \pm \frac{b}{a}x$
   - For vertical hyperbolas: $x = \pm \frac{b}{a}y$
 - **Foci**: the points where the hyperbola is centered
