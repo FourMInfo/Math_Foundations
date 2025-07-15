@@ -28,7 +28,7 @@ The key difference is that functions have the **uniqueness property** - each inp
 
 #### Surjective (Onto)
 
-A _surjective_ (onto) function is defined as every element in the codomain is hit by some element in the domain. Formally, a function $f: A \to B$ is surjective if: For every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
+A _surjective_ (_onto_) function is defined as every element in the codomain is hit by some element in the domain. Formally, function $f: A \to B$ is _surjective_ if for every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
 
 ##### Surjective Properties
 
@@ -44,7 +44,7 @@ A _surjective_ (onto) function is defined as every element in the codomain is hi
 
 #### Into
 
-An _into_ relationship refers to a function that is not surjective (not onto). A function $f: A \rightarrow B$ is "into" if its range is a proper subset of its codomain. In other words, Range$(f) \subsetneq B$ (strict subset).
+An _into_ relationship refers to a function that is not surjective (not _onto_). A function $f: A \rightarrow B$ is _into_ if its range is a proper subset of its codomain. In other words, Range$(f) \subsetneq B$ (strict subset).
 
 ##### Into Properties
 
@@ -56,26 +56,27 @@ An _into_ relationship refers to a function that is not surjective (not onto). A
 
 - **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$
   - Range = $[0,\infty)$, Codomain = $\mathbb{R}$
-  - Since negative numbers are never outputs, this is "into" $\mathbb{R}$
+  - Since negative numbers are never outputs, this is _into_ $\mathbb{R}$
 - **Example**: $f: \mathbb{N} \to \mathbb{Z}$ where $f(n) = n$
   - Range = $\mathbb{N}$, Codomain = $\mathbb{Z}$
-  - Since negative integers and zero are never outputs, this is "into" $\mathbb{Z}$
+  - Since negative integers and zero are never outputs, this is _into_ $\mathbb{Z}$
 
 ##### Terminology clarification - Into vs Onto
 
-- **Into**: Range $\subsetneq$ Codomain (proper subset)
-- **Onto** (surjective): Range = Codomain
-- Every function is either "into" or "onto" (but not both, unless the range equals the codomain) Not every element in the codomain $B$ is "hit" by the function
-- There exist elements $b \in B$ such that $f(a) \neq b$ for any $a \in A$
-- The function "goes into" $B$ but doesn't fill all of $B$Into Examples
-
-**Note:** “Into” is somewhat informal terminology. The formal term is **“not surjective.”** Some texts avoid “into” because it can be confused with the general notion that any function f: A → B maps A “into” B.
+_Into_ is somewhat informal terminology. The formal term is **“not _surjective_.”** Some texts avoid _into_ because it can be confused with the general notion that any function $f: A \rightarrow B$ maps the domain $A$ “into” the codomain $B$.
 
 The distinction matters because it tells you whether you’re using the “full capacity” of your codomain or just part of it.​​​​​​​​​​​​​​​​
 
+- Every function is either _into_ or "onto" (but not both, unless the range equals the codomain)
+- **Into**: Range $\subsetneq$ Codomain (proper subset)
+- **Onto** (surjective): Range = Codomain
+- **Into**: Not every element in the codomain $B$ is "hit" by the function
+- **Into**: There exist elements $b \in B$ such that $f(a) \neq b$ for any $a \in A$
+- **Into**: The function "goes into" $B$ but doesn't fill all of $B$
+
 #### Injective
 
-An _injective_ (one-to-one) function is defined as no two elements in the domain map to the same element in the codomain. Formally, a function $f: A \to B$ is injective if: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
+An _injective_ (one-to-one) function is defined as no two elements in the domain map to the same element in the codomain. Formally, a function $f: A \to B$ is _injective_ if: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
 
 ##### Injective Properties
 
@@ -96,10 +97,10 @@ A _bijective_ function is both injective and surjective. This means it has a per
 
 ##### Bijective Properties
 
-Formally, a function $f: A \to B$ is bijective if:
+Formally, a function $f: A \to B$ is _bijective_ if:
 
-- It is injective: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
-- It is surjective: For every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
+- It is _injective_: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
+- It is _surjective_: For every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
 - This means every element in the codomain is hit by exactly one element in the domain
 - Meets both the vertical and horizontal line tests
 - Has an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(a)) = a$ for all $a \in A$ and $f(f^{-1}(b)) = b$ for all $b \in B$
@@ -121,6 +122,46 @@ Formally, a function $f: A \to B$ is bijective if:
   - Not bijective, so no inverse exists
   - However, $f(x) = x^2$ for $x \geq 0$ has inverse $f^{-1}(x) = \sqrt{x}$
 
+##### Terminology Clarification - Bijective vs Injective
+
+**Injective (one-to-one):**
+
+- Each element in the **range** gets hit by exactly one element from the domain
+- No two different inputs map to the same output
+- $f(x_1) = f(x_2) \implies x_1 = x_2$
+- But not every element in the codomain needs to be hit
+
+**Bijective (one-to-one correspondence):**
+
+- Combines both injective AND surjective properties
+- Each element in the **codomain** gets hit by exactly one element from the domain
+- Every element in codomain is hit (surjective) AND no element is hit more than once (injective)
+
+**The key difference:**
+
+**Injective:** “one-to-one from domain to **range**”
+
+- Perfect pairing between domain and range
+- But range might be smaller than codomain
+
+**Bijective:** “one-to-one correspondence from domain to **codomain**”
+
+- Perfect pairing between domain and entire codomain
+- Range = codomain
+
+**Examples:**
+
+- **Bijective:** $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = 2x$
+  - **Injective**: one-to-one from $\mathbb{R}$ to $\mathbb{R}$ (range = $\mathbb{R}$)
+  - **Surjective**: onto $\mathbb{R}$ (every real number is hit)
+  - **Bijective**: one-to-one correspondence from $\mathbb{R}$ to $\mathbb{R}$
+- **Injective but not Bijective:** $f: \mathbb{R} \to [0, \infty)$ where $f(x) = x^2$
+  - **Injective**: one-to-one from $\mathbb{R}$ to $[0, \infty)$ (range = $[0, \infty)$)
+  - **Not Surjective**: not onto $\mathbb{R}$ (negative numbers are never outputs)
+  - **Not Bijective**: no perfect pairing with codomain $\mathbb{R}$
+
+In conclusion, _bijective_ is a stronger condition - it requires the one-to-one property to extend to the entire codomain.​​​​​​​​​​​​​​​​
+
 ### Additional Set Theory Terminology
 
 - **Partial function**: Relation where each element in domain relates to at most one element in codomain (but not necessarily exactly one)
@@ -128,7 +169,7 @@ Formally, a function $f: A \to B$ is bijective if:
 - **Multivalued function**: Relation where elements can map to multiple values (technically not a function)
 - **Well-defined function**: A function where every input has a unique output, and the output is unambiguous
 
-### Function Notation in Mathematcs
+### Function Notation in Mathematics
 
 - **Standard notation**: $y = f(x)$ where $x$ is the input and $y$ is the output
   - **Example**: $y = f(x) = 2x + 3$ means for input $x = 1$, output $y = f(1) = 2(1) + 3 = 5$
@@ -169,7 +210,7 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 
 ### Finding Roots and Zeros
 
-Finding polynomial roots and zeros is a fundamental problem in algebra. This topic is covered in detail in the [Solving Equations](03 Solving Equations.md) section, which includes comprehensive methods and examples for finding roots of polynomial equations.
+Finding polynomial roots and zeros is a fundamental problem in algebra. This topic is covered in detail in the [Solving Equations](03 Solving Equations.md) document, which includes comprehensive methods and examples for finding roots of polynomial equations.
 
 ### Polynomial Operations
 
@@ -206,7 +247,13 @@ For polynomials $f(x)$ and $g(x)$, the composition $(f \circ g)(x) = f(g(x))$.
 **Example**:
 
 If $f(x) = x^2 + 1$ and $g(x) = 2x - 1$, then:
-$$f(g(x)) = f(2x - 1) = (2x - 1)^2 + 1 = 4x^2 - 4x + 1 + 1 = 4x^2 - 4x + 2$$
+
+$$\begin{aligned}
+f(g(x)) &= f(2x - 1) \\
+&= (2x - 1)^2 + 1 \\
+&= 4x^2 - 4x + 1 + 1 \\
+&= 4x^2 - 4x + 2
+\end{aligned}$$
 
 ## Quadratic Functions and Parabolas
 
@@ -229,25 +276,20 @@ Quadratic functions have the form $f(x) = ax^2 + bx + c$ where $a \neq 0$. Their
 
 ### Finding Roots Using the Quadratic Formula
 
-For $ax^2 + bx + c = 0$: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
-
-The **discriminant** $\Delta = b^2 - 4ac$ determines the nature of roots:
-
-- Two distinct real roots: $\Delta > 0$
-- One real root (repeated/double root): $\Delta = 0$
-- Two complex conjugate roots: $\Delta < 0$
+This topic is covered in detail in the [Solving Equations](03 Solving Equations.md) document, which includes the quadratic formula:
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 ### Example: Complete Analysis
 
 Analyze $f(x) = -2x^2 + 8x - 6$
 
-1. **Step 1**: Identify $a = -2$, $b = 8$, $c = -6$
-1. **Step 2**: Vertex at $x = -\frac{8}{2(-2)} = 2$, $y = f(2) = -2(4) + 16 - 6 = 2$
-1. **Step 3**: Vertex: $(2, 2)$
-1. **Step 4**: Opens downward since $a < 0$
-1. **Step 5**: Y-intercept: $(0, -6)$
-1. **Step 6**: Discriminant: $\Delta = 64 - 48 = 16 > 0$ (two real roots)
-1. **Step 7**: Roots: $x = \frac{-8 \pm 4}{-4} = 1, 3$
+- Identify $a = -2$, $b = 8$, $c = -6$
+- Vertex at $x = -\frac{8}{2(-2)} = 2$, $y = f(2) = -2(4) + 16 - 6 = 2$
+- Vertex: $(2, 2)$
+- Opens downward since $a < 0$
+- Y-intercept: $(0, -6)$
+- Discriminant: $\Delta = 64 - 48 = 16 > 0$ (two real roots)
+- Roots: $x = \frac{-8 \pm 4}{-4} = 1, 3$
 
 ## Hyperbolic Functions
 
@@ -260,9 +302,26 @@ Hyperbolas are conic sections defined by equations of the form:
 
 ### Key Properties of Conic Hyperbolas
 
-- **Center**: $(0, 0)$ for standard form
-- **Vertices**: $(\pm a, 0)$ for horizontal, $(0, \pm a)$ for vertical
-- **Asymptotes**: $y = \pm \frac{b}{a}x$ for horizontal hyperbola
+- **Center**: the center of the hyperbola is at the origin $(0, 0)$ for standard form
+- **Axes**: the transverse axis is
+  - along the x-axis for horizontal hyperbolas
+  - along the y-axis for vertical hyperbolas
+- **Vertices**: points where the hyperbola intersects the transverse axis
+  - For horizontal hyperbolas: $(\pm a, 0)$
+  - For vertical hyperbolas: $(0, \pm a)$
+- **Asymptotes**: the asymptote is the line that the hyperbola approaches but never touches. 
+  - For horizontal hyperbolas: $y = \pm \frac{b}{a}x$
+  - For vertical hyperbolas: $x = \pm \frac{b}{a}y$
+- **Foci**: the points where the hyperbola is centered
+  - For horizontal hyperbolas: $(\pm c, 0)$
+  - For vertical hyperbolas: $(0, \pm c)$
+  - where $c = \sqrt{a^2 + b^2}$
+- **Eccentricity**: the ratio of the distance from the center to a focus and the distance from the center to a vertex
+  - For hyperbolas: $e = \frac{c}{a}$, where $c = \sqrt{a^2 + b^2}$
+  - Eccentricity is always greater than 1 for hyperbolas
+- **Domain**: All real numbers except the vertical asymptote
+- **Range**: All real numbers except the horizontal asymptote
+- **Symmetry**: Hyperbolas are symmetric with respect to both axes and the origin
 
 ### Rational Function Hyperbolas
 
@@ -410,9 +469,9 @@ where:
 - number of times interest is compounded per year is $n$
 - the final amount after $t$ years is $A$
 
-**Example:** \$1000 invested at $5%$ annual interest compounded quarterly for $3$ years:
+**Example:** \$1000 invested at $5\%$ annual interest compounded quarterly for $3$ years:
 
-$$A = 1000\left(1 + \frac{0.05}{4}\right)^{4 \times 3} = 1000(1.0125)^{12} \approx \$1161.62$$
+$$A = 1000\left(1 + \frac{0.05}{4}\right)^{4 \times 3} = 1000(1.0125)^{12} \approx \$1160.75$$
 
 **Continuous Compounding Formula:**
 $$A = Pe^{rt}$$
