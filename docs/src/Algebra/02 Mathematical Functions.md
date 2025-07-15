@@ -1,31 +1,88 @@
 # Mathematical Functions
 
-Functions are fundamental mathematical objects that describe relationships between variables. A function assigns exactly one output value to each input value.
+Functions are fundamental mathematical constructs that map inputs to outputs. This section covers various types of mathematical functions, their properties, and how to work with them.
 
-## Definition and Notation
+## Function Definition and Notation
 
-A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where:
+A function is a mapping of one set onto another set, where each element in the first set (domain) is associated with exactly one element in the second set (codomain). The idea comes from relations in set theory, where a function is a special type of relation. Functions are a critical concept in mathematics, allowing us to model and analyze relationships between quantities.
+
+### Relations
+
+- A relation R from set A to set B is simply a subset of $A \times B$
+- No restrictions on how elements relate
+- An element in A can be related to multiple elements in B, or none at all
+- Domain of $R = \{a \in A : \exists b \in B \text{ such that } (a,b) \in R\}$
+- Range of $R = \{b \in B : \exists a \in A \text{ such that } (a,b) \in R\}$
+
+### Functions
+
+A function is a special relation where each element in A is related to exactly one element in B. A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where:
 
 - The **domain** $A$ is the set of all possible input values
 - The **codomain** $B$ is the set containing all possible output values
 - The **range** is the set of actual output values
 
-### Function Notation
+The key difference is that functions have the **uniqueness property** - each input has exactly one output - while relations have no such restriction.​​​​​​​​​​​​​​​​
 
-- **Standard notation**: $y = f(x)$ where $x$ is the input and $y$ is the output
-  - **Example**: $f(x) = 2x + 3$ means for input $x = 1$, output $f(1) = 2(1) + 3 = 5$
-- **Function evaluation**: $f(a)$ represents the output when input is $a$
+### Set Theory Terminology for Function Types
 
-### Key Function Properties
+#### Surjective (Onto)
 
-- **One-to-one (injective)**: Each output corresponds to exactly one input
-- **Onto (surjective)**: Every element in the codomain is an output
-- **Bijective**: Both one-to-one and onto
-- **Invertible**: Has an inverse function (equivalent to being bijective)
+A _surjective_ (onto) function is defined as every element in the codomain is hit by some element in the domain. Formally, a function $f: A \to B$ is surjective if: For every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
 
-#### Examples of Function Properties
+##### Surjective Properties
 
-**One-to-one (Injective) Functions:**
+- This means the range of the function is equal to the codomain
+- Meets the vertical line test which means every vertical line intersects the graph at least once
+
+##### Surjective Examples
+
+- **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^3$
+  - For any real number $y$, we can find $x = \sqrt[3]{y}$ such that $f(x) = y$
+- **Counter-example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$
+  - Negative numbers in the codomain are never outputs (range is $[0, \infty)$)
+
+#### Into
+
+An _into_ relationship refers to a function that is not surjective (not onto). A function $f: A \rightarrow B$ is "into" if its range is a proper subset of its codomain. In other words, Range$(f) \subsetneq B$ (strict subset).
+
+##### Into Properties
+
+- Not every element in the codomain B is “hit” by the function
+- There exist elements b ∈ B such that f(a) ≠ b for any a ∈ A
+- The function “goes into” B but doesn’t fill all of B
+
+##### Into Examples
+
+- **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$
+  - Range = $[0,\infty)$, Codomain = $\mathbb{R}$
+  - Since negative numbers are never outputs, this is "into" $\mathbb{R}$
+- **Example**: $f: \mathbb{N} \to \mathbb{Z}$ where $f(n) = n$
+  - Range = $\mathbb{N}$, Codomain = $\mathbb{Z}$
+  - Since negative integers and zero are never outputs, this is "into" $\mathbb{Z}$
+
+##### Terminology clarification - Into vs Onto
+
+- **Into**: Range $\subsetneq$ Codomain (proper subset)
+- **Onto** (surjective): Range = Codomain
+- Every function is either "into" or "onto" (but not both, unless the range equals the codomain) Not every element in the codomain $B$ is "hit" by the function
+- There exist elements $b \in B$ such that $f(a) \neq b$ for any $a \in A$
+- The function "goes into" $B$ but doesn't fill all of $B$Into Examples
+
+**Note:** “Into” is somewhat informal terminology. The formal term is **“not surjective.”** Some texts avoid “into” because it can be confused with the general notion that any function f: A → B maps A “into” B.
+
+The distinction matters because it tells you whether you’re using the “full capacity” of your codomain or just part of it.​​​​​​​​​​​​​​​​
+
+#### Injective
+
+An _injective_ (one-to-one) function is defined as no two elements in the domain map to the same element in the codomain. Formally, a function $f: A \to B$ is injective if: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
+
+##### Injective Properties
+
+- This means that different inputs always produce different outputs
+- Meets the horizontal line test which means no horizontal line intersects the graph more than once
+
+##### Injective Examples
 
 - **Example**: $f(x) = 2x + 3$
   - Different inputs always give different outputs
@@ -33,29 +90,49 @@ A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where
 - **Counter-example**: $f(x) = x^2$ (for domain $\mathbb{R}$)
   - two different inputs give the same output: $f(2) = 4$ and $f(-2) = 4$
 
-**Onto (Surjective) Functions:**
+#### Bijective (Invertible) Functions
 
-- **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^3$
-  - For any real number $y$, we can find $x = \sqrt[3]{y}$ such that $f(x) = y$
-- **Counter-example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$
-  - Negative numbers in the codomain are never outputs (range is $[0, \infty)$)
+A _bijective_ function is both injective and surjective. This means it has a perfect one-to-one correspondence between the domain and codomain.
 
-**Bijective Functions:**
+##### Bijective Properties
+
+Formally, a function $f: A \to B$ is bijective if:
+
+- It is injective: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
+- It is surjective: For every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
+- This means every element in the codomain is hit by exactly one element in the domain
+- Meets both the vertical and horizontal line tests
+- Has an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(a)) = a$ for all $a \in A$ and $f(f^{-1}(b)) = b$ for all $b \in B$
+
+##### Bijective Examples
 
 - **Example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = 3x - 7$
   - Both injective and surjective (linear functions with non-zero slope)
+  - Inverse is $f^{-1}(y) = \frac{y + 7}{3}$
 - **Counter-example**: $f: \mathbb{R} \to \mathbb{R}$ where $f(x) = \sin(x)$
   - Not injective: $\sin(0) = \sin(\pi) = 0$
   - Not surjective: range is $[-1, 1]$, not all of $\mathbb{R}$
 
-**Invertible Functions:**
-
 - **Example**: $f(x) = 2x + 5$ has inverse $f^{-1}(x) = \frac{x - 5}{2}$
+  - Both injective and surjective (linear functions with non-zero slope)
   - Verify: $f(f^{-1}(x)) = f\left(\frac{x-5}{2}\right) = 2\left(\frac{x-5}{2}\right) + 5 = x$
   - And: $f^{-1}(f(x)) = f^{-1}(2x + 5) = \frac{(2x + 5) - 5}{2} = x$
 - **Counter-example**: $f(x) = x^2$ (for domain $\mathbb{R}$)
   - Not bijective, so no inverse exists
   - However, $f(x) = x^2$ for $x \geq 0$ has inverse $f^{-1}(x) = \sqrt{x}$
+
+### Additional Set Theory Terminology
+
+- **Partial function**: Relation where each element in domain relates to at most one element in codomain (but not necessarily exactly one)
+- **Total function**: What we usually call a “function” - defined on entire domain
+- **Multivalued function**: Relation where elements can map to multiple values (technically not a function)
+- **Well-defined function**: A function where every input has a unique output, and the output is unambiguous
+
+### Function Notation in Mathematcs
+
+- **Standard notation**: $y = f(x)$ where $x$ is the input and $y$ is the output
+  - **Example**: $y = f(x) = 2x + 3$ means for input $x = 1$, output $y = f(1) = 2(1) + 3 = 5$
+- **Function evaluation**: $f(a)$ represents the output when input is $a$
 
 ## Polynomial Functions
 
@@ -92,7 +169,7 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 
 ### Finding Roots and Zeros
 
-Finding polynomial roots and zeros is a fundamental problem in algebra. This topic is covered in detail in the [Solving Equations](03%20Solving%20Equations.md#finding-polynomial-roots-and-zeros) section, which includes comprehensive methods and examples for finding roots of polynomial equations.
+Finding polynomial roots and zeros is a fundamental problem in algebra. This topic is covered in detail in the [Solving Equations](03 Solving Equations.md) section, which includes comprehensive methods and examples for finding roots of polynomial equations.
 
 ### Polynomial Operations
 
@@ -218,7 +295,7 @@ Transform $y = \frac{1}{x}$ to $y = \frac{-2}{x + 3} + 1$:
 
 ### Mathematical Hyperbolic Functions
 
-Mathematical hyperbolic functions are closely related to trigonometric functions and are covered in detail in the [Trigonometric Functions](../Trigonometry/01%20Trigonometric%20Functions.md#hyperbolic-functions) section.
+Mathematical hyperbolic functions are closely related to trigonometric functions and are covered in detail in the [Trigonometric Functions](../Trigonometry/01 Trigonometric Functions.md) section.
 
 ## Exponential Functions
 
@@ -307,6 +384,18 @@ where:
 
 $$N(11460) = 100 \left(\frac{1}{2}\right)^{11460/5730} = 100 \left(\frac{1}{2}\right)^2 = 100 \cdot \frac{1}{4} = 25 \text{ grams}$$
 
+#### Continuous Exponential Decay
+
+For continuous exponential decay with a known decay constant, we use the continuous formula.
+
+**Example:** A radioactive substance decays continuously at a rate of $k = -0.0231$ per year. If we start with 100g, how much remains after 30 years?
+
+Using $N(t) = N_0 e^{kt}$:
+
+$$N(30) = 100 e^{-0.0231 \times 30} = 100 e^{-0.693} = 100 \times 0.5 = 50 \text{ grams}$$
+
+Note: The decay constant $k = -0.693$ corresponds to a half-life of 30 years since $\ln(0.5) = -0.693$.
+
 #### Compound Interest
 
 Compound interest is calculated when interest is earned on both the principal and previously earned interest.
@@ -321,6 +410,10 @@ where:
 - number of times interest is compounded per year is $n$
 - the final amount after $t$ years is $A$
 
+**Example:** \$1000 invested at $5%$ annual interest compounded quarterly for $3$ years:
+
+$$A = 1000\left(1 + \frac{0.05}{4}\right)^{4 \times 3} = 1000(1.0125)^{12} \approx \$1161.62$$
+
 **Continuous Compounding Formula:**
 $$A = Pe^{rt}$$
 
@@ -331,9 +424,11 @@ where:
 - the time in years is $t$
 - the final amount is $A$
 
-**Example:** \$1000 invested at $5%$ annual interest compounded quarterly for $3$ years:
+**Example:** \$1000 invested at $5%$ annual interest compounded continuously for $3$ years:
 
-$$A = 1000\left(1 + \frac{0.05}{4}\right)^{4 \times 3} = 1000(1.0125)^{12} \approx \$1161.62$$
+$$A = 1000e^{0.05 \times 3} = 1000e^{0.15} \approx 1000 \times 1.1618 \approx \$1161.83$$
+
+Notice that continuous compounding yields slightly more than quarterly compounding.
 
 ## Logarithmic Functions
 
