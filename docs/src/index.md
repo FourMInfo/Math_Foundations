@@ -27,17 +27,18 @@ This section provides links to documentation that replicates topics covered in t
 - [Elementary Calculations](Algebra/01 Elementary Calculations.md)
 - [Mathematical Functions](Algebra/02 Mathematical Functions.md)
 - [Solving Equations](Algebra/03 Solving Equations.md)
+- [Finding Polynomial Roots and Zeros](Algebra/04 Finding Polynomial Roots and Zeros.md)
 
 ### Geometry
 
 - [Triangles](Geometry/01 Triangles.md)
-- [Angles & Measurements](Geometry/02 Angles & Measurements.md)
-- [Hyperbola](Geometry/Hyperbola.md)
+- [Hyperbola](Geometry/02 Hyperbola.md)
 
 ### Trigonometry
 
-- [Trigonometric Functions](Trigonometry/01 Trigonometric Functions.md)
-- [Trigonometric Identities](Trigonometry/02 Trigonometric Identities.md)
+- [Angles & Measurements](Trigonometry/01 Angles & Measurements.md)
+- [Trigonometric Functions](Trigonometry/02 Trigonometric Functions.md)
+- [Trigonometric Identities](Trigonometry/03 Trigonometric Identities.md)
 
 ---
 
