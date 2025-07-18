@@ -102,7 +102,12 @@ Starting with the general quadratic equation $ax^2 + bx + c = 0$ where $a \neq 0
 
 Here: $a = 2$, $b = 5$, $c = -3$
 
-$$x = \frac{-5 \pm \sqrt{5^2 - 4(2)(-3)}}{2(2)} = \frac{-5 \pm \sqrt{25 + 24}}{4} = \frac{-5 \pm \sqrt{49}}{4} = \frac{-5 \pm 7}{4}$$
+$$\begin{aligned}
+x &= \frac{-5 \pm \sqrt{5^2 - 4(2)(-3)}}{2(2)} \\
+&= \frac{-5 \pm \sqrt{25 + 24}}{4} \\
+&= \frac{-5 \pm \sqrt{49}}{4} \\
+&= \frac{-5 \pm 7}{4}
+\end{aligned}$$
 
 Therefore: $x = \frac{-5 + 7}{4} = \frac{1}{2}$ or $x = \frac{-5 - 7}{4} = -3$
 
@@ -176,20 +181,16 @@ Cubic equations have the form $ax^3 + bx^2 + cx + d = 0$ where $a \neq 0$.
 
 ##### 2. Rational Root Theorem
 
-See section below for details on the Rational Root Theorem.
+See [04 Finding Polynomial Roots and Zeros](04 Finding Polynomial Roots and Zeros.md) for details on the Rational Root Theorem and its relationship to synthetic division.
 
 **Example**: Find rational roots of $2x^3 - 3x^2 - 11x + 6 = 0$
 
-Possible rational roots: $\pm 1, \pm 2, \pm 3, \pm 6, \pm \frac{1}{2}, \pm \frac{3}{2}$
-
-Testing $x = 3$: $2(27) - 3(9) - 11(3) + 6 = 54 - 27 - 33 + 6 = 0$ ✓
-
-So $(x - 3)$ is a factor. Using synthetic division:
-$2x^3 - 3x^2 - 11x + 6 = (x - 3)(2x^2 + 3x - 2)$
-
-Factor the quadratic: $2x^2 + 3x - 2 = (2x - 1)(x + 2)$
-
-Complete factorization: $(x - 3)(2x - 1)(x + 2) = 0$
+1. Possible rational roots: $\pm 1, \pm 2, \pm 3, \pm 6, \pm \frac{1}{2}, \pm \frac{3}{2}$
+2. Testing $x = 3$: $2(27) - 3(9) - 11(3) + 6 = 54 - 27 - 33 + 6 = 0$ ✓
+3. So $(x - 3)$ is a factor.
+4. Using synthetic division: $2x^3 - 3x^2 - 11x + 6 = (x - 3)(2x^2 + 3x - 2)$
+5. Factor the quadratic: $2x^2 + 3x - 2 = (2x - 1)(x + 2)$
+6. Complete factorization: $(x - 3)(2x - 1)(x + 2) = 0$
 
 Solutions: $x = 3, \frac{1}{2}, -2$
 
