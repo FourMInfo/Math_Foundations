@@ -32,7 +32,9 @@ This section provides links to documentation that replicates topics covered in t
 ### Geometry
 
 - [Triangles](Geometry/01 Triangles.md)
+<!--- IGNORE FOR NOW
 - [Hyperbola](Geometry/02 Hyperbola.md)
+--->
 
 ### Trigonometry
 
