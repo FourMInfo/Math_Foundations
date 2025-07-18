@@ -199,11 +199,11 @@ Methods for determining which fraction is larger:
   - To compare $\frac{a}{b}$ and $\frac{c}{d}$, compare $ad$ with $bc$
   - Example: Compare $\frac{2}{3}$ and $\frac{3}{5}$: $2 \times 5 = 10$, $3 \times 3 = 9$, so $\frac{2}{3} > \frac{3}{5}$
 
-- **Common denominator:** 
+- **Common denominator:**
   - Convert to same denominator and compare numerators
   - Example: $\frac{2}{3}$ vs $\frac{3}{5}$ becomes $\frac{10}{15}$ vs $\frac{9}{15}$, so $\frac{2}{3} > \frac{3}{5}$
 
-- **Decimal conversion:** 
+- **Decimal conversion:**
   - Convert to decimals for easy comparison
   - Example: $\frac{2}{3} \approx 0.667$, $\frac{3}{5} = 0.6$, so $\frac{2}{3} > \frac{3}{5}$
 
