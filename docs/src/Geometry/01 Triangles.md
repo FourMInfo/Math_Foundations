@@ -5,21 +5,21 @@ Triangles are three-sided polygons that form the foundation of much geometric an
 ## Types of Triangles
 
 ### By Side Length
-- **Equilateral**: All three sides equal
-- **Isosceles**: Two sides equal
-- **Scalene**: All sides different
+- **Equilateral:** All three sides equal
+- **Isosceles:** Two sides equal
+- **Scalene:** All sides different
 
 ### By Angle Measure
-- **Acute**: All angles less than 90°
-- **Right**: One angle equals 90°
-- **Obtuse**: One angle greater than 90°
+- **Acute:** All angles less than 90°
+- **Right:** One angle equals 90°
+- **Obtuse:** One angle greater than 90°
 
 ## Triangle Properties
 
 ### Fundamental Properties
-- **Sum of angles**: Always equals 180°
-- **Triangle inequality**: Sum of any two sides > third side
-- **Exterior angle**: Equals sum of two non-adjacent interior angles
+- **Sum of angles:** Always equals 180°
+- **Triangle inequality:** Sum of any two sides > third side
+- **Exterior angle:** Equals sum of two non-adjacent interior angles
 
 ## Area Calculations
 
@@ -95,12 +95,12 @@ This generalizes the Pythagorean theorem (when $C = 90°$, $\cos C = 0$).
 ## Circle Properties
 
 ### Circumcircle
-- **Circumcenter**: Point equidistant from all vertices
-- **Circumradius**: $R = \frac{abc}{4A}$ where $A$ is the area
+- **Circumcenter:** Point equidistant from all vertices
+- **Circumradius:** $R = \frac{abc}{4A}$ where $A$ is the area
 
 ### Incircle
-- **Incenter**: Point equidistant from all sides
-- **Inradius**: $r = \frac{A}{s}$ where $s$ is the semi-perimeter
+- **Incenter:** Point equidistant from all sides
+- **Inradius:** $r = \frac{A}{s}$ where $s$ is the semi-perimeter
 
 ### Excircles
 Each triangle has three excircles, each tangent to one side and the extensions of the other two sides.
@@ -108,13 +108,13 @@ Each triangle has three excircles, each tangent to one side and the extensions o
 ## Applications
 
 ### Surveying and Navigation
-- **Triangulation**: Determining position using angle measurements
-- **GPS systems**: Using triangular calculations
+- **Triangulation:** Determining position using angle measurements
+- **GPS systems:** Using triangular calculations
 
 ### Engineering
-- **Structural analysis**: Triangular frameworks and trusses
-- **Computer graphics**: Triangular meshes for 3D modeling
+- **Structural analysis:** Triangular frameworks and trusses
+- **Computer graphics:** Triangular meshes for 3D modeling
 
 ### Physics
-- **Vector decomposition**: Breaking forces into components
-- **Wave analysis**: Using trigonometric functions
+- **Vector decomposition:** Breaking forces into components
+- **Wave analysis:** Using trigonometric functions

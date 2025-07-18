@@ -10,23 +10,23 @@ A hyperbola, in analytic geometry, is a conic section that is formed when a plan
 
 Let us check through a few important terms relating to the different parameters of a hyperbola.
 
-**Foci of hyperbola**: The hyperbola has two foci and their coordinates are $F(c, 0)$, and $F^{\prime}(-c, 0)$.
+**Foci of hyperbola:** The hyperbola has two foci and their coordinates are $F(c, 0)$, and $F^{\prime}(-c, 0)$.
 
-**Center of Hyperbola**: The midpoint of the line joining the two foci is called the center of the hyperbola.
+**Center of Hyperbola:** The midpoint of the line joining the two foci is called the center of the hyperbola.
 
-**Major Axis**: The length of the major axis of the hyperbola is $2a$ units.
+**Major Axis:** The length of the major axis of the hyperbola is $2a$ units.
 
-**Minor Axis**: The length of the minor axis of the hyperbola is $2b$ units.
+**Minor Axis:** The length of the minor axis of the hyperbola is $2b$ units.
 
-**Vertices**: The points where the hyperbola intersects the axis are called the vertices. The vertices of the hyperbola are $(a, 0)$, $(-a, 0)$.
+**Vertices:** The points where the hyperbola intersects the axis are called the vertices. The vertices of the hyperbola are $(a, 0)$, $(-a, 0)$.
 
-**Latus Rectum of Hyperbola**: The latus rectum is a line drawn perpendicular to the transverse axis of the hyperbola and is passing through the foci of the hyperbola. The length of the latus rectum of the hyperbola is $\frac{2b^2}{a}$.
+**Latus Rectum of Hyperbola:** The latus rectum is a line drawn perpendicular to the transverse axis of the hyperbola and is passing through the foci of the hyperbola. The length of the latus rectum of the hyperbola is $\frac{2b^2}{a}$.
 
-**Transverse Axis**: The line passing through the two foci and the center of the hyperbola is called the transverse axis of the hyperbola.
+**Transverse Axis:** The line passing through the two foci and the center of the hyperbola is called the transverse axis of the hyperbola.
 
-**Conjugate Axis**: The line passing through the center of the hyperbola and perpendicular to the transverse axis is called the conjugate axis of the hyperbola.
+**Conjugate Axis:** The line passing through the center of the hyperbola and perpendicular to the transverse axis is called the conjugate axis of the hyperbola.
 
-**Eccentricity of Hyperbola**: $(e > 1)$ The eccentricity is the ratio of the distance of the focus from the center of the hyperbola, and the distance of the vertex from the center of the hyperbola. The distance of the focus is $c$ units, and the distance of the vertex is $a$ units, and hence the eccentricity is $e = \frac{c}{a}$.
+**Eccentricity of Hyperbola:** $(e > 1)$ The eccentricity is the ratio of the distance of the focus from the center of the hyperbola, and the distance of the vertex from the center of the hyperbola. The distance of the focus is $c$ units, and the distance of the vertex is $a$ units, and hence the eccentricity is $e = \frac{c}{a}$.
 
 ## Standard Equation of a Hyperbola
 
@@ -87,20 +87,20 @@ Therefore, the standard equation of the Hyperbola is derived.
 
 Hyperbola is an open curve that has two branches that look like mirror images of each other. For any point on any of the branches, the absolute difference between the point from foci is constant and equals to $2a$, where $a$ is the distance of the branch from the center. The Hyperbola formula helps us to find various parameters and related parts of the hyperbola such as the equation of hyperbola, the major and minor axis, eccentricity, asymptotes, vertex, foci, and semi-latus rectum.
 
-**Equation of hyperbola formula**:
+**Equation of hyperbola formula:**
 $$\frac{(x-x_0)^{2}}{a^{2}} - \frac{(y-y_0)^{2}}{b^{2}} = 1$$
 
-**Major and minor axis formula**: $y = y_0$ is the major axis, and its length is $2a$, whereas $x = x_0$ is the minor axis, and its length is $2b$
+**Major and minor axis formula:** $y = y_0$ is the major axis, and its length is $2a$, whereas $x = x_0$ is the minor axis, and its length is $2b$
 
-**Eccentricity (e) of hyperbola formula**:
+**Eccentricity (e) of hyperbola formula:**
 $$e = \sqrt{1+\frac{b^{2}}{a^{2}}}$$
 
-**Asymptotes of hyperbola formula**:
+**Asymptotes of hyperbola formula:**
 $$y = y_0 \pm \frac{b}{a}(x - x_0)$$
 
-**Vertex of hyperbola formula**: $(x_0 \pm a, y_0)$
+**Vertex of hyperbola formula:** $(x_0 \pm a, y_0)$
 
-**Focus(foci) of hyperbola**: $(x_0 \pm \sqrt{a^{2}+b^{2}}, y_0)$
+**Focus(foci) of hyperbola:** $(x_0 \pm \sqrt{a^{2}+b^{2}}, y_0)$
 
 ### Semi-latus rectum(p) of hyperbola formula
 
@@ -114,7 +114,7 @@ where:
 
 ### Example Problem
 
-**Problem**: The equation of the hyperbola is given as $\frac{(x-5)^{2}}{4^{2}} - \frac{(y-2)^{2}}{2^{2}} = 1$. Use the hyperbola formulas to find the length of the Major Axis and Minor Axis.
+**Problem:** The equation of the hyperbola is given as $\frac{(x-5)^{2}}{4^{2}} - \frac{(y-2)^{2}}{2^{2}} = 1$. Use the hyperbola formulas to find the length of the Major Axis and Minor Axis.
 
 ### Solution
 
@@ -124,7 +124,7 @@ Length of major axis = $2a$, and length of minor axis = $2b$
 
 Length of major axis = $2 \times 4 = 8$, and Length of minor axis = $2 \times 2 = 4$
 
-**Answer**: The length of the major axis is 8 units, and the length of the minor axis is 4 units.
+**Answer:** The length of the major axis is 8 units, and the length of the minor axis is 4 units.
 
 ## Graphs of Hyperbola
 
@@ -153,14 +153,14 @@ Here:
 
 The following important properties related to different concepts help in understanding hyperbola better.
 
-**Asymptotes**: The pair of straight lines drawn parallel to the hyperbola and assumed to touch the hyperbola at infinity. The equations of the asymptotes of the hyperbola are $y = \frac{bx}{a}$, and $y = -\frac{bx}{a}$ respectively.
+**Asymptotes:** The pair of straight lines drawn parallel to the hyperbola and assumed to touch the hyperbola at infinity. The equations of the asymptotes of the hyperbola are $y = \frac{bx}{a}$, and $y = -\frac{bx}{a}$ respectively.
 
 ![Hyperbola with asymptotes](https://cdn.mathpix.com/cropped/2025_05_14_1656b57f57be8f82f871g-12.jpg?height=1376&width=1545&top_left_y=238&top_left_x=255)
 
-**Rectangular Hyperbola**: The hyperbola having the transverse axis and the conjugate axis of the same length is called the rectangular hyperbola. Here, we have $2a = 2b$, or $a = b$. Hence the equation of the rectangular hyperbola is equal to $x^{2} - y^{2} = a^{2}$
+**Rectangular Hyperbola:** The hyperbola having the transverse axis and the conjugate axis of the same length is called the rectangular hyperbola. Here, we have $2a = 2b$, or $a = b$. Hence the equation of the rectangular hyperbola is equal to $x^{2} - y^{2} = a^{2}$
 
-**Parametric Coordinates**: The points on the hyperbola can be represented with the parametric coordinates $(x, y) = (a\sec\theta, b\tan\theta)$. These parametric coordinates representing the points on the hyperbola satisfy the equation of the hyperbola.
+**Parametric Coordinates:** The points on the hyperbola can be represented with the parametric coordinates $(x, y) = (a\sec\theta, b\tan\theta)$. These parametric coordinates representing the points on the hyperbola satisfy the equation of the hyperbola.
 
-**Auxiliary Circle**: A circle drawn with the endpoints of the transverse axis of the hyperbola as its diameter is called the auxiliary circle. The equation of the auxiliary circle of the hyperbola is $x^{2} + y^{2} = a^{2}$.
+**Auxiliary Circle:** A circle drawn with the endpoints of the transverse axis of the hyperbola as its diameter is called the auxiliary circle. The equation of the auxiliary circle of the hyperbola is $x^{2} + y^{2} = a^{2}$.
 
-**Director Circle**: The locus of the point of intersection of perpendicular tangents to the hyperbola is called the director circle. The equation of the director circle of the hyperbola is $x^{2} + y^{2} = a^{2} - b^{2}$.
+**Director Circle:** The locus of the point of intersection of perpendicular tangents to the hyperbola is called the director circle. The equation of the director circle of the hyperbola is $x^{2} + y^{2} = a^{2} - b^{2}$.

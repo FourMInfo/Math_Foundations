@@ -46,22 +46,22 @@ Mathematical hyperbolic functions are analogs of trigonometric functions based o
 
 ### Basic Hyperbolic Functions
 
-- **Hyperbolic sine**: $\sinh(x) = \frac{e^x - e^{-x}}{2}$
-- **Hyperbolic cosine**: $\cosh(x) = \frac{e^x + e^{-x}}{2}$
-- **Hyperbolic tangent**: $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
+- **Hyperbolic sine:** $\sinh(x) = \frac{e^x - e^{-x}}{2}$
+- **Hyperbolic cosine:** $\cosh(x) = \frac{e^x + e^{-x}}{2}$
+- **Hyperbolic tangent:** $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
 
 ### Key Properties
 
-- **Fundamental hyperbolic identity**: $\cosh^2(x) - \sinh^2(x) = 1$
-- **Initial values**: $\sinh(0) = 0$, $\cosh(0) = 1$
-- **Odd function property**: $\sinh(x)$ is an odd function: $\sinh(-x) = -\sinh(x)$
-- **Even function property**: $\cosh(x)$ is an even function: $\cosh(-x) = \cosh(x)$
+- **Fundamental hyperbolic identity:** $\cosh^2(x) - \sinh^2(x) = 1$
+- **Initial values:** $\sinh(0) = 0$, $\cosh(0) = 1$
+- **Odd function property:** $\sinh(x)$ is an odd function: $\sinh(-x) = -\sinh(x)$
+- **Even function property:** $\cosh(x)$ is an even function: $\cosh(-x) = \cosh(x)$
 
 ### Relationship to Trigonometric Functions
 
 Hyperbolic functions have many similarities to trigonometric functions:
 
-- **Trigonometric identity**: $\sin^2(x) + \cos^2(x) = 1$
-- **Hyperbolic identity**: $\cosh^2(x) - \sinh^2(x) = 1$
+- **Trigonometric identity:** $\sin^2(x) + \cos^2(x) = 1$
+- **Hyperbolic identity:** $\cosh^2(x) - \sinh^2(x) = 1$
 
 The key difference is the sign in the fundamental identity, which reflects the difference between the unit circle ($x^2 + y^2 = 1$) and the unit hyperbola ($x^2 - y^2 = 1$).

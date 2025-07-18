@@ -9,10 +9,10 @@ An angle is formed by two rays (called sides) that share a common endpoint (call
 ## Angle Measurement Systems
 
 ### Degrees
-- **Full rotation**: 360°
-- **Right angle**: 90°
-- **Straight angle**: 180°
-- **Common angles**: 30°, 45°, 60°, 90°
+- **Full rotation:** 360°
+- **Right angle:** 90°
+- **Straight angle:** 180°
+- **Common angles:** 30°, 45°, 60°, 90°
 
 ### Radians
 Radians provide a natural unit for angle measurement based on arc length.
@@ -29,27 +29,27 @@ One radian is the angle subtended by an arc equal in length to the radius of the
 - $\frac{\pi}{6}$ radians = 30°
 
 #### Conversion Formulas
-- **Degrees to radians**: $\text{radians} = \text{degrees} \times \frac{\pi}{180}$
-- **Radians to degrees**: $\text{degrees} = \text{radians} \times \frac{180}{\pi}$
+- **Degrees to radians:** $\text{radians} = \text{degrees} \times \frac{\pi}{180}$
+- **Radians to degrees:** $\text{degrees} = \text{radians} \times \frac{180}{\pi}$
 
 ### Gradians (Gons)
-- **Full rotation**: 400 gradians
-- **Right angle**: 100 gradians
+- **Full rotation:** 400 gradians
+- **Right angle:** 100 gradians
 - Less commonly used in modern applications
 
 ## Types of Angles
 
 ### By Measure
-- **Acute**: $0° < \theta < 90°$ (or $0 < \theta < \frac{\pi}{2}$)
-- **Right**: $\theta = 90°$ (or $\theta = \frac{\pi}{2}$)
-- **Obtuse**: $90° < \theta < 180°$ (or $\frac{\pi}{2} < \theta < \pi$)
-- **Straight**: $\theta = 180°$ (or $\theta = \pi$)
-- **Reflex**: $180° < \theta < 360°$ (or $\pi < \theta < 2\pi$)
+- **Acute:** $0° < \theta < 90°$ (or $0 < \theta < \frac{\pi}{2}$)
+- **Right:** $\theta = 90°$ (or $\theta = \frac{\pi}{2}$)
+- **Obtuse:** $90° < \theta < 180°$ (or $\frac{\pi}{2} < \theta < \pi$)
+- **Straight:** $\theta = 180°$ (or $\theta = \pi$)
+- **Reflex:** $180° < \theta < 360°$ (or $\pi < \theta < 2\pi$)
 
 ### By Position
-- **Standard position**: Vertex at origin, initial side on positive x-axis
-- **Coterminal angles**: Angles that differ by multiples of $360°$ (or $2\pi$ radians)
-- **Reference angle**: Acute angle between terminal side and x-axis
+- **Standard position:** Vertex at origin, initial side on positive x-axis
+- **Coterminal angles:** Angles that differ by multiples of $360°$ (or $2\pi$ radians)
+- **Reference angle:** Acute angle between terminal side and x-axis
 
 ## Angle Relationships
 
@@ -93,8 +93,8 @@ Linear velocity relates to angular velocity by: $v = r\omega$
 | 90° | π/2 | 1 | 0 | undefined |
 
 ### Memory Aids
-- **30-60-90 triangle**: Sides in ratio $1 : \sqrt{3} : 2$
-- **45-45-90 triangle**: Sides in ratio $1 : 1 : \sqrt{2}$
+- **30-60-90 triangle:** Sides in ratio $1 : \sqrt{3} : 2$
+- **45-45-90 triangle:** Sides in ratio $1 : 1 : \sqrt{2}$
 
 ## Periodic Nature of Angles
 
@@ -113,13 +113,13 @@ Trigonometric functions repeat their values at regular intervals:
 ## Applications
 
 ### Navigation
-- **Bearing**: Direction measured clockwise from north
-- **Azimuth**: Angle measured from a reference direction
+- **Bearing:** Direction measured clockwise from north
+- **Azimuth:** Angle measured from a reference direction
 
 ### Engineering
-- **Phase angles**: In electrical engineering for AC circuits
-- **Rotation**: Describing rotational motion in mechanics
+- **Phase angles:** In electrical engineering for AC circuits
+- **Rotation:** Describing rotational motion in mechanics
 
 ### Computer Graphics
-- **Rotation matrices**: Using angles to rotate objects
-- **Animation**: Smooth transitions using trigonometric functions
+- **Rotation matrices:** Using angles to rotate objects
+- **Animation:** Smooth transitions using trigonometric functions

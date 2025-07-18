@@ -10,7 +10,7 @@ Linear systems consist of linear equations with multiple variables.
 
 Solve one equation for one variable, then substitute into the other equation(s).
 
-**Example**: Solve the system:
+**Example:** Solve the system:
 $$\begin{aligned}
 2x + y &= 7 \\
 x - y &= 2
@@ -26,7 +26,7 @@ x - y &= 2
 
 Add or subtract equations to eliminate one variable.
 
-**Example**: Solve the system:
+**Example:** Solve the system:
 $$\begin{aligned}
 3x + 2y &= 12 \\
 2x - y &= 1
@@ -42,7 +42,7 @@ $$\begin{aligned}
 
 For systems with three or more variables, we can extend the substitution and elimination methods:
 
-**Example**: Solve the system:
+**Example:** Solve the system:
 $$\begin{aligned}
 x + y + z &= 6 \\
 2x - y + z &= 3 \\
@@ -70,10 +70,10 @@ x + 2y - z &= 1
 
 5. Find $z$ using equation 1: $z = 6 - x - y = 6 - \frac{5}{7} - \frac{13}{7} = \frac{24}{7}$
 
-**Solution**: $(x, y, z) = \left(\frac{5}{7}, \frac{13}{7}, \frac{24}{7}\right)$
+**Solution:** $(x, y, z) = \left(\frac{5}{7}, \frac{13}{7}, \frac{24}{7}\right)$
 
 <!--- TODO: Add back link when Linear Algebra section is active --->
-**Note**: For larger systems or more complex cases, matrix methods (covered in the Linear Algebra section) provide more systematic approaches.
+**Note:** For larger systems or more complex cases, matrix methods (covered in the Linear Algebra section) provide more systematic approaches.
 
 ## Nonlinear Systems
 
@@ -81,7 +81,7 @@ Systems containing at least one nonlinear equation require specialized technique
 
 ### Substitution Method for Nonlinear Systems
 
-**Example**: Solve the system:
+**Example:** Solve the system:
 $$\begin{aligned}
 x^2 + y^2 &= 25 \\
 x + y &= 7
