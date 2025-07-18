@@ -354,7 +354,7 @@ Transform $y = \frac{1}{x}$ to $y = \frac{-2}{x + 3} + 1$:
 
 ### Mathematical Hyperbolic Functions
 
-Mathematical hyperbolic functions are closely related to trigonometric functions and are covered in detail in the [Trigonometric Functions](../Trigonometry/01 Trigonometric Functions.md) section.
+Mathematical hyperbolic functions are closely related to trigonometric functions and are covered in detail in the [Trigonometric Functions](../Trigonometry/02 Trigonometric Functions.md) section.
 
 ## Exponential Functions
 

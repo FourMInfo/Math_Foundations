@@ -32,8 +32,13 @@ This section provides links to documentation that replicates topics covered in t
 ### Geometry
 
 - [Triangles](Geometry/01 Triangles.md)
-<!--- IGNORE FOR NOW
+<!--- IGNORE 
 - [Hyperbola](Geometry/02 Hyperbola.md)
+
+### Linear Algebra
+
+- [Systems of Equations](Linear Algebra/01 Systems of Equations.md)
+- [Systems of Linear Equations](Linear Algebra/02 Systems of Linear Equations.md)
 --->
 
 ### Trigonometry

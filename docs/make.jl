@@ -14,16 +14,21 @@ makedocs(;
         "Algebra" => [
             "Algebra/01 Elementary Calculations.md",
             "Algebra/02 Mathematical Functions.md", 
-            "Algebra/03 Solving Equations.md"
+            "Algebra/03 Solving Equations.md",
+            "Algebra/04 Finding Polynomial Roots and Zeros.md"
         ],
         "Geometry" => [
             "Geometry/01 Triangles.md",
-            "Geometry/02 Angles & Measurements.md",
-            "Geometry/Hyperbola.md"
+            "Geometry/02 Hyperbola.md"
+        ],
+        "Linear Algebra" => [
+            "Linear Algebra/01 Systems of Equations.md",
+            "Linear Algebra/02 Systems of Linear Equations.md"
         ],
         "Trigonometry" => [
-            "Trigonometry/01 Trigonometric Functions.md",
-            "Trigonometry/02 Trigonometric Identities.md"
+            "Trigonometry/01 Angles & Measurements.md",
+            "Trigonometry/02 Trigonometric Functions.md",
+            "Trigonometry/03 Trigonometric Identities.md"
         ]
     ],
     # Don't worry about what `CI` does in this line.

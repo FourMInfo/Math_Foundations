@@ -164,4 +164,3 @@ The following important properties related to different concepts help in underst
 **Auxiliary Circle**: A circle drawn with the endpoints of the transverse axis of the hyperbola as its diameter is called the auxiliary circle. The equation of the auxiliary circle of the hyperbola is $x^{2} + y^{2} = a^{2}$.
 
 **Director Circle**: The locus of the point of intersection of perpendicular tangents to the hyperbola is called the director circle. The equation of the director circle of the hyperbola is $x^{2} + y^{2} = a^{2} - b^{2}$.
-
