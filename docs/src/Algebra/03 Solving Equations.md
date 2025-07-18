@@ -1,4 +1,4 @@
-# Solving Equations and Finding Roots
+# Solving Equations
 
 Equations are mathematical statements that assert the equality of two expressions. Solving equations means finding the values of variables that make the equation true. The solutions of an equation are the values of the variable that satisfy the equation, making both sides equal. For polynomial equations (where $P(x) = 0$), these solutions are also called **roots** or **zeros**. These are discussed in the separate document [Finding Polynomial Roots and Zeros](./04 Finding Polynomial Roots and Zeros.md). In this document we will discuss (mostly) algebraic methods for solving equations of various types.
 
