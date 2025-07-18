@@ -72,9 +72,8 @@ x + 2y - z &= 1
 
 **Solution**: $(x, y, z) = \left(\frac{5}{7}, \frac{13}{7}, \frac{24}{7}\right)$
 
-<!--- IGNORE FOR NOW
-**Note**: For larger systems or more complex cases, matrix methods (covered in the [Linear Algebra](../Linear Algebra/01 Systems of Linear Equations.md) section) provide more systematic approaches.
---->
+<!--- TODO: Add back link when Linear Algebra section is active --->
+**Note**: For larger systems or more complex cases, matrix methods (covered in the Linear Algebra section) provide more systematic approaches.
 
 ## Nonlinear Systems
 

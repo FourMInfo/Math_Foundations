@@ -18,13 +18,13 @@ makedocs(;
             "Algebra/04 Finding Polynomial Roots and Zeros.md"
         ],
         "Geometry" => [
-            "Geometry/01 Triangles.md",
-            "Geometry/02 Hyperbola.md"
+            "Geometry/01 Triangles.md"
+            # "Geometry/02 Hyperbola.md"  # TODO: Uncomment when ready to show
         ],
-        "Linear Algebra" => [
-            "Linear Algebra/01 Systems of Equations.md",
-            "Linear Algebra/02 Systems of Linear Equations.md"
-        ],
+        # "Linear Algebra" => [  # TODO: Uncomment when ready to show
+        #     "Linear Algebra/01 Systems of Equations.md",
+        #     "Linear Algebra/02 Systems of Linear Equations.md"
+        # ],
         "Trigonometry" => [
             "Trigonometry/01 Angles & Measurements.md",
             "Trigonometry/02 Trigonometric Functions.md",
