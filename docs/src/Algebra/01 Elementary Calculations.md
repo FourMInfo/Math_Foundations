@@ -224,28 +224,23 @@ Understanding the components and meaning:
 
 These rules apply to all real number bases (with appropriate restrictions):
 
-- **Product Rule:**
-  - $a^m \times a^n = a^{m+n}$
+- **Product Rule:** $a^m \times a^n = a^{m+n}$
   - Example: $2^3 \times 2^4 = 2^{3+4} = 2^7 = 128$
   - Example: $x^5 \times x^2 = x^7$
 
-- **Quotient Rule:**
-  - $a^m \div a^n = a^{m-n}$ (where $a \neq 0$)
+- **Quotient Rule:** $a^m \div a^n = a^{m-n}$ (where $a \neq 0$)
   - Example: $3^6 \div 3^2 = 3^{6-2} = 3^4 = 81$
   - Example: $y^8 \div y^3 = y^5$
 
-- **Power Rule:**
-  - $(a^m)^n = a^{mn}$
+- **Power Rule:** $(a^m)^n = a^{mn}$
   - Example: $(2^3)^2 = 2^{3 \times 2} = 2^6 = 64$
   - Example: $(x^4)^3 = x^{12}$
 
-- **Product to Power:**
-  - $(ab)^n = a^n b^n$
+- **Product to Power:** $(ab)^n = a^n b^n$
   - Example: $(3 \times 4)^2 = 3^2 \times 4^2 = 9 \times 16 = 144$
   - Example: $(xy)^3 = x^3 y^3$
 
-- **Quotient to Power:**
-  - $\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$ (where $b \neq 0$)
+- **Quotient to Power:** $\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$ (where $b \neq 0$)
   - Example: $\left(\frac{2}{3}\right)^3 = \frac{2^3}{3^3} = \frac{8}{27}$
   - Example: $\left(\frac{x}{y}\right)^4 = \frac{x^4}{y^4}$
 
@@ -313,22 +308,21 @@ Rules governing radical operations:
 
 #### Step 1: Factor out perfect powers
 
-- $\sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2}$
-- $\sqrt{48} = \sqrt{16 \times 3} = 4\sqrt{3}$
-- $\sqrt[3]{24} = \sqrt[3]{8 \times 3} = 2\sqrt[3]{3}$
+- Example 1: $\sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2}$
+- Example 2: $\sqrt{48} = \sqrt{16 \times 3} = 4\sqrt{3}$
+- Example 3: $\sqrt[3]{24} = \sqrt[3]{8 \times 3} = 2\sqrt[3]{3}$
 
 #### Step 2: Combine like radicals
 
-- $3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}$
-- $4\sqrt{3} - 7\sqrt{3} = -3\sqrt{3}$
-- $2\sqrt{5} + 3\sqrt{2}$ (cannot be simplified further)
+- Example 1: $3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}$
+- Example 2: $4\sqrt{3} - 7\sqrt{3} = -3\sqrt{3}$
+- Example 3: $2\sqrt{5} + 3\sqrt{2}$ (cannot be simplified further)
 
 #### Step 3: Simplify complex expressions
 
-Example: $2\sqrt{12} + 3\sqrt{27}$
-
-- Simplify each: $2\sqrt{12} = 2(2\sqrt{3}) = 4\sqrt{3}$ and $3\sqrt{27} = 3(3\sqrt{3}) = 9\sqrt{3}$
-- Combine: $4\sqrt{3} + 9\sqrt{3} = 13\sqrt{3}$
+- Example: $2\sqrt{12} + 3\sqrt{27}$
+  - Simplify each: $2\sqrt{12} = 2(2\sqrt{3}) = 4\sqrt{3}$ and $3\sqrt{27} = 3(3\sqrt{3}) = 9\sqrt{3}$
+  - Combine: $4\sqrt{3} + 9\sqrt{3} = 13\sqrt{3}$
 
 #### Step 4: Rationalize denominators
 
