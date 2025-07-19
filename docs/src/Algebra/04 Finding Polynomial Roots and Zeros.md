@@ -29,17 +29,17 @@ Understanding these fundamental theorems provides the theoretical foundation for
 
 **Mathematical Form:**
 
-- **division result:** $P(x) = (x - a) \cdot Q(x) + R$, where $R = P(a)$
-- **root condition:** $P(a) = 0 \Rightarrow (x - a)$ is a factor of $P(x)$
+- **Division result:** $P(x) = (x - a) \cdot Q(x) + R$, where $R = P(a)$
+- **Root condition:** $P(a) = 0 \Rightarrow (x - a)$ is a factor of $P(x)$
 
 **Example 1:** When $P(x) = x^3 + 2x^2 - 5x + 1$ is divided by $(x - 2)$:
 
-- $P(2) = 8 + 8 - 10 + 1 = 7$
+- Substitute: $P(2) = 8 + 8 - 10 + 1 = 7$
 - So the remainder is $7$ (not a root)
 
 **Example 2:** When $P(x) = x^3 - 6x^2 + 11x - 6$ is divided by $(x - 2)$:
 
-- $P(2) = 8 - 24 + 22 - 6 = 0$
+- Substitute: $P(2) = 8 - 24 + 22 - 6 = 0$
 - So the remainder is $0$, which means $x = 2$ is a root
 - Therefore $(x - 2)$ is a factor of $P(x)$
 
@@ -49,7 +49,31 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Testing potential roots
 - Fundamental to polynomial long division and synthetic division
 
-### 3. **Fundamental Theorem of Algebra**
+### 3. **Multiplicity of Roots**
+
+**Definition:** The multiplicity of a root $r$ is the highest power of $(x - r)$ that divides the polynomial.
+
+**Types:**
+
+- **Simple root (multiplicity 1):**
+  - The factor $(x - r)$ appears once
+  - Graph crosses the x-axis at this point
+- **Double root (multiplicity 2):**
+  - The factor $(x - r)^2$ divides the polynomial
+  - Graph touches the x-axis but doesn't cross (tangent to x-axis)
+- **Triple root (multiplicity 3):**
+  - The factor $(x - r)^3$ divides the polynomial
+  - Graph has an inflection point at the x-axis
+
+**Key insight:** Multiplicity tells you how many times a particular root is "repeated" and affects the shape of the graph at that root. The higher the multiplicity, the more the graph "flattens out" at that root rather than crossing straight through the x-axis.
+
+**Example:** $P(x) = (x - 2)^2(x + 1)^3$ has:
+
+- Root $x = 2$ with multiplicity 2
+- Root $x = -1$ with multiplicity 3
+- Total degree: $2 + 3 = 5$
+
+### 4. **Fundamental Theorem of Algebra**
 
 **Statement:** Every polynomial of degree $n \geq 1$ with complex coefficients has exactly $n$ roots in the complex numbers (counting multiplicity).
 
@@ -61,24 +85,8 @@ Understanding these fundamental theorems provides the theoretical foundation for
 
 **Example:** $P(x) = x^4 - 1$ has degree 4, so it has exactly 4 roots:
 
-- $P(x) = (x - 1)(x + 1)(x - i)(x + i)$
+- Factored: $P(x) = (x - 1)(x + 1)(x - i)(x + i)$
 - Roots: $1, -1, i, -i$
-
-### 4. **Multiplicity of Roots**
-
-**Definition:** The multiplicity of a root $r$ is the highest power of $(x - r)$ that divides the polynomial.
-
-**Types:**
-
-- **Simple root** (multiplicity 1): Graph crosses the x-axis
-- **Double root** (multiplicity 2): Graph touches the x-axis but doesn't cross
-- **Triple root** (multiplicity 3): Graph has an inflection point at the x-axis
-
-**Example:** $P(x) = (x - 2)^2(x + 1)^3$ has:
-
-- Root $x = 2$ with multiplicity 2
-- Root $x = -1$ with multiplicity 3
-- Total degree: $2 + 3 = 5$
 
 ### 5. **Rational Root Theorem** (Preview)
 
@@ -100,10 +108,10 @@ Understanding these fundamental theorems provides the theoretical foundation for
 
 **Method:**
 
-1. **Look for common factors** first
+1. **Look for common factors:** first factor out any common terms
 2. **Apply factoring techniques:** difference of squares, perfect square trinomials, grouping
-3. **Set each factor to zero** and solve
-4. **Verify solutions** by substitution
+3. **Set each factor to zero:** and solve
+4. **Verify solutions:** by substitution
 
 **Example:** Factor $P(x) = x^3 - 6x^2 + 11x - 6$
 
@@ -129,8 +137,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 
 **Description:** For quadratic polynomials $ax^2 + bx + c = 0$, use the derived formula to find roots directly.
 
-**Formula:**
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+**Formula:** $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
 
 **When to Use:**
 
@@ -154,8 +161,8 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 **Verification:**
 
-- $P(3) = 2(9) - 7(3) + 3 = 18 - 21 + 3 = 0$ ✓
-- $P(\frac{1}{2}) = 2(\frac{1}{4}) - 7(\frac{1}{2}) + 3 = \frac{1}{2} - \frac{7}{2} + 3 = 0$ ✓
+- Substitute: $P(3) = 2(9) - 7(3) + 3 = 18 - 21 + 3 = 0$ ✓
+- Substitute: $P(\frac{1}{2}) = 2(\frac{1}{4}) - 7(\frac{1}{2}) + 3 = \frac{1}{2} - \frac{7}{2} + 3 = 0$ ✓
 
 ### 3. **The Rational Root Theorem**
 
@@ -191,11 +198,10 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 3. **Possible rational roots:** $\frac{p}{q} = \pm 1, \pm 2, \pm 3, \pm 6, \pm \frac{1}{2}, \pm \frac{3}{2}$
 
 4. **Test candidates:**
-   - $P(3) = 2(27) - 3(9) - 11(3) + 6 = 54 - 27 - 33 + 6 = 0$ ✓
+   - Substitute: $P(3) = 2(27) - 3(9) - 11(3) + 6 = 54 - 27 - 33 + 6 = 0$ ✓
    - So $x = 3$ is a root
 
-5. **Factor out $(x - 3)$** using synthetic division:
-   $P(x) = (x - 3)(2x^2 + 3x - 2)$
+5. **Factor out $(x - 3)$ using synthetic division:** $P(x) = (x - 3)(2x^2 + 3x - 2)$
 
 6. **Factor the quadratic:** $2x^2 + 3x - 2 = (2x - 1)(x + 2)$
 
@@ -336,15 +342,15 @@ Using graphical analysis, we can see there's a root near $x = 2$. Using numerica
 
 **Step 3:** Back-substitute to find $x$
 
-- $x^2 = 1 \Rightarrow x = \pm 1$
-- $x^2 = 9 \Rightarrow x = \pm 3$
+- 1: $x^2 = 1 \Rightarrow x = \pm 1$
+- 9: $x^2 = 9 \Rightarrow x = \pm 3$
 
 **Step 4:** Verify all solutions
 
-- $P(1) = 1 - 10 + 9 = 0$ ✓
-- $P(-1) = 1 - 10 + 9 = 0$ ✓
-- $P(3) = 81 - 90 + 9 = 0$ ✓
-- $P(-3) = 81 - 90 + 9 = 0$ ✓
+- Substitute: $P(1) = 1 - 10 + 9 = 0$ ✓
+- Substitute: $P(-1) = 1 - 10 + 9 = 0$ ✓
+- Substitute: $P(3) = 81 - 90 + 9 = 0$ ✓
+- Substitute: $P(-3) = 81 - 90 + 9 = 0$ ✓
 
 **Final Answer:** Roots are $x = \pm 1, \pm 3$
 
@@ -371,18 +377,18 @@ Using graphical analysis, we can see there's a root near $x = 2$. Using numerica
 ```
 
 - Remainder is 0, so $x = 3$ is a root
-- $P(x) = (x - 3)(2x^2 + 5x + 2)$
+- Synthetic division gives: $P(x) = (x - 3)(2x^2 + 5x + 2)$
 
 **Step 3:** Factor the remaining quadratic
 
-- $2x^2 + 5x + 2 = (2x + 1)(x + 2)$
+- Factor right term: $2x^2 + 5x + 2 = (2x + 1)(x + 2)$
 - Complete factorization: $P(x) = (x - 3)(2x + 1)(x + 2)$
 
 **Step 4:** Find all roots
 
-- $x - 3 = 0 \Rightarrow x = 3$
-- $2x + 1 = 0 \Rightarrow x = -\frac{1}{2}$
-- $x + 2 = 0 \Rightarrow x = -2$
+- First Factor: $x - 3 = 0 \Rightarrow x = 3$
+- Second Factor: $2x + 1 = 0 \Rightarrow x = -\frac{1}{2}$
+- Third Factor: $x + 2 = 0 \Rightarrow x = -2$
 
 **Final Answer:** Roots are $x = 3, -\frac{1}{2}, -2$
 
