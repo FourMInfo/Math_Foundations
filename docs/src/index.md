@@ -1,4 +1,4 @@
-# Math_Foundations
+# Math Foundations
 
 This package is a collection of functions and notebooks I built as I worked through the book [Foundations of Mathematics: A Preparatory Course](https://link.springer.com/book/10.1007/978-3-662-67809-1).
 
@@ -13,6 +13,8 @@ Besides the package documentation, you will also find in the left navigation tab
 These documents are meant to be a resource first for myself and then anyone who wants to learn and review basic mathematical concepts. I do try hard to carefully check the accuracy of the explanations, but I am not a professional mathematician, so please do let me know if you find any mistakes or inaccuracies. Also please note that as of the date in the footer timestamp, I have only fully checked and edited the Algebra section. The other sections are still in progress, but I do plan to complete them.
 
 ## Basic Mathematical Functions
+
+The code for the basic mathematical functions is in the [basic_maths.jl](https://github.com/FourMInfo/Math_Foundations/blob/main/src/basic_maths.jl) file.
 
 ```@autodocs
 Modules = [Math_Foundations]
