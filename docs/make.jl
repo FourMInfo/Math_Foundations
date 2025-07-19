@@ -1,12 +1,12 @@
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
-using DrWatson, Documenter
+using DrWatson, Documenter, Dates
 # using Documenter
 using Math_Foundations
 
 @info "Building Documentation"
 makedocs(;
     modules=[Math_Foundations],  # Specify your module here
-    sitename = "Math_Foundations",
+    sitename = "Math Foundations",
     # This argument is only so that the sequence of pages in the sidebar is configured
     # By default all markdown files in `docs/src` are expanded and included.
     pages = [
@@ -29,14 +29,16 @@ makedocs(;
             "Trigonometry/01 Angles & Measurements.md",
             "Trigonometry/02 Trigonometric Functions.md",
             "Trigonometry/03 Trigonometric Identities.md"
-        ]
+        ],
+        "sites.md",
     ],
     # Don't worry about what `CI` does in this line.
     format = Documenter.HTML(
         prettyurls = CI,
         edit_link = "main",
-        assets = ["assets/custom.css"]
-    )
+        assets = ["assets/custom.css"],
+        footer = "Powered by [Documenter.jl](https://documenter.jl) and the [Julia Programming Language](https://julialang.org) generated on $(Dates.format(Dates.now(), "yyyy-mm-dd HH:MM:ss"))"
+    ),
 )
 
 @info "Deploying Documentation"
