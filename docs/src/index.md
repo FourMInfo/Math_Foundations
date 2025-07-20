@@ -1,4 +1,4 @@
-# Math_Foundations
+# Math Foundations
 
 This package is a collection of functions and notebooks I built as I worked through the book [Foundations of Mathematics: A Preparatory Course](https://link.springer.com/book/10.1007/978-3-662-67809-1).
 
@@ -8,52 +8,16 @@ The English edition is a mostly AI translation of the fourth edition of the orig
 
 The code in this package is not meant to be a complete implementation of the book, but rather stuff that I created in order to gain practice and a deeper understanding of the concepts in the book. The code is all in Julia, a language I find extremely suitable for mathematical study and actually fun to code with. I make use of multiple Julia packages, not because they are necessary to implement a specific concept, but rather, in order to have an opportunity to play with and learn about some of their capabilities.
 
+Besides the package documentation, you will also find in the left navigation tab, links to documents that explain topics covered in the book. These often provide more details than covered in the books. In writing this documentation I made extensive use of the LLM Claude (currently version Sonic 4.0) which I use in a paid version of VSCode CoPilot.
+
+These documents are meant to be a resource first for myself and then anyone who wants to learn and review basic mathematical concepts. I do try hard to carefully check the accuracy of the explanations, but I am not a professional mathematician, so please do let me know if you find any mistakes or inaccuracies. Also please note that as of the date in the footer timestamp, I have only fully checked and edited the Algebra section. The other sections are still in progress, but I do plan to complete them.
+
 ## Basic Mathematical Functions
 
-This section provides the documentation for all the functions I wrote to help me work through the book.
+The code for the basic mathematical functions is in the [basic_maths.jl](https://github.com/FourMInfo/Math_Foundations/blob/main/src/basic_maths.jl) file.
 
 ```@autodocs
 Modules = [Math_Foundations]
 Order   = [:function, :type]
 Pages   = ["basic_maths.jl"]
-```
-
-## External Documentation
-
-This section provides links to external documentation that replicates topics covered in the book and often provide more details. It is not an exhaustive list, but it does cover many of the important topics. Most of the links are to the [LibreTexts](https://math.libretexts.org/) project, which is a free online library of mathematics textbooks and resources. The links are grouped by topic.
-
-### Basic Computation
-
-### Functions
-
-### Geometry
-
-* [Parabola](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.03%3A_The_Parabola)
-* [Hyperbola](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.02%3A_The_Hyperbola)
-* [Triangle](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/12%3A_Analytic_Geometry/12.01%3A_The_Triangle)
-  
-### Trigonometry
-
-* [Trigonometric Functions](https://math.libretexts.org/Bookshelves/Trigonometry/Book%3A_Trigonometry_(OpenStax)/01%3A_Introduction_to_Trigonometry/1.01%3A_Trigonometric_Functions)
-
----
-
-## Navigating FourM Study Guides & Documentation Sites
-
-```@raw html
-<div class="site-navigation">
-    <div class="nav-section">
-        <h4>Documentation Sites</h4>
-        <ul>
-            <li><a href="https://study.fourm.info/linear_algebra/">Linear Algebra Docs</a></li>
-            <li><a href="https://study.fourm.info/math_foundations/">Math Foundations Docs (this site)</a></li>
-        </ul>
-    </div>
-    <div class="nav-section">
-        <h4>Related Projects</h4>
-        <ul>
-            <li><a href="https://study.fourm.info/">Main Study Site</a></li>
-        </ul>
-    </div>
-</div>
 ```
