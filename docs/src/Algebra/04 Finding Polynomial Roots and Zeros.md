@@ -113,7 +113,13 @@ Understanding these fundamental theorems provides the theoretical foundation for
 3. **Set each factor to zero:** and solve
 4. **Verify solutions:** by substitution
 
-**Example:** Factor $P(x) = x^3 - 6x^2 + 11x - 6$
+**Examples of Factoring Techniques:**
+
+- **Difference of squares:** $P(x) = x^4 - 16 = (x^2)^2 - 4^2 = (x^2 - 4)(x^2 + 4) = (x - 2)(x + 2)(x^2 + 4)$
+- **Perfect square trinomial:** $P(x) = x^2 - 6x + 9 = (x - 3)^2$, so root is $x = 3$ (multiplicity 2)
+- **Factoring by grouping:** $P(x) = x^3 + 2x^2 - 3x - 6 = x^2(x + 2) - 3(x + 2) = (x^2 - 3)(x + 2)$
+
+**Complete Example:** Factor $P(x) = x^3 - 6x^2 + 11x - 6$
 
 1. Try grouping or look for rational roots
 2. Test $x = 1$: $P(1) = 1 - 6 + 11 - 6 = 0$ ✓
@@ -201,7 +207,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
    - Substitute: $P(3) = 2(27) - 3(9) - 11(3) + 6 = 54 - 27 - 33 + 6 = 0$ ✓
    - So $x = 3$ is a root
 
-5. **Factor out $(x - 3)$ using synthetic division:** $P(x) = (x - 3)(2x^2 + 3x - 2)$
+5. **Factor out $(x - 3)$:** $P(x) = (x - 3)(2x^2 + 3x - 2)$
 
 6. **Factor the quadratic:** $2x^2 + 3x - 2 = (2x - 1)(x + 2)$
 
