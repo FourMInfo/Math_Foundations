@@ -1,15 +1,15 @@
 using DrWatson, Test
 @quickactivate "Math_Foundations"
 
-# Here you include files using `srcdir`
-# include(srcdir("file.jl"))
+# Load the Math_Foundations package
+using Math_Foundations
 
 # Run test suite
 println("Starting tests")
 ti = time()
 
 @testset "Math_Foundations tests" begin
-    @test 1 == 1
+    include("test_basic_maths.jl")
 end
 
 ti = time() - ti
