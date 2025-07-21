@@ -48,8 +48,31 @@ jobs:
         with:
           version: '1'
           arch: x64
+          
+      # Enhanced caching for docs job
+      - name: Cache Julia packages (docs)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.julia
+            ~/.julia/compiled
+            ~/.julia/packages
+          key: julia-docs-${{ runner.os }}-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
+          restore-keys: |
+            julia-docs-${{ runner.os }}-
+            julia-${{ runner.os }}-
+            
       - uses: julia-actions/cache@v1
+        continue-on-error: true
+        
       - uses: julia-actions/julia-buildpkg@v1
+        continue-on-error: true
+        
+      # Retry build for docs if needed
+      - name: Retry docs build on failure
+        if: failure()
+        run: |
+          julia --project=. -e "using Pkg; Pkg.instantiate()"
 
       - name: Generate documentation and deploy
         run: >
