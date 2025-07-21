@@ -59,7 +59,7 @@ jobs:
           
       - name: Run tests
         run: >
-          julia --project=. --color=yes test/runtests.jl
+          julia --project=. --color=yes -e "include(\"test/runtests.jl\")"
 
   deploy-docs:
     name: Deploy Documentation
