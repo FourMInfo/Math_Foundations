@@ -1,7 +1,5 @@
 using DrWatson, Test
-# @quickactivate "Math_Foundations"  # Comment out - causing issues in CI
-# Instead, manually add the src directory to the load path
-push!(LOAD_PATH, joinpath(@__DIR__, "..", "src"))
+@quickactivate "Math_Foundations"
 
 # Load the Math_Foundations package
 using Math_Foundations
