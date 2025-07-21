@@ -3,8 +3,15 @@ module Math_Foundations
 using Reexport
 @reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials
 
-# Set GR as the default plotting backend
-gr()
+# Configure plotting for both interactive and headless environments
+if haskey(ENV, "CI") || get(ENV, "GKSwstype", "") == "100"
+    # CI or headless environment - use headless mode
+    ENV["GKSwstype"] = "100"
+    gr(show=false)
+else
+    # Interactive environment - normal plotting
+    gr()
+end
 
 # Exports...
 export nth_root
