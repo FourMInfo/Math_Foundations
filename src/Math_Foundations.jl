@@ -15,6 +15,9 @@ end
 
 # Exports...
 export nth_root
+# Pure computational functions (no plotting dependencies)
+export calculate_parabola_roots_amrvw, calculate_parabola_roots_polynomial, calculate_parabola_roots_quadratic
+# Integrated plotting functions (computation + visualization)
 export plot_parabola_roots_amrvw, plot_parabola_roots_polynomial, plot_parabola_roots_quadratic
 export plot_hyperbola, plot_hyperbola_axes, plot_hyperbola_axes_varx, plot_hyperbola_axes_direct
 export expa2x
