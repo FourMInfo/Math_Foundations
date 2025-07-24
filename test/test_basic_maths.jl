@@ -128,6 +128,100 @@ end
         @test area > 0
     end
     
+    # COMPUTATIONAL TESTS - These should NEVER use try-catch, ensuring math is always tested
+    @testset "Pure Computational Functions (Mathematics Only)" begin
+        @testset "calculate_parabola_roots_quadratic" begin
+            # Test quadratic formula: x^2 - 4 = 0, roots at ±2
+            roots = calculate_parabola_roots_quadratic(1.0, 0.0, -4.0)
+            @test length(roots) == 2
+            @test sort(real.(roots)) ≈ [-2.0, 2.0] atol=1e-10
+            
+            # Test parabola with no real roots: x^2 + 1 = 0
+            roots = calculate_parabola_roots_quadratic(1.0, 0.0, 1.0)
+            @test length(roots) == 2
+            @test all(r -> abs(imag(r)) > 0, roots)  # Should be complex
+            @test abs(abs(roots[1]) - 1.0) < 1e-10   # Should have magnitude 1
+            
+            # Test perfect square: (x-3)^2 = x^2 - 6x + 9 = 0
+            roots = calculate_parabola_roots_quadratic(1.0, -6.0, 9.0)
+            @test length(roots) == 2
+            @test all(r -> abs(real(r) - 3.0) < 1e-10, roots)  # Double root at x=3
+        end
+        
+        @testset "calculate_parabola_roots_polynomial" begin
+            # Test using Polynomials.jl: x^2 - 4 = 0
+            roots = calculate_parabola_roots_polynomial(1.0, 0.0, -4.0)
+            @test length(roots) == 2
+            @test sort(real.(roots)) ≈ [-2.0, 2.0] atol=1e-10
+            
+            # Test linear case: 2x + 4 = 0 (should give root at -2)
+            roots = calculate_parabola_roots_polynomial(0.0, 2.0, 4.0)
+            @test length(roots) == 1
+            @test real(roots[1]) ≈ -2.0 atol=1e-10
+        end
+        
+        @testset "calculate_parabola_roots_amrvw" begin
+            # Test using AMRVW.jl: x^2 - 4 = 0
+            roots = calculate_parabola_roots_amrvw(1.0, 0.0, -4.0)
+            @test length(roots) == 2
+            @test isa(roots, Vector)
+            # Note: AMRVW may return results in different format, so we test basic properties
+            @test all(r -> isa(r, Number), roots)
+        end
+    end
+    
+    # INTEGRATION TESTS - These test computation + plotting together with safe fallbacks
+    @testset "Integrated Plotting Functions (Computation + Visualization)" begin
+        @testset "plot_parabola_roots_quadratic integration" begin
+            # Test that function runs and returns correct computational results
+            # even if plotting fails in CI environments
+            try
+                roots = plot_parabola_roots_quadratic(1.0, 0.0, -4.0)
+                # Mathematical correctness is still tested even if plotting fails
+                @test length(roots) == 2
+                @test sort(real.(roots)) ≈ [-2.0, 2.0] atol=1e-10
+            catch e
+                # Only catch plotting-related errors, not computational errors
+                if contains(string(e), "display") || contains(string(e), "GKS") || isa(e, ArgumentError)
+                    @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+                else
+                    # Re-throw computational errors - these should fail the test
+                    rethrow(e)
+                end
+            end
+        end
+        
+        @testset "plot_parabola_roots_polynomial integration" begin
+            try
+                roots = plot_parabola_roots_polynomial(1.0, 0.0, -4.0)
+                @test isa(roots, Vector)
+                @test length(roots) == 2
+                @test sort(real.(roots)) ≈ [-2.0, 2.0] atol=1e-10
+            catch e
+                if contains(string(e), "display") || contains(string(e), "GKS") || isa(e, ArgumentError)
+                    @test hasmethod(plot_parabola_roots_polynomial, (Float64, Float64, Float64))
+                else
+                    rethrow(e)
+                end
+            end
+        end
+        
+        @testset "plot_parabola_roots_amrvw integration" begin
+            try
+                roots = plot_parabola_roots_amrvw(1.0, 0.0, -4.0)
+                @test isa(roots, Vector)
+                @test all(r -> isa(r, Number), roots)
+            catch e
+                if contains(string(e), "display") || contains(string(e), "GKS") || isa(e, ArgumentError)
+                    @test hasmethod(plot_parabola_roots_amrvw, (Float64, Float64, Float64))
+                else
+                    rethrow(e)
+                end
+            end
+        end
+    end
+    
+    # LEGACY COMPATIBILITY TESTS - Maintain backward compatibility
     @testset "Plotting functions (return value tests)" begin
         # Note: These functions create plots and save files, so we mainly test
         # that they don't error and return reasonable values
@@ -179,32 +273,45 @@ end
     
     # Note: Hyperbola plotting functions primarily create visualizations
     # so we'll test that they run without critical errors
-    @testset "Hyperbola plotting functions (execution tests)" begin
-        @testset "plot_hyperbola" begin
+    @testset "Hyperbola plotting functions (integration tests)" begin
+        @testset "plot_hyperbola integration" begin
             try
-                @test_nowarn plot_hyperbola(1.0, 0.0, 0.0)
-                @test_nowarn plot_hyperbola()  # Test default parameters
+                # Test the plotting function returns a plot object
+                result = plot_hyperbola(1.0, 0.0, 0.0)
+                @test typeof(result) <: Plots.Plot
+                
+                # Test default parameters
+                result_default = plot_hyperbola()
+                @test typeof(result_default) <: Plots.Plot
             catch e
-                # In headless CI, just test that functions exist
+                # Graceful fallback for CI - test function exists
                 @test hasmethod(plot_hyperbola, ())
                 @test hasmethod(plot_hyperbola, (Float64, Float64, Float64))
             end
         end
         
-        @testset "plot_hyperbola_axes_varx" begin
+        @testset "plot_hyperbola_axes_varx integration" begin
             try
-                @test_nowarn plot_hyperbola_axes_varx(1.0, 1.0)
-                @test_nowarn plot_hyperbola_axes_varx(2.0, 3.0)
+                result = plot_hyperbola_axes_varx(1.0, 1.0)
+                @test typeof(result) <: Plots.Plot
+                
+                result2 = plot_hyperbola_axes_varx(2.0, 3.0)
+                @test typeof(result2) <: Plots.Plot
             catch e
+                # Graceful fallback for CI - test function exists
                 @test hasmethod(plot_hyperbola_axes_varx, (Float64, Float64))
             end
         end
         
-        @testset "plot_hyperbola_axes_direct" begin
+        @testset "plot_hyperbola_axes_direct integration" begin
             try
-                @test_nowarn plot_hyperbola_axes_direct(1.0, 1.0)
-                @test_nowarn plot_hyperbola_axes_direct(2.0, 3.0)
+                result = plot_hyperbola_axes_direct(1.0, 1.0)
+                @test typeof(result) <: Plots.Plot
+                
+                result2 = plot_hyperbola_axes_direct(2.0, 3.0)
+                @test typeof(result2) <: Plots.Plot
             catch e
+                # Graceful fallback for CI - test function exists
                 @test hasmethod(plot_hyperbola_axes_direct, (Float64, Float64))
             end
         end
