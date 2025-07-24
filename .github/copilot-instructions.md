@@ -162,6 +162,14 @@ CI=true julia --project=. test/runtests.jl
 julia --project=. docs/make.jl
 ```
 
+### Julia Compilation Considerations
+- **Be Patient with First Runs**: Julia often needs to precompile packages and rebuild project cache on first run. when running a Julia command in the CLI for the first time, it may take a while to precompile the packages and build the project cache, so you won't see the results of running the command for a while.
+- **Typical First Run**: May take 15-30 seconds for precompilation before tests actually start
+- **Example Expected Output**: `Precompiling DrWatson... 3 dependencies successfully precompiled in 17 seconds`
+- **Subsequent Runs**: Much faster once cache is built
+- **Don't Cancel Early**: Allow time for compilation phase to complete
+- **IMPORTANT**: This applies to ALL Julia commands including CI testing with `CI=true julia --project=. test/runtests.jl`
+
 ### CI Considerations
 - Plots directory must exist for plotting tests to pass
 - Configure headless mode before plotting in tests
