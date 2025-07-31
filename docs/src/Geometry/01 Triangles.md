@@ -127,6 +127,9 @@ Right triangles have special properties and are fundamental to trigonometry.
     - **Example:** For $m = 2$ and $n = 1$, you get $(3, 4, 5)$.
     - **Note:** The order of $a$ and $b$ does not matter, so $(4, 3, 5)$ is also a valid Pythagorean triple.
 - **Area of Right Triangles:** For a right triangle with legs $a$ and $b$: $$A = \frac{1}{2}ab$$
+
+### Advanced Right Triangle Theorems
+
 - **[Geometric Mean Theorem](https://en.wikipedia.org/wiki/Geometric_mean_theorem):**
   - Also known as the Altitude-on-Hypotenuse theorem or Right Triangle Altitude Theorem.
   - For right triangles, the altitude to the hypotenuse has length: $$h = \sqrt{pq}$$ where $p$ and $q$ are the segments of the hypotenuse.
@@ -134,10 +137,10 @@ Right triangles have special properties and are fundamental to trigonometry.
     - where $a$ is the cathetus adjacent to segment $p$: $a^2 = cp$
     - where $b$ is the cathetus adjacent to segment $q$: $b^2 = cq$
   - It is called the [geometric mean](https://en.wikipedia.org/wiki/Geometric_mean) because:
-    - From $a = cp$, we get $a = \sqrt{cp}$, so $a$ is the geometric mean of $c$ and $p$.
+    - From $a^2 = cp$, we get $a = \sqrt{cp}$, so $a$ is the geometric mean of $c$ and $p$.
     - From $b^2 = cq$, we get $b = \sqrt{cq}$, so $b$ is the geometric mean of $c$ and $q$.
-  - $$h = \sqrt{pq}$$ is the geometric mean of the segments $p$ and $q$.
-- **[Thales' Theorem](https://mathworld.wolfram.com/ThalesTheorem.html):** If a triangle is inscribed in a circle such that one side is a diameter, then the triangle is a right triangle.
+    - Alternatively, $h = \sqrt{pq}$ is the geometric mean of the segments $p$ and $q$.
+- **[Thales' Theorem](https://en.wikipedia.org/wiki/Thales%27s_theorem):** If a triangle is inscribed in a circle such that one side is a diameter, then the triangle is a right triangle.
 
 ### Special Right Triangles
 
@@ -146,60 +149,21 @@ Right triangles have special properties and are fundamental to trigonometry.
 - Angles are 45°-45°-90°
 - Sides in ratio $1 : 1 : \sqrt{2}$
 - If legs = $a$, then hypotenuse = $a\sqrt{2}$
+- **Derivation of the 45°-45°-90° Triangle:**
+  - Start with an isosceles triangle where the two equal angles are each 45°.
+  - The hypotenuse is opposite the right angle, and the legs are equal in length.
+  - By the Pythagorean theorem, if each leg has length $a$, then the hypotenuse has length $a\sqrt{2}$.
+- Area: $$A = \frac{1}{2}a^2$$
 
 #### [30°-60°-90° Triangle](https://mathworld.wolfram.com/30-60-90Triangle.html)
 
 - Sides in ratio $1 : \sqrt{3} : 2$
 - If short leg = $a$, then long leg = $a\sqrt{3}$, hypotenuse = $2a$
-
-## Advanced Triangle Theorems
-
-### Euclid's Theorem
-
-For a right triangle with hypotenuse $c$ divided into segments $p$ and $q$ by the altitude:
-
-- $a^2 = cp$ (where $a$ is the leg adjacent to segment $p$)
-- $b^2 = cq$ (where $b$ is the leg adjacent to segment $q$)
-
-### Height Theorem
-
-The altitude to the hypotenuse has length:
-$$h = \sqrt{pq}$$
-where $p$ and $q$ are the segments of the hypotenuse.
-
-### [Thales' Theorem](https://mathworld.wolfram.com/ThalesTheorem.html)
-
-If a triangle is inscribed in a circle such that one side is a diameter, then the triangle is a right triangle.
-
-## Law of Sines and Cosines
-
-### [Law of Sines](https://mathworld.wolfram.com/LawofSines.html)
-
-For any triangle with sides $a$, $b$, $c$ opposite angles $α$, $β$, $γ$:
-$$\frac{a}{\sin α} = \frac{b}{\sin β} = \frac{c}{\sin γ} = 2R$$
-where $R$ is the circumradius.
-
-### [Law of Cosines](https://mathworld.wolfram.com/LawofCosines.html)
-
-$$c^2 = a^2 + b^2 - 2ab \cos γ$$
-
-This generalizes the Pythagorean theorem (when $γ = 90°$, $\cos γ = 0$).
-
-## Circle Properties
-
-### [Circumcircle](https://mathworld.wolfram.com/Circumcircle.html)
-
-- **Circumcenter:** Point equidistant from all vertices
-- **[Circumradius](https://mathworld.wolfram.com/Circumradius.html):** $R = \frac{abc}{4A}$ where $A$ is the area
-
-### [Incircle](https://mathworld.wolfram.com/Incircle.html)
-
-- **Incenter:** Point equidistant from all sides
-- **[Inradius](https://mathworld.wolfram.com/Inradius.html):** $r = \frac{A}{s}$ where $s$ is the semi-perimeter
-
-### [Excircles](https://mathworld.wolfram.com/Excircle.html)
-
-Each triangle has three excircles, each tangent to one side and the extensions of the other two sides.
+- **Derivation of the 30°-60°-90° Triangle:**
+  - Start with an equilateral triangle with side length $2a$.
+  - By drawing an altitude from one vertex to the opposite side, you create two 30°-60°-90° triangles.
+  - The altitude bisects the base, creating a segment of length $a$.
+  - The altitude itself has length $a\sqrt{3}$, leading to the ratios mentioned above.
 
 ## Applications
 
