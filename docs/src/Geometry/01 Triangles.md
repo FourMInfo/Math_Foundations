@@ -18,8 +18,12 @@
 
 ## Triangle Properties
 
-### Fundamental Properties
+### Fundamental Properties of Triangles
 
+- **[Perimeter](https://mathworld.wolfram.com/Perimeter.html):** Sum of all sides: $P = a + b + c$
+  (where $a$, $b$, and $c$ are the lengths of the sides of the triangle)
+- **[Semi-perimeter](https://mathworld.wolfram.com/Semiperimeter.html):** $s = \frac{a + b + c}{2}$
+  (used in Heron's formula--see below--for area)
 - **Sum of angles:** Always equals 180°: $α + β + γ = 180°$
 - **[Triangle inequality](https://mathworld.wolfram.com/TriangleInequality.html):** Sum of any two sides > third side: $a + b > c$, $a + c > b$, $b + c > a$
 - **[Exterior angle](https://mathworld.wolfram.com/ExteriorAngle.html):** Equals sum of two non-adjacent interior angles: $\angle_{ext} = α + β$ (where $α$ and $β$ are the two non-adjacent interior angles)
@@ -81,46 +85,65 @@ For more information, see: [Menelaus' Theorem - Wolfram MathWorld](https://mathw
 For a triangle with base $b$ and height $h$:
 $$A = \frac{1}{2}bh$$
 
-### [Heron's Formula](https://mathworld.wolfram.com/HeronsFormula.html)
+### Heron's Formula
 
-For a triangle with sides $a$, $b$, $c$:
+[Heron's Formula](https://mathworld.wolfram.com/HeronsFormula.html) is a useful way to find the area of a triangle when you only know the lengths of its sides. For a triangle with sides $a$, $b$, $c$:
 $$A = \sqrt{s(s-a)(s-b)(s-c)}$$
 where $s = \frac{a+b+c}{2}$ is the semi-perimeter.
 
 ### Using Trigonometry
 
-For a triangle with two sides $a$, $b$ and included angle $γ$:
-$$A = \frac{1}{2}ab \sin γ$$
+If you know the length of two sides and the included angle, you can use the following trigonometric formula: For a triangle with two sides $a$, $b$ and included angle $γ$: $$A = \frac{1}{2}ab \sin γ$$
 
 ### Coordinate Geometry
 
 For a triangle with vertices $(x_1, y_1)$, $(x_2, y_2)$, $(x_3, y_3)$:
 $$A = \frac{1}{2}|x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$$
 
+For more information, see: [Area of Triangle - Wolfram MathWorld](https://mathworld.wolfram.com/TriangleArea.html)
+
 ## Right Triangles
+
+### Fundamental Properties of Right Triangles
 
 Right triangles have special properties and are fundamental to trigonometry.
 
-### [Pythagorean Theorem](https://mathworld.wolfram.com/PythagoreanTheorem.html)
-
-For a right triangle with legs $a$, $b$ and hypotenuse $c$:
-$$a^2 + b^2 = c^2$$
-
-### [Pythagorean Triples](https://mathworld.wolfram.com/PythagoreanTriple.html)
-
-Integer solutions to the Pythagorean theorem:
-
-**Examples:**
-
-- 1: $(3, 4, 5)$
-- 2: $(5, 12, 13)$
-- 3: $(8, 15, 17)$
-- 4: $(7, 24, 25)$
+- **[Right Triangle](https://mathworld.wolfram.com/RightTriangle.html):** A triangle with one angle equal to 90°.
+- **[Cathetes and Hypotenuse](https://mathworld.wolfram.com/RightTriangle.html):** The two sides forming the right angle are called the cathetes or catheti, and the side opposite the right angle is called the hypotenuse.
+- **[Pythagorean Theorem](https://mathworld.wolfram.com/PythagoreanTheorem.html):** For a right triangle with legs $a$, $b$ and hypotenuse $c$: $$a^2 + b^2 = c^2$$
+- **[Pythagorean Triples](https://mathworld.wolfram.com/PythagoreanTriple.html):** a triple of positive integers a,  b, and c such that a right triangle exists with legs $a$,$b$ and hypotenuse $c$. This is equivalent to finding positive integers $a$,$b$ and $c$ satisfying the Pythagorean Theorem:
+  - **Examples:**
+    - 1: $(3, 4, 5)$
+    - 2: $(5, 12, 13)$
+    - 3: $(8, 15, 17)$
+    - 4: $(7, 24, 25)$
+  - **Primitive Pythagorean triples:** These are triples where $a$, $b$, and $c$ are coprime (i.e., their greatest common divisor is 1). Examples include $(3, 4, 5)$ and $(5, 12, 13)$.
+  - **Generating Pythagorean triples:** You can generate all primitive Pythagorean triples using the formula:
+    - For integers $m > n > 0$:
+      - calculate $a = m^2 - n^2$
+      - calculate $b = 2mn$
+      - calculate $c = m^2 + n^2$
+    - This generates all primitive triples, and you can multiply by a common factor to get non-primitive ones.
+    - **Example:** For $m = 2$ and $n = 1$, you get $(3, 4, 5)$.
+    - **Note:** The order of $a$ and $b$ does not matter, so $(4, 3, 5)$ is also a valid Pythagorean triple.
+- **Area of Right Triangles:** For a right triangle with legs $a$ and $b$: $$A = \frac{1}{2}ab$$
+- **[Geometric Mean Theorem](https://en.wikipedia.org/wiki/Geometric_mean_theorem):**
+  - Also known as the Altitude-on-Hypotenuse theorem or Right Triangle Altitude Theorem.
+  - For right triangles, the altitude to the hypotenuse has length: $$h = \sqrt{pq}$$ where $p$ and $q$ are the segments of the hypotenuse.
+  - For a right triangle with hypotenuse $c$ divided into segments $p$ and $q$ by the altitude:
+    - where $a$ is the cathetus adjacent to segment $p$: $a^2 = cp$
+    - where $b$ is the cathetus adjacent to segment $q$: $b^2 = cq$
+  - It is called the [geometric mean](https://en.wikipedia.org/wiki/Geometric_mean) because:
+    - From $a = cp$, we get $a = \sqrt{cp}$, so $a$ is the geometric mean of $c$ and $p$.
+    - From $b^2 = cq$, we get $b = \sqrt{cq}$, so $b$ is the geometric mean of $c$ and $q$.
+  - $$h = \sqrt{pq}$$ is the geometric mean of the segments $p$ and $q$.
+- **[Thales' Theorem](https://mathworld.wolfram.com/ThalesTheorem.html):** If a triangle is inscribed in a circle such that one side is a diameter, then the triangle is a right triangle.
 
 ### Special Right Triangles
 
-#### [45°-45°-90° Triangle](https://mathworld.wolfram.com/IsoscelesRightTriangle.html)
+#### [Isosceles Right Triangle](https://mathworld.wolfram.com/IsoscelesRightTriangle.html)
 
+- Angles are 45°-45°-90°
 - Sides in ratio $1 : 1 : \sqrt{2}$
 - If legs = $a$, then hypotenuse = $a\sqrt{2}$
 
