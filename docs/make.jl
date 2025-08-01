@@ -37,6 +37,7 @@ makedocs(;
         prettyurls = CI,
         edit_link = "main",
         assets = ["assets/custom.css"],
+        inventory_version = "0.1.0",
         footer = "Powered by [Documenter.jl](https://documenter.jl) and the [Julia Programming Language](https://julialang.org) generated on $(Dates.format(Dates.now(), "yyyy-mm-dd HH:MM:ss"))"
     ),
 )

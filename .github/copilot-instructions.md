@@ -255,6 +255,11 @@ triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Tuple{Float64, Float6
 - Use Markdown for explanations
 - After creating or editing a markdown document always review and fix all linting issues, unless the document is a configuration file of some kind
 - Follow the pattern of existing function documentation in src directory
+- When a new mathematical concept is introduced, add an external link to [MathWorld](https://mathworld.wolfram.com/) for that specific concept.
+  - Compare multiple potential URLs to choose the most appropriate one
+  - Avoid replacing working links with inferior alternatives
+  - Always use fetch_webpage function to check the link is valid and points to the correct concept.
+- use underscore not askterisk for markdown emphasis  
 
 ## Communication Patterns
 
