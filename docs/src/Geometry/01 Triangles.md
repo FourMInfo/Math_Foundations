@@ -32,7 +32,7 @@
 ### Fundamental Definitions
 
 - **[Intersecting vs Parallel Lines](https://mathworld.wolfram.com/IntersectingLines.html):** Two lines that cross each other intersect whereas parallel lines run alongside without meeting
-- **Concurrent lines:** Three or more lines that intersect at a single point called the _point of concurrency_. ([MathWorld](https://mathworld.wolfram.com/Concurrent.html) uses a less standard definition of "two or more" which is used in computational contexts or differential geometry.)
+- **[Concurrent lines](https://en.wikipedia.org/wiki/Concurrent_lines):** Three or more lines that intersect at a single point called the _point of concurrency_. ([MathWorld](https://mathworld.wolfram.com/Concurrent.html) uses a less standard definition of "two or more" which is used in computational contexts or differential geometry.)
 - **[Collinear points](https://mathworld.wolfram.com/Collinear.html):** Three or more points that lie on the same straight line
 - **[Vertex](https://mathworld.wolfram.com/Vertex.html):** A point where two or more line segments meet; in a triangle, the three corners where sides intersect
 - **[Perpendicular (orthogonal)](https://mathworld.wolfram.com/Perpendicular.html):** Two lines that intersect at a right angle (90°)
@@ -52,7 +52,7 @@ A [cevian](https://mathworld.wolfram.com/Cevian.html) is a line segment that joi
 
 ### Ceva's Theorem
 
-Giovanni Ceva (1647-1734) was an Italian mathematician who discovered this fundamental theorem about concurrent cevians. His work laid important groundwork for projective geometry and triangle geometry.
+[Giovanni Ceva](https://en.wikipedia.org/wiki/Giovanni_Ceva) (1647-1734) was an Italian mathematician who discovered this fundamental theorem about concurrent cevians. His work laid important groundwork for projective geometry and triangle geometry.
 
 For cevians $AA'$, $BB'$, $CC'$ in triangle $ABC$ (where $A'$, $B'$, $C'$ are on sides $BC$, $CA$, $AB$ respectively), the cevians are concurrent if and only if:
 $$\frac{BA'}{A'C} \cdot \frac{CB'}{B'A} \cdot \frac{AC'}{C'B} = 1$$
@@ -61,7 +61,7 @@ For more information, see: [Ceva's Theorem - Wolfram MathWorld](https://mathworl
 
 ### Menelaus' Theorem
 
-Menelaus of Alexandria (c. 70-140 CE) was a Greek mathematician and astronomer who developed this theorem about collinear points. His work "Sphaerica" was influential in both geometry and astronomy.
+[Menelaus of Alexandria](https://en.wikipedia.org/wiki/Menelaus_of_Alexandria) (c. 70-140 CE) was a Greek mathematician and astronomer who developed this theorem about collinear points. His work "Sphaerica" was influential in both geometry and astronomy.
 
 For a transversal intersecting sides $BC$, $CA$, $AB$ (or their extensions) at points $A'$, $B'$, $C'$ respectively, the points are collinear if and only if:
 $$\frac{BA'}{A'C} \cdot \frac{CB'}{B'A} \cdot \frac{AC'}{C'B} = -1$$
@@ -82,8 +82,7 @@ For more information, see: [Menelaus' Theorem - Wolfram MathWorld](https://mathw
 
 ### Standard Formula
 
-For a triangle with base $b$ and height $h$:
-$$A = \frac{1}{2}bh$$
+For a triangle with base $b$ and height $h$: $A = \frac{1}{2}bh$
 
 ### Heron's Formula
 
@@ -131,7 +130,7 @@ Right triangles have special properties and are fundamental to trigonometry.
 ### Advanced Right Triangle Theorems
 
 - **[Geometric Mean Theorem](https://en.wikipedia.org/wiki/Geometric_mean_theorem):**
-  - Also known as the Altitude-on-Hypotenuse theorem or Right Triangle Altitude Theorem.
+  - Also known as the Altitude-on-Hypotenuse Theorem or Right Triangle Altitude Theorem.
   - For right triangles, the altitude to the hypotenuse has length: $$h = \sqrt{pq}$$ where $p$ and $q$ are the segments of the hypotenuse.
   - For a right triangle with hypotenuse $c$ divided into segments $p$ and $q$ by the altitude:
     - where $a$ is the cathetus adjacent to segment $p$: $a^2 = cp$
@@ -175,9 +174,9 @@ Right triangles have special properties and are fundamental to trigonometry.
 ### Engineering
 
 - **Structural analysis:** Triangular frameworks and trusses
-- **Computer graphics:** Triangular meshes for 3D modeling
+- **Computer graphics:** [Triangular meshes](https://www.tutorialspoint.com/computer_graphics/computer_graphics_triangle_meshes.htm) for 3D modeling
 
 ### Physics
 
-- **Vector decomposition:** Breaking forces into components
-- **Wave analysis:** Using trigonometric functions
+- **[Vector decomposition](https://brilliant.org/wiki/vector-decomposition/):** Breaking forces into components
+- **[Projectile motion](https://en.wikipedia.org/wiki/Projectile_motion):** Analyzing trajectories using right triangles
