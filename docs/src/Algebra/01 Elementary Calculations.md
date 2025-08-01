@@ -10,20 +10,20 @@ Numbers are the basic building blocks of mathematics.
 
 Numbers can be categorized into different types based on their properties, forming a hierarchical structure:
 
-- **Natural Numbers:** $\mathbb{N}$ - Positive integers starting from 1: $\{1, 2, 3, 4, \ldots\}$
-- **Whole Numbers:** $\mathbb{N}_0$ - Natural numbers including zero: $\{0, 1, 2, 3, \ldots\}$
-- **Integers:** $\mathbb{Z}$ - Whole numbers including negatives: $\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$
-- **Rational Numbers:** $\mathbb{Q}$ - Numbers expressible as fractions: $\left\{\frac{p}{q} \mid p, q \in \mathbb{Z}, q \neq 0\right\}$
-- **Irrational Numbers:** Numbers that cannot be expressed as fractions: $\{\sqrt{2}, \pi, e, \ldots\}$
-- **Real Numbers:** $\mathbb{R}$ - All rational and irrational numbers combined
-- **Imaginary Numbers:** Multiples of the imaginary unit $i$: $\{bi \mid b \in \mathbb{R}, i^2 = -1\}$
-- **Complex Numbers:** $\mathbb{C}$ - Numbers with real and imaginary parts: $\{a + bi \mid a, b \in \mathbb{R}\}$
+- **[Natural Numbers](https://mathworld.wolfram.com/NaturalNumber.html):** $\mathbb{N}$ - Positive integers starting from 1: $\{1, 2, 3, 4, \ldots\}$
+- **[Whole Numbers](https://mathworld.wolfram.com/WholeNumber.html):** $\mathbb{N}_0$ - Natural numbers including zero: $\{0, 1, 2, 3, \ldots\}$
+- **[Integers](https://mathworld.wolfram.com/Integer.html):** $\mathbb{Z}$ - Whole numbers including negatives: $\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$
+- **[Rational Numbers](https://mathworld.wolfram.com/RationalNumber.html):** $\mathbb{Q}$ - Numbers expressible as fractions: $\left\{\frac{p}{q} \mid p, q \in \mathbb{Z}, q \neq 0\right\}$
+- **[Irrational Numbers](https://mathworld.wolfram.com/IrrationalNumber.html):** Numbers that cannot be expressed as fractions: $\{\sqrt{2}, \pi, e, \ldots\}$
+- **[Real Numbers](https://mathworld.wolfram.com/RealNumber.html):** $\mathbb{R}$ - All rational and irrational numbers combined
+- **[Imaginary Numbers](https://mathworld.wolfram.com/ImaginaryNumber.html):** Multiples of the imaginary unit $i$: $\{bi \mid b \in \mathbb{R}, i^2 = -1\}$
+- **[Complex Numbers](https://mathworld.wolfram.com/ComplexNumber.html):** $\mathbb{C}$ - Numbers with real and imaginary parts: $\{a + bi \mid a, b \in \mathbb{R}\}$
 
 ### Extended Types of Numbers
 
 In addition to the basic types, there are several extended types of numbers used in advanced mathematics:
 
-- **Algebraic Number:** Roots of polynomial equations with integer coefficients (e.g., $\sqrt{2}$, which is a root of $x^2 - 2 = 0$)
+- **Algebraic Number:** Roots of [polynomial](https://mathworld.wolfram.com/Polynomial.html) equations with integer coefficients (e.g., $\sqrt{2}$, which is a root of $x^2 - 2 = 0$, a [quadratic equation](https://mathworld.wolfram.com/QuadraticEquation.html))
 - **Transcendental Numbers:** Irrational numbers that are not algebraic (e.g., $e$, $\pi$)
 - **Ordinal Numbers:** Numbers indicating position in a sequence (e.g., first, second, third)
 - **Cardinal Numbers:** Numbers indicating quantity (e.g., one, two, three)
@@ -176,7 +176,7 @@ Systematic methods for operating with fractions:
 Reducing fractions to lowest terms using systematic methods:
 
 - **Find the GCD:**
-  - Find the greatest common divisor of numerator and denominator
+  - Find the [greatest common divisor](https://mathworld.wolfram.com/GreatestCommonDivisor.html) of numerator and denominator
   - Example: For $\frac{12}{18}$, $\gcd(12,18) = 6$, so $\frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}$
 
 - **Prime factorization method:**
@@ -188,7 +188,7 @@ Reducing fractions to lowest terms using systematic methods:
   - Example: $\frac{15}{25} = \frac{3 \times 5}{5 \times 5} = \frac{3}{5}$
 
 - **Euclidean algorithm:**
-  - Systematic method for finding GCD
+  - Systematic method for finding [GCD](https://mathworld.wolfram.com/GreatestCommonDivisor.html) using the [Euclidean algorithm](https://mathworld.wolfram.com/EuclideanAlgorithm.html)
   - For $\gcd(48,18)$: $48 = 18 \times 2 + 12$, then $18 = 12 \times 1 + 6$, then $12 = 6 \times 2 + 0$, so $\gcd = 6$
 
 ### Comparing Fractions
@@ -209,14 +209,14 @@ Methods for determining which fraction is larger:
 
 ## Powers and Exponents
 
-Powers and exponents provide a compact way to represent repeated multiplication and form the basis for more advanced mathematical concepts.
+Powers and [exponents](https://mathworld.wolfram.com/Exponent.html) provide a compact way to represent repeated multiplication and form the basis for more advanced mathematical concepts.
 
 ### Basic Exponent Notation
 
 Understanding the components and meaning:
 
 - **Base:** The number being multiplied repeatedly
-- **Exponent:** How many times the base multiplies itself
+- **[Exponent](https://mathworld.wolfram.com/Exponent.html):** How many times the base multiplies itself
 - **Power:** The result of the exponentiation
 - **Exponential Form:** $a^n$ where $a$ is base, $n$ is exponent
 
