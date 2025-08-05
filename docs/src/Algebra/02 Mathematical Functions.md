@@ -1,14 +1,14 @@
 # Mathematical Functions
 
-Functions are fundamental mathematical constructs that map inputs to outputs. This section covers various types of mathematical functions, their properties, and how to work with them.
+[Functions](https://mathworld.wolfram.com/Function.html) are fundamental mathematical constructs that map inputs to outputs. This section covers various types of mathematical functions, their properties, and how to work with them.
 
 ## Function Definition and Notation
 
-A function is a mapping of one set onto another set, where each element in the first set (domain) is associated with exactly one element in the second set (codomain). The idea comes from relations in set theory, where a function is a special type of relation. Functions are a critical concept in mathematics, allowing us to model and analyze relationships between quantities.
+A [function](https://mathworld.wolfram.com/Function.html) is a mapping of one set onto another set, where each element in the first set (domain) is associated with exactly one element in the second set (codomain). The idea comes from [relations](https://mathworld.wolfram.com/Relation.html) in set theory, where a function is a special type of relation. Functions are a critical concept in mathematics, allowing us to model and analyze relationships between quantities.
 
 ### Relations
 
-- A relation R from set A to set B is simply a subset of $A \times B$
+- A [relation](https://mathworld.wolfram.com/Relation.html) R from set A to set B is simply a subset of $A \times B$
 - No restrictions on how elements relate
 - An element in A can be related to multiple elements in B, or none at all
 - Domain of $R = \{a \in A : \exists b \in B \text{ such that } (a,b) \in R\}$
@@ -16,7 +16,7 @@ A function is a mapping of one set onto another set, where each element in the f
 
 ### Functions
 
-A function is a special relation where each element in A is related to exactly one element in B. A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where:
+A [function](https://mathworld.wolfram.com/Function.html) is a special relation where each element in A is related to exactly one element in B. A function $f$ from set $A$ to set $B$ is denoted as $f: A \rightarrow B$, where:
 
 - The **domain** $A$ is the set of all possible input values
 - The **codomain** $B$ is the set containing all possible output values
@@ -28,7 +28,7 @@ The key difference is that functions have the **uniqueness property** - each inp
 
 #### Surjective (Onto)
 
-A _surjective_ (_onto_) function is defined as every element in the codomain is hit by some element in the domain. Formally, function $f: A \to B$ is _surjective_ if for every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
+A _[surjective](https://mathworld.wolfram.com/Surjection.html)_ (_onto_) function is defined as every element in the codomain is hit by some element in the domain. Formally, function $f: A \to B$ is _surjective_ if for every $b \in B$, there exists at least one $a \in A$ such that $f(a) = b$
 
 ##### Surjective Properties
 
@@ -76,7 +76,7 @@ The distinction matters because it tells you whether you’re using the “full 
 
 #### Injective
 
-An _injective_ (one-to-one) function is defined as no two elements in the domain map to the same element in the codomain. Formally, a function $f: A \to B$ is _injective_ if: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
+An _[injective](https://mathworld.wolfram.com/Injection.html)_ (one-to-one) function is defined as no two elements in the domain map to the same element in the codomain. Formally, a function $f: A \to B$ is _injective_ if: For all $x₁, x₂ \in A$, if $f(x₁) = f(x₂)$, then $x₁ = x₂$
 
 ##### Injective Properties
 
@@ -93,7 +93,7 @@ An _injective_ (one-to-one) function is defined as no two elements in the domain
 
 #### Bijective (Invertible) Functions
 
-A _bijective_ function is both injective and surjective. This means it has a perfect one-to-one correspondence between the domain and codomain.
+A _[bijective](https://mathworld.wolfram.com/Bijection.html)_ function is both injective and surjective. This means it has a perfect one-to-one correspondence between the domain and codomain.
 
 ##### Bijective Properties
 
@@ -164,9 +164,9 @@ In conclusion, _bijective_ is a stronger condition - it requires the one-to-one 
 
 ### Additional Set Theory Terminology
 
-- **Partial function:** Relation where each element in domain relates to at most one element in codomain (but not necessarily exactly one)
+- **[Partial function](https://mathworld.wolfram.com/PartialFunction.html):** Relation where each element in domain relates to at most one element in codomain (but not necessarily exactly one)
 - **Total function:** What we usually call a “function” - defined on entire domain
-- **Multivalued function:** Relation where elements can map to multiple values (technically not a function)
+- **[Multivalued function](https://mathworld.wolfram.com/MultivaluedFunction.html):** Relation where elements can map to multiple values (technically not a function)
 - **Well-defined function:** A function where every input has a unique output, and the output is unambiguous
 
 ### Function Notation in Mathematics
@@ -177,12 +177,11 @@ In conclusion, _bijective_ is a stronger condition - it requires the one-to-one 
 
 ## Polynomial Functions
 
-Polynomials are functions of the form: $P(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$
-where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degree).
+[Polynomials](https://mathworld.wolfram.com/Polynomial.html) are functions of the form: $P(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degree).
 
 ### Key Polynomial Properties
 
-- **Degree:** The highest power of $x$ in the polynomial
+- **[Degree/Order](https://mathworld.wolfram.com/PolynomialOrder.html):** The highest power of $x$ in the polynomial
 - **Leading Coefficient:** The coefficient of the term with the highest degree
 - **Constant Term:** The term with degree 0 (if present)
 - **Standard Form:** Terms arranged in descending order of degree
@@ -201,9 +200,9 @@ where $a_i$ are constants (coefficients) and $n$ is a non-negative integer (degr
 ### Classification by Number of Terms
 
 - **Zero Polynomial** (degree undefined): $P(x) = 0$
-- **Monomial** (single term): $P(x) = ax^n$
+- **[Monomial](https://mathworld.wolfram.com/Monomial.html)** (single term): $P(x) = ax^n$
   - Example: $P(x) = 7x^4$
-- **Binomial** (two terms): $P(x) = ax^n + bx^m$
+- **[Binomial](https://mathworld.wolfram.com/Binomial.html)** (two terms): $P(x) = ax^n + bx^m$
   - Example: $P(x) = 3x^5 - 2x^2$
 - **Trinomial** (three terms): $P(x) = ax^n + bx^m + cx^p$
   - Example: $P(x) = x^3 + 4x - 1$
@@ -242,7 +241,7 @@ Using synthetic division: Quotient is $x^2 + 1$ with remainder $0$
 
 #### Function Composition
 
-For polynomials $f(x)$ and $g(x)$, the composition $(f \circ g)(x) = f(g(x))$.
+For polynomials $f(x)$ and $g(x)$, the [composition](https://mathworld.wolfram.com/Composition.html) $(f \circ g)(x) = f(g(x))$.
 
 **Example:**
 
@@ -257,7 +256,7 @@ f(g(x)) &= f(2x - 1) \\
 
 ## Quadratic Functions and Parabolas
 
-Quadratic functions have the form $f(x) = ax^2 + bx + c$ where $a \neq 0$. Their graphs are parabolas.
+[Quadratic functions](https://mathworld.wolfram.com/QuadraticEquation.html) have the form $f(x) = ax^2 + bx + c$ where $a \neq 0$. Their graphs are [parabolas](https://mathworld.wolfram.com/Parabola.html).
 
 ### Parabola Standard Forms
 
@@ -295,7 +294,7 @@ Analyze $f(x) = -2x^2 + 8x - 6$
 
 ### Conic Section Hyperbolas
 
-Hyperbolas are conic sections defined by equations of the form:
+[Hyperbolas](https://mathworld.wolfram.com/Hyperbola.html) are [conic sections](https://mathworld.wolfram.com/ConicSection.html) defined by equations of the form:
 
 - **Horizontal Hyperbola:** $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$
 - **Vertical Hyperbola:** $\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$
@@ -358,7 +357,7 @@ Mathematical hyperbolic functions are closely related to trigonometric functions
 
 ## Exponential Functions
 
-Exponential functions have the form $f(x) = a^x$ where $a > 0$ and $a \neq 1$.
+[Exponential functions](https://mathworld.wolfram.com/ExponentialFunction.html) have the form $f(x) = a^x$ where $a > 0$ and $a \neq 1$.
 
 ### Key Properties of Exponential Functions
 
@@ -374,7 +373,7 @@ Exponential functions have the form $f(x) = a^x$ where $a > 0$ and $a \neq 1$.
 
 #### Natural Exponential Function
 
-The natural exponential function is defined as: $f(x) = e^x$ where $e \approx 2.71828$ (Euler's number)
+The [natural exponential function](https://mathworld.wolfram.com/NaturalExponentialFunction.html) is defined as: $f(x) = e^x$ where $e \approx 2.71828$ (Euler's number)
 
 **Properties:**
 
@@ -491,7 +490,7 @@ Notice that continuous compounding yields slightly more than quarterly compoundi
 
 ## Logarithmic Functions
 
-A logarithmic function is the inverse of an exponential function. The logarithm $\log_a x$ is defined as the exponent to which base $a$ must be raised to produce $x$.
+A [logarithmic function](https://mathworld.wolfram.com/Logarithm.html) is the inverse of an exponential function. The logarithm $\log_a x$ is defined as the exponent to which base $a$ must be raised to produce $x$.
 
 ### Definition
 
@@ -499,8 +498,8 @@ For $a > 0$ and $a \neq 1$: $y = \log_a(x) \quad \text{if and only if} \quad a^y
 
 The most common logarithms are:
 
-- **Natural logarithm:** $\ln(x) = \log_e(x)$ where $e \approx 2.718$
-- **Common logarithm:** $\log(x) = \log_{10}(x)$
+- **[Natural logarithm](https://mathworld.wolfram.com/NaturalLogarithm.html):** $\ln(x) = \log_e(x)$ where $e \approx 2.718$
+- **[Common logarithm](https://mathworld.wolfram.com/CommonLogarithm.html):** $\log(x) = \log_{10}(x)$
 
 ### Key Properties of Logarithmic Functions
 
