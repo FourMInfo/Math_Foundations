@@ -1,12 +1,12 @@
 # Finding Polynomial Roots and Zeros
 
-**Roots** or **zeros** are values of $x$ for which a polynomial $P(x) = 0$. This is a fundamental problem in algebra with many practical applications in engineering, physics, economics, and computer science.
+**[Roots](https://mathworld.wolfram.com/PolynomialRoots.html)** or **zeros** are values of $x$ for which a [polynomial](https://mathworld.wolfram.com/Polynomial.html) $P(x) = 0$. This is a fundamental problem in algebra with many practical applications in engineering, physics, economics, and computer science.
 
 ## Polynomial Equation Theorems
 
 Understanding these fundamental theorems provides the theoretical foundation for all root-finding methods:
 
-### 1. **Factor Theorem**
+### 1. **[Factor Theorem](https://mathworld.wolfram.com/PolynomialFactorTheorem.html)**
 
 **Statement:** If $P(x)$ is a polynomial and $a$ is a real number, then $P(a) = 0$ if and only if $(x - a)$ is a factor of $P(x)$.
 
@@ -23,7 +23,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Helps factor polynomials systematically
 - Provides the basis for synthetic division
 
-### 2. **Remainder Theorem**
+### 2. **[Remainder Theorem](https://mathworld.wolfram.com/PolynomialRemainderTheorem.html)**
 
 **Statement:** When a polynomial $P(x)$ is divided by $(x - a)$, the remainder is $P(a)$. If the remainder is 0, then it's a root.
 
@@ -49,7 +49,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Testing potential roots
 - Fundamental to polynomial long division and synthetic division
 
-### 3. **Multiplicity of Roots**
+### 3. **[Multiplicity](https://mathworld.wolfram.com/Multiplicity.html) of Roots**
 
 **Definition:** The multiplicity of a root $r$ is the highest power of $(x - r)$ that divides the polynomial.
 
@@ -73,7 +73,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Root $x = -1$ with multiplicity 3
 - Total degree: $2 + 3 = 5$
 
-### 4. **Fundamental Theorem of Algebra**
+### 4. **[Fundamental Theorem of Algebra](https://mathworld.wolfram.com/FundamentalTheoremofAlgebra.html)**
 
 **Statement:** Every polynomial of degree $n \geq 1$ with complex coefficients has exactly $n$ roots in the complex numbers (counting multiplicity).
 
@@ -88,7 +88,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Factored: $P(x) = (x - 1)(x + 1)(x - i)(x + i)$
 - Roots: $1, -1, i, -i$
 
-### 5. **Rational Root Theorem** (Preview)
+### 5. **[Rational Root Theorem](https://mathworld.wolfram.com/RationalZeroTheorem.html)** (Preview)
 
 **Statement:** For a polynomial with integer coefficients, any rational root $\frac{p}{q}$ (in lowest terms) must have $p$ dividing the constant term and $q$ dividing the leading coefficient.
 
@@ -96,7 +96,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 
 ## Methods for Finding Roots
 
-### 1. **Factoring**
+### 1. **[Factoring](https://mathworld.wolfram.com/PolynomialFactorization.html)**
 
 **Description:** Express the polynomial as a product of linear factors and find where each factor equals zero.
 
@@ -170,7 +170,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Substitute: $P(3) = 2(9) - 7(3) + 3 = 18 - 21 + 3 = 0$ ✓
 - Substitute: $P(\frac{1}{2}) = 2(\frac{1}{4}) - 7(\frac{1}{2}) + 3 = \frac{1}{2} - \frac{7}{2} + 3 = 0$ ✓
 
-### 3. **The Rational Root Theorem**
+### 3. **The [Rational Root Theorem](https://mathworld.wolfram.com/RationalZeroTheorem.html)**
 
 **Description:** The Rational Root Theorem provides a systematic way to find potential rational roots of polynomial equations with integer coefficients.
 
@@ -227,7 +227,7 @@ Understanding these fundamental theorems provides the theoretical foundation for
 - Can have many candidates to test
 - Irrational and complex roots require other methods
 
-### 4. **Synthetic Division**
+### 4. **[Synthetic Division](https://mathworld.wolfram.com/SyntheticDivision.html)**
 
 **Description:** Synthetic division is an efficient method for dividing polynomials by linear factors of the form $(x - c)$ and testing whether $c$ is a root.
 
