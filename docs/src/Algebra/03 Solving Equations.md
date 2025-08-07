@@ -1,10 +1,10 @@
 # Solving Equations
 
-Equations are mathematical statements that assert the equality of two expressions. Solving equations means finding the values of variables that make the equation true. The solutions of an equation are the values of the variable that satisfy the equation, making both sides equal. For polynomial equations (where $P(x) = 0$), these solutions are also called **roots** or **zeros**. These are discussed in the separate document [Finding Polynomial Roots and Zeros](./04 Finding Polynomial Roots and Zeros.md). In this document we will discuss (mostly) algebraic methods for solving equations of various types.
+[Equations](https://mathworld.wolfram.com/Equation.html) are mathematical statements that assert the equality of two expressions. Solving equations means finding the values of variables that make the equation true. The solutions of an equation are the values of the variable that satisfy the equation, making both sides equal. For polynomial equations (where $P(x) = 0$), these solutions are also called **roots** or **zeros**. These are discussed in the separate document [Finding Polynomial Roots and Zeros](./04 Finding Polynomial Roots and Zeros.md). In this document we will discuss (mostly) algebraic methods for solving equations of various types.
 
 ## Linear Equations
 
-Linear equations are equations of the first degree, meaning the highest power of the variable is 1.
+[Linear equations](https://mathworld.wolfram.com/LinearEquation.html) are equations of the first degree, meaning the highest power of the variable is 1.
 
 ### Standard Forms
 
@@ -39,7 +39,7 @@ Linear equations are equations of the first degree, meaning the highest power of
 
 ## Quadratic Equations
 
-Quadratic equations are second-degree polynomial equations of the form:
+[Quadratic equations](https://mathworld.wolfram.com/QuadraticEquation.html) are second-degree polynomial equations of the form:
 $$ax^2 + bx + c = 0$$
 where $a \neq 0$.
 
@@ -47,7 +47,7 @@ where $a \neq 0$.
 
 #### 1. Factoring
 
-If the quadratic can be factored as $(px + q)(rx + s) = 0$, then:
+If the quadratic can be [factored](https://mathworld.wolfram.com/Factorization.html) as $(px + q)(rx + s) = 0$, then:
 
 - either factor may equal 0: $px + q = 0$ or $rx + s = 0$
 - solve for x: $x = -\frac{q}{p}$ or $x = -\frac{s}{r}$
@@ -63,7 +63,7 @@ If the quadratic can be factored as $(px + q)(rx + s) = 0$, then:
 
 #### 2. Completing the Square
 
-Completing the square is a method that rewrites the quadratic in a form that makes it easy to solve and is related to the quadratic formula (see below). The idea is to transform $ax^2 + bx + c = 0$ into $(x + d)^2 = e$ form and then use the square root property to find the roots.
+[Completing the square](https://mathworld.wolfram.com/CompletingtheSquare.html) is a method that rewrites the quadratic in a form that makes it easy to solve and is related to the quadratic formula (see below). The idea is to transform $ax^2 + bx + c = 0$ into $(x + d)^2 = e$ form and then use the square root property to find the roots.
 
 **Example:** Solve $x^2 + 6x + 5 = 0$ by completing the square
 
@@ -82,7 +82,7 @@ Both give the same answer, but completing the square shows the geometric/algebra
 
 #### 3. Quadratic Formula
 
-The quadratic formula is a general solution for any quadratic equation:
+The [quadratic formula](https://mathworld.wolfram.com/QuadraticFormula.html) is a general solution for any quadratic equation:
 
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
@@ -113,7 +113,7 @@ Therefore: $x = \frac{-5 + 7}{4} = \frac{1}{2}$ or $x = \frac{-5 - 7}{4} = -3$
 
 **The Discriminant:**
 
-The discriminant $\Delta = b^2 - 4ac$ determines the nature of solutions:
+The [discriminant](https://mathworld.wolfram.com/Discriminant.html) $\Delta = b^2 - 4ac$ determines the nature of solutions:
 
 - Two distinct real s: $\Delta > 0$
 - One repeated real solution: $\Delta = 0$
@@ -165,7 +165,7 @@ For equations of degree 3 and higher, various specialized techniques may be need
 
 ### Cubic Equations
 
-Cubic equations have the form $ax^3 + bx^2 + cx + d = 0$ where $a \neq 0$.
+[Cubic equations](https://mathworld.wolfram.com/CubicEquation.html) have the form $ax^3 + bx^2 + cx + d = 0$ where $a \neq 0$.
 
 #### Methods for Solving Cubic Equations
 
@@ -200,7 +200,7 @@ For the general cubic $ax^3 + bx^2 + cx + d = 0$, there exists an exact formula 
 
 ### Biquadratic Equations
 
-Biquadratic equations are fourth-degree equations of the form:
+[Biquadratic equations](https://mathworld.wolfram.com/BiquadraticEquation.html) are fourth-degree equations of the form:
 $$ax^4 + bx^2 + c = 0$$
 
 #### Solution Method
@@ -221,7 +221,7 @@ Solve: $x^4 - 5x^2 + 4 = 0$
 
 ## Logarithmic and Exponential Equations
 
-These equations involve exponential or logarithmic expressions and require special techniques.
+These equations involve [exponential functions](https://mathworld.wolfram.com/ExponentialFunction.html) or [logarithmic](https://mathworld.wolfram.com/Logarithm.html) expressions and require special techniques.
 
 ### Exponential Equations
 
@@ -295,6 +295,6 @@ This type of equation typically requires numerical methods or graphical solution
 
 Always verify solutions by substituting back into the original equation. Pay attention to:
 
-- **Domain restrictions** (e.g., denominators ≠ 0, arguments of logarithms > 0)
+- **[Domain](https://mathworld.wolfram.com/Domain.html) restrictions** (e.g., denominators ≠ 0, arguments of logarithms > 0)
 - **Extraneous solutions** introduced by algebraic manipulations
 - **Practical constraints** in applied problems
