@@ -59,3 +59,49 @@ $$\tan(a + b) = \frac{\frac{\sin(a)}{\cos(a)} + \frac{\sin(b)}{\cos(b)}}{1 - \fr
 $$\tan(a + b) = \frac{\tan(a) + \tan(b)}{1 - \tan(a)\tan(b)}$$
 
 This is the tangent addition theorem, which allows you to find the tangent of a sum of angles in terms of the tangents of the individual angles.
+
+## TODO: Content Moved from Document 02
+
+The following section was moved from "02 Trigonometric Functions.md" because it relates more closely to trigonometric identities than basic function definitions. This content needs to be properly integrated into this document in a future enhancement:
+
+### Angle Relationships and Identities
+
+#### Complementary Angles
+
+Two angles whose measures sum to 90°. These relationships show the co-function identities:
+
+- $\sin \theta = \cos(90° - \theta)$
+- $\cos \theta = \sin(90° - \theta)$
+- $\tan \theta = \cot(90° - \theta)$
+
+**Interpretation**: The sine of an angle equals the cosine of its complement, and vice versa.
+
+#### Supplementary Angles  
+
+Two angles whose measures sum to 180°. These relationships help find trigonometric values in different quadrants:
+
+- $\sin(180° - \theta) = \sin \theta$
+- $\cos(180° - \theta) = -\cos \theta$
+- $\tan(180° - \theta) = -\tan \theta$
+
+**Interpretation**: When an angle and its supplement are considered, sine remains the same but cosine and tangent change sign.
+
+#### Periodicity and Principal Values
+
+##### Periodic Properties
+
+Trigonometric functions repeat their values at regular intervals due to the circular nature of angles:
+
+- $\sin(\theta + 2\pi) = \sin \theta$ (sine has period $2\pi$)
+- $\cos(\theta + 2\pi) = \cos \theta$ (cosine has period $2\pi$)  
+- $\tan(\theta + \pi) = \tan \theta$ (tangent has period $\pi$)
+
+**Note**: Tangent has a shorter period because it repeats every half-rotation around the unit circle.
+
+##### Principal Values for Inverse Functions
+
+For inverse trigonometric functions, we define principal value ranges to ensure unique outputs:
+
+- $\arcsin$: domain $[-1,1]$, range $[-\frac{\pi}{2}, \frac{\pi}{2}]$
+- $\arccos$: domain $[-1,1]$, range $[0, \pi]$
+- $\arctan$: domain $(-\infty,\infty)$, range $(-\frac{\pi}{2}, \frac{\pi}{2})$
