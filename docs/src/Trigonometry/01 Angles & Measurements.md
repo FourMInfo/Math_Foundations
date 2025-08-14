@@ -14,14 +14,14 @@ A [degree](https://mathworld.wolfram.com/Degree.html) is a unit of angular measu
 
 #### Degree Definition
 
-One degree (1°) is defined as 1/360 of a complete rotation around a circle.
+One degree ($1^\circ$) is defined as 1/360 of a complete rotation around a circle.
 
 #### Key Values
 
-- **Full rotation:** 360°
-- **Right angle:** 90°
-- **Straight angle:** 180°
-- **Common angles:** 30°, 45°, 60°, 90°
+- **Full rotation:** $360^\circ$
+- **Right angle:** $90^\circ$
+- **Straight angle:** $180^\circ$
+- **Common angles:** $30^\circ$, $45^\circ$, $60^\circ$, $90^\circ$
 
 ### Radians
 
@@ -38,17 +38,17 @@ One radian is the angle subtended by an [arc](https://mathworld.wolfram.com/Arc.
 $$\begin{array}{c|c}
 \text{Radians} & \text{Degrees} \\
 \hline
-2\pi & 360° \\
+2\pi & 360^\circ \\
 \hline
-\pi & 180° \\
+\pi & 180^\circ \\
 \hline
-\frac{\pi}{2} & 90° \\
+\frac{\pi}{2} & 90^\circ \\
 \hline
-\frac{\pi}{3} & 60° \\
+\frac{\pi}{3} & 60^\circ \\
 \hline
-\frac{\pi}{4} & 45° \\
+\frac{\pi}{4} & 45^\circ \\
 \hline
-\frac{\pi}{6} & 30° \\
+\frac{\pi}{6} & 30^\circ \\
 \hline
 \end{array}$$
 
@@ -79,16 +79,16 @@ One gradian (1ᵍ) is defined as 1/400 of a complete rotation around a circle.
 
 ### By Measure
 
-- **Acute:** $0° < \theta < 90°$ (or $0 < \theta < \frac{\pi}{2}$)
-- **Right:** $\theta = 90°$ (or $\theta = \frac{\pi}{2}$)
-- **Obtuse:** $90° < \theta < 180°$ (or $\frac{\pi}{2} < \theta < \pi$)
-- **Straight:** $\theta = 180°$ (or $\theta = \pi$)
-- **Reflex:** $180° < \theta < 360°$ (or $\pi < \theta < 2\pi$)
+- **Acute:** $0^\circ < \theta < 90^\circ$ (or $0 < \theta < \frac{\pi}{2}$)
+- **Right:** $\theta = 90^\circ$ (or $\theta = \frac{\pi}{2}$)
+- **Obtuse:** $90^\circ < \theta < 180^\circ$ (or $\frac{\pi}{2} < \theta < \pi$)
+- **Straight:** $\theta = 180^\circ$ (or $\theta = \pi$)
+- **Reflex:** $180^\circ < \theta < 360^\circ$ (or $\pi < \theta < 2\pi$)
 
 ### By Position
 
 - **[Standard position](https://mathworld.wolfram.com/AngleStandardPosition.html):** Vertex at origin, initial side on positive x-axis
-- **[Coterminal angles](https://mathworld.wolfram.com/CoterminalAngle.html):** Angles that differ by multiples of $360°$ (or $2\pi$ radians)
+- **[Coterminal angles](https://mathworld.wolfram.com/CoterminalAngle.html):** Angles that differ by multiples of $360^\circ$ (or $2\pi$ radians)
 - **Reference angle:** Acute angle between terminal side and x-axis
 - **Negative angles:** Angles measured clockwise from the positive x-axis
 

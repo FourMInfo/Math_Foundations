@@ -10,7 +10,7 @@ The code in this package is not meant to be a complete implementation of the boo
 
 Besides the package documentation, you will also find in the left navigation tab, links to documents that explain topics covered in the book. These often provide more details than covered in the books. In writing this documentation I made extensive use of the LLM Claude (currently version Sonic 4.0) which I use in a paid version of VSCode CoPilot.
 
-These documents are meant to be a resource first for myself and then anyone who wants to learn and review basic mathematical concepts. I do try hard to carefully check the accuracy of the explanations, but I am not a professional mathematician, so please do let me know if you find any mistakes or inaccuracies. Also please note that as of the date in the footer timestamp, I have only fully checked and edited the Algebra & Geometry sections. The other sections are still in progress, but I do plan to complete them, as well as perhaps more topics to the "completed" sections.
+These documents are meant to be a resource first for myself and then anyone who wants to learn and review basic mathematical concepts. I do try hard to carefully check the accuracy of the explanations. Please note that as of the date in the footer timestamp, I have fully checked and edited all displayed sections.  However, I am not a professional mathematician, so please do let me know if you find any mistakes or inaccuracies. I do plan to add more topics in the future.
 
 ## Basic Mathematical Functions
 
