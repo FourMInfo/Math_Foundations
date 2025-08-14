@@ -64,9 +64,9 @@ For any angle $\theta$ measured counterclockwise from the positive x-axis:
 
 This connection between triangles and the unit circle becomes clear when we consider:
 
-1. **For acute angles** (0° < θ < 90°): The unit circle point creates a right triangle with the x-axis
-2. **For obtuse angles** (90° < θ < 180°): The definitions extend naturally using signed coordinates
-3. **For angles beyond 180°**: The pattern continues, creating the periodic nature of trigonometric functions
+1. **For acute angles** ($0^\circ < θ < 90^\circ$): The unit circle point creates a right triangle with the x-axis
+2. **For obtuse angles** ($90^\circ < θ < 180^\circ$): The definitions extend naturally using signed coordinates
+3. **For angles beyond $180^\circ$**: The pattern continues, creating the periodic nature of trigonometric functions
 
 ### Domain and Range
 
@@ -85,7 +85,7 @@ The [sine function](https://mathworld.wolfram.com/Sine.html), denoted as $\sin(x
 - **Definition**: $\sin(x) = \frac{\text{opposite}}{\text{hypotenuse}}$ (in right triangles) or y-coordinate on unit circle
 - **Domain**: All real numbers $(-\infty, \infty)$
 - **Range**: $[-1, 1]$
-- **Period**: $2\pi$ radians (360°)
+- **Period**: $2\pi$ radians ($360^\circ$)
 - **Symmetry**: Odd function, meaning $\sin(-x) = -\sin(x)$
 
 ### Sine Key Characteristics
@@ -103,7 +103,7 @@ The [cosine function](https://mathworld.wolfram.com/Cosine.html), denoted as $\c
 - **Definition**: $\cos(x) = \frac{\text{adjacent}}{\text{hypotenuse}}$ (in right triangles) or x-coordinate on unit circle
 - **Domain**: All real numbers $(-\infty, \infty)$
 - **Range**: $[-1, 1]$
-- **Period**: $2\pi$ radians (360°)
+- **Period**: $2\pi$ radians ($360^\circ$)
 - **Symmetry**: Even function, meaning $\cos(-x) = \cos(x)$
 
 ### Cosine Key Characteristics
@@ -123,7 +123,7 @@ $$\tan(x) = \frac{\sin(x)}{\cos(x)}$$
 - **Definition**: $\tan(x) = \frac{\text{opposite}}{\text{adjacent}}$ (in right triangles) or $\frac{\sin(x)}{\cos(x)}$
 - **Domain**: All real numbers except $x = \frac{\pi}{2} + n\pi$ where $n$ is any integer
 - **Range**: All real numbers $(-\infty, \infty)$
-- **Period**: $\pi$ radians (180°)
+- **Period**: $\pi$ radians ($180^\circ$)
 - **Symmetry**: Odd function, meaning $\tan(-x) = -\tan(x)$
 
 ### Tangent Key Characteristics
@@ -138,7 +138,7 @@ The following table shows exact values of trigonometric functions at commonly us
 
 $$\begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
-\text{Angle } (\theta) & 0° & 30° & 45° & 60° & 90° & 180° & 270° \\
+\text{Angle } (\theta) & 0^\circ & 30^\circ & 45^\circ & 60^\circ & 90^\circ & 180^\circ & 270^\circ \\
 \hline
 \text{Radians} & 0 & \frac{\pi}{6} & \frac{\pi}{4} & \frac{\pi}{3} & \frac{\pi}{2} & \pi & \frac{3\pi}{2} \\
 \hline
@@ -154,21 +154,21 @@ $$\begin{array}{|c|c|c|c|c|c|c|c|}
 
 **30-60-90 Triangle**: Sides in ratio $1 : \sqrt{3} : 2$
 
-- $\sin 30° = \frac{1}{2}$
-- $\cos 30° = \frac{\sqrt{3}}{2}$
-- $\sin 60° = \frac{\sqrt{3}}{2}$
-- $\cos 60° = \frac{1}{2}$
+- $\sin 30^\circ = \frac{1}{2}$
+- $\cos 30^\circ = \frac{\sqrt{3}}{2}$
+- $\sin 60^\circ = \frac{\sqrt{3}}{2}$
+- $\cos 60^\circ = \frac{1}{2}$
 
 **45-45-90 Triangle**: Sides in ratio $1 : 1 : \sqrt{2}$
 
-- $\sin 45° = \cos 45° = \frac{\sqrt{2}}{2}$
+- $\sin 45^\circ = \cos 45^\circ = \frac{\sqrt{2}}{2}$
 
 **Quadrant Signs**:
 
-- **Quadrant I** (0° to 90°): All positive
-- **Quadrant II** (90° to 180°): Only sine positive  
-- **Quadrant III** (180° to 270°): Only tangent positive
-- **Quadrant IV** (270° to 360°): Only cosine positive
+- **Quadrant I** ($0^\circ$ to $90^\circ$): All positive
+- **Quadrant II** ($90^\circ$ to $180^\circ$): Only sine positive  
+- **Quadrant III** ($180^\circ$ to $270^\circ$): Only tangent positive
+- **Quadrant IV** ($270^\circ$ to $360^\circ$): Only cosine positive
 
 **Mnemonic**: "All Students Take Calculus" (A-S-T-C)
 
@@ -188,27 +188,27 @@ This law is particularly useful when you know:
 
 #### Example: Finding a Missing Side (AAS)
 
-**Given:** In triangle ABC, $A = 30°$, $B = 45°$, and side $a = 10$ units.  
+**Given:** In triangle ABC, $A = 30^\circ$, $B = 45^\circ$, and side $a = 10$ units.  
 **Find:** Side $b$.
 
 **Solution:**
-1. First find angle $C$: $C = 180° - A - B = 180° - 30° - 45° = 105°$
+1. First find angle $C$: $C = 180^\circ - A - B = 180^\circ - 30^\circ - 45^\circ = 105^\circ$
 2. Apply the Sine Law: $\frac{a}{\sin A} = \frac{b}{\sin B}$
-3. Substitute: $\frac{10}{\sin 30°} = \frac{b}{\sin 45°}$
-4. Solve: $b = \frac{10 \times \sin 45°}{\sin 30°} = \frac{10 \times \frac{\sqrt{2}}{2}}{\frac{1}{2}} = 10\sqrt{2} \approx 14.14$ units
+3. Substitute: $\frac{10}{\sin 30^\circ} = \frac{b}{\sin 45^\circ}$
+4. Solve: $b = \frac{10 \times \sin 45^\circ}{\sin 30^\circ} = \frac{10 \times \frac{\sqrt{2}}{2}}{\frac{1}{2}} = 10\sqrt{2} \approx 14.14$ units
 
 #### Example: Finding a Missing Angle (SSA)
 
-**Given:** In triangle ABC, side $a = 8$ units, side $b = 10$ units, and angle $A = 30°$.  
+**Given:** In triangle ABC, side $a = 8$ units, side $b = 10$ units, and angle $A = 30^\circ$.  
 **Find:** Angle $B$.
 
 **Solution:**
 1. Apply the Sine Law: $\frac{a}{\sin A} = \frac{b}{\sin B}$
 2. Rearrange: $\sin B = \frac{b \sin A}{a}$
-3. Substitute: $\sin B = \frac{10 \times \sin 30°}{8} = \frac{10 \times \frac{1}{2}}{8} = \frac{5}{8} = 0.625$
-4. Solve: $B = \arcsin(0.625) \approx 38.68°$
+3. Substitute: $\sin B = \frac{10 \times \sin 30^\circ}{8} = \frac{10 \times \frac{1}{2}}{8} = \frac{5}{8} = 0.625$
+4. Solve: $B = \arcsin(0.625) \approx 38.68^\circ$
 
-**Note:** In SSA cases, check if a second solution exists: $B' = 180° - 38.68° = 141.32°$. Verify which solution(s) create valid triangles by checking that all angles sum to 180°.
+**Note:** In SSA cases, check if a second solution exists: $B' = 180^\circ - 38.68^\circ = 141.32^\circ$. Verify which solution(s) create valid triangles by checking that all angles sum to 180^\circ.
 
 ### Cosine Law
 
@@ -222,12 +222,12 @@ This generalizes the Pythagorean theorem and is useful when you know:
 
 #### Example: Finding a Missing Side (SAS)
 
-**Given:** In triangle ABC, $a = 8$ units, $b = 6$ units, and $C = 60°$.  
+**Given:** In triangle ABC, $a = 8$ units, $b = 6$ units, and $C = 60^\circ$.  
 **Find:** Side $c$.
 
 **Solution:**
 1. Apply the Cosine Law: $c^2 = a^2 + b^2 - 2ab\cos C$
-2. Substitute: $c^2 = 8^2 + 6^2 - 2(8)(6)\cos 60°$
+2. Substitute: $c^2 = 8^2 + 6^2 - 2(8)(6)\cos 60^\circ$
 3. Calculate: $c^2 = 64 + 36 - 96 \times \frac{1}{2} = 100 - 48 = 52$
 4. Solve: $c = \sqrt{52} = 2\sqrt{13} \approx 7.21$ units
 
@@ -239,7 +239,7 @@ This generalizes the Pythagorean theorem and is useful when you know:
 **Solution:**
 1. Rearrange the Cosine Law: $\cos C = \frac{a^2 + b^2 - c^2}{2ab}$
 2. Substitute: $\cos C = \frac{5^2 + 7^2 - 9^2}{2(5)(7)} = \frac{25 + 49 - 81}{70} = \frac{-7}{70} = -0.1$
-3. Solve: $C = \arccos(-0.1) \approx 95.74°$
+3. Solve: $C = \arccos(-0.1) \approx 95.74^\circ$
 
 ## Hyperbolic Functions
 
