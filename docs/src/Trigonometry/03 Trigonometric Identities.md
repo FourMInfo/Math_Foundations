@@ -1,14 +1,6 @@
 # Trigonometric Identities
 
-Trigonometric identities are equations involving [trigonometric functions](./02 TrigonometrFind $\cos(15^\circ)$ using $\cos(45^\circ - 30^\circ)$:
-
-$$\begin{aligned}
-\cos(15^\circ) &= \cos(45^\circ - 30^\circ)\\
-&= \cos(45^\circ)\cos(30^\circ) + \sin(45^\circ)\sin(30^\circ)\\
-&= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}\\
-&= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4}\\
-&= \frac{\sqrt{6} + \sqrt{2}}{4}
-\end{aligned}$$ons.md) that are true for all values of the variables involved. These identities are essential in simplifying trigonometric expressions, solving equations, and proving other mathematical statements. Below are some of the most commonly used trigonometric identities.
+Trigonometric identities are equations involving [trigonometric functions](./02 Trigonometric Functions.md) that are true for all values of the variables involved. These identities are essential in simplifying trigonometric expressions, solving equations, and proving other mathematical statements. Below are some of the most commonly used trigonometric identities.
 
 ## Pythagorean Identities
 
@@ -154,6 +146,18 @@ $$\begin{aligned}
 &= \frac{3 + 2\sqrt{3} + 1}{3 - 1}\\
 &= \frac{4 + 2\sqrt{3}}{2}\\
 &= 2 + \sqrt{3}
+\end{aligned}$$
+
+#### Example 4: Cosine Difference Formula
+
+Find $\cos(15^\circ)$ using $\cos(45^\circ - 30^\circ)$:
+
+$$\begin{aligned}
+\cos(15^\circ) &= \cos(45^\circ - 30^\circ)\\
+&= \cos(45^\circ)\cos(30^\circ) + \sin(45^\circ)\sin(30^\circ)\\
+&= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}\\
+&= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4}\\
+&= \frac{\sqrt{6} + \sqrt{2}}{4}
 \end{aligned}$$
 
 ## Co-function Identities
