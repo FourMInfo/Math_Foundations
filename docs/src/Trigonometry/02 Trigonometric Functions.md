@@ -215,7 +215,9 @@ This law is particularly useful when you know:
 For any triangle with sides $a$, $b$, $c$ and angle $C$ opposite side $c$:
 $$c^2 = a^2 + b^2 - 2ab\cos C$$
 
-This generalizes the Pythagorean theorem and is useful when you know:
+This generalizes the Pythagorean theorem: If the special case of a right triangle with vertices $A$, $B$, and $C$ is present – for example, if $C = 90^\circ$, then $\cos(C) = \cos(90^\circ) = 0$, and the term $2ab \cos(C)$ will also be 0. So in this case, the cosine theorem gives $c^2 = a^2 + b^2$, which is nothing more than the statement of Pythagoras’ theorem for right triangles.
+
+The Cosine Law is useful when you know:
 
 - Three sides (SSS)  
 - Two sides and the included angle (SAS)
