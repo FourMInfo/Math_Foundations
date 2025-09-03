@@ -178,7 +178,8 @@ The [Sine Law](https://mathworld.wolfram.com/LawofSines.html) and [Cosine Law](h
 
 ### Sine Law
 
-For any triangle with sides $a$, $b$, $c$ and opposite angles $A$, $B$, $C$:
+For any triangle with sides $a$, $b$, $c$ and opposite angles $A$, $B$, $C$ (alternatively given as opposite angles $\alpha$, $\beta$, $\gamma$):
+
 $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
 
 In other words, the sine law states that the quotient of two side lengths of a triangle
@@ -216,7 +217,13 @@ This law is particularly useful when you know:
 3. Substitute: $\sin B = \frac{10 \times \sin 30^\circ}{8} = \frac{10 \times \frac{1}{2}}{8} = \frac{5}{8} = 0.625$
 4. Solve: $B = \arcsin(0.625) \approx 38.68^\circ$
 
-**Note:** In SSA cases, check if a second solution exists: $B' = 180^\circ - 38.68^\circ = 141.32^\circ$. Verify which solution(s) create valid triangles by checking that all angles sum to 180^\circ.
+**Note:** In SSA cases, check if a second solution exists: $B' = 180^\circ - 38.68^\circ = 141.32^\circ$. Verify which solution(s) create valid triangles by checking that all angles sum to $180^\circ$.
+
+**General Note:** If the lengths of the sides $a$ and b and $A$, the angle opposite the side with length a, _are_ given, then it is _not_ necessary that:
+
+$$|sin(A)\frac{b}{a}| \leq 1$$
+
+hold. But since this should always be satisfied because it is necessary that $|\sin(B)| \leq 1$, we can see that something goes wrong for certain specifications of $a$, $b$ and $A$, that is, a triangle cannot be constructed for some choices of these quantities.
 
 ### Cosine Law
 
