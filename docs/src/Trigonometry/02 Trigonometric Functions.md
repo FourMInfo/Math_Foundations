@@ -178,8 +178,15 @@ The [Sine Law](https://mathworld.wolfram.com/LawofSines.html) and [Cosine Law](h
 
 ### Sine Law
 
-For any triangle with sides $a$, $b$, $c$ and opposite angles $A$, $B$, $C$:
+For any triangle with sides $a$, $b$, $c$ and opposite angles $A$, $B$, $C$ (alternatively given as opposite angles $\alpha$, $\beta$, $\gamma$):
+
 $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+
+In other words, the sine law states that the quotient of two side lengths of a triangle
+gives the same value as the quotient of the sines of the opposite interior angles (also:
+opposite angles):
+
+$$\frac{a}{b} = \frac{\sin A}{\sin B}, \quad \frac{b}{c} = \frac{\sin B}{\sin C}, \quad \frac{c}{a} = \frac{\sin C}{\sin A}$$
 
 This law is particularly useful when you know:
 
@@ -192,6 +199,7 @@ This law is particularly useful when you know:
 **Find:** Side $b$.
 
 **Solution:**
+
 1. First find angle $C$: $C = 180^\circ - A - B = 180^\circ - 30^\circ - 45^\circ = 105^\circ$
 2. Apply the Sine Law: $\frac{a}{\sin A} = \frac{b}{\sin B}$
 3. Substitute: $\frac{10}{\sin 30^\circ} = \frac{b}{\sin 45^\circ}$
@@ -203,19 +211,28 @@ This law is particularly useful when you know:
 **Find:** Angle $B$.
 
 **Solution:**
+
 1. Apply the Sine Law: $\frac{a}{\sin A} = \frac{b}{\sin B}$
 2. Rearrange: $\sin B = \frac{b \sin A}{a}$
 3. Substitute: $\sin B = \frac{10 \times \sin 30^\circ}{8} = \frac{10 \times \frac{1}{2}}{8} = \frac{5}{8} = 0.625$
 4. Solve: $B = \arcsin(0.625) \approx 38.68^\circ$
 
-**Note:** In SSA cases, check if a second solution exists: $B' = 180^\circ - 38.68^\circ = 141.32^\circ$. Verify which solution(s) create valid triangles by checking that all angles sum to 180^\circ.
+**Note:** In SSA cases, check if a second solution exists: $B' = 180^\circ - 38.68^\circ = 141.32^\circ$. Verify which solution(s) create valid triangles by checking that all angles sum to $180^\circ$.
+
+**General Note:** If the lengths of the sides $a$ and b and $A$, the angle opposite the side with length a, _are_ given, then it is _not_ necessary that:
+
+$$|sin(A)\frac{b}{a}| \leq 1$$
+
+hold. But since this should always be satisfied because it is necessary that $|\sin(B)| \leq 1$, we can see that something goes wrong for certain specifications of $a$, $b$ and $A$, that is, a triangle cannot be constructed for some choices of these quantities.
 
 ### Cosine Law
 
 For any triangle with sides $a$, $b$, $c$ and angle $C$ opposite side $c$:
 $$c^2 = a^2 + b^2 - 2ab\cos C$$
 
-This generalizes the Pythagorean theorem and is useful when you know:
+This generalizes the Pythagorean theorem: If the special case of a right triangle with vertices $A$, $B$, and $C$ is present – for example, if $C = 90^\circ$, then $\cos(C) = \cos(90^\circ) = 0$, and the term $2ab \cos(C)$ will also be 0. So in this case, the cosine theorem gives $c^2 = a^2 + b^2$, which is nothing more than the statement of Pythagoras’ theorem for right triangles.
+
+The Cosine Law is useful when you know:
 
 - Three sides (SSS)  
 - Two sides and the included angle (SAS)
@@ -226,6 +243,7 @@ This generalizes the Pythagorean theorem and is useful when you know:
 **Find:** Side $c$.
 
 **Solution:**
+
 1. Apply the Cosine Law: $c^2 = a^2 + b^2 - 2ab\cos C$
 2. Substitute: $c^2 = 8^2 + 6^2 - 2(8)(6)\cos 60^\circ$
 3. Calculate: $c^2 = 64 + 36 - 96 \times \frac{1}{2} = 100 - 48 = 52$
@@ -237,9 +255,49 @@ This generalizes the Pythagorean theorem and is useful when you know:
 **Find:** Angle $C$.
 
 **Solution:**
+
 1. Rearrange the Cosine Law: $\cos C = \frac{a^2 + b^2 - c^2}{2ab}$
 2. Substitute: $\cos C = \frac{5^2 + 7^2 - 9^2}{2(5)(7)} = \frac{25 + 49 - 81}{70} = \frac{-7}{70} = -0.1$
 3. Solve: $C = \arccos(-0.1) \approx 95.74^\circ$
+
+#### Cosine Law and Isosceles Triangles
+
+In isosceles triangles, where two sides are equal (say $a = b$), the Cosine Law simplifies significantly.
+
+For angle $A$ opposite side $a$, we have:
+
+$$\begin{aligned}
+\cos A &= \frac{b^2 + c^2 - a^2}{2bc} \\
+&= \frac{a^2 + c^2 - a^2}{2ac} \\
+&= \frac{c^2}{2ac} \\
+&= \frac{c}{2a}
+\end{aligned}$$
+
+For angle $B$ opposite side $b$, we have:
+
+$$\begin{aligned}
+\cos B &= \frac{a^2 + c^2 - b^2}{2ac} \\
+&= \frac{a^2 + c^2 - a^2}{2ac} \\
+&= \frac{c^2}{2ac} \\
+&= \frac{c}{2a}
+\end{aligned}$$
+
+So the adjacent interior angles $A$ and $B$ are equal. 
+
+For the apex angle $C$ opposite the base $c$, we have: $C = 180 - 2A$.
+
+This relationship can be particularly useful for finding angles or sides in isosceles triangles.
+
+#### Cosine Law and Equilateral Triangles
+
+In equilateral triangles, all sides are equal (say $a = b = c$), and all angles are equal ($A = B = C = 60^\circ$). The Cosine Law simplifies significantly:
+
+$$\begin{aligned}
+\cos A &= \frac{b^2 + c^2 - a^2}{2bc} \\
+&= \frac{a^2 + a^2 - a^2}{2a^2} \\
+&= \frac{a^2}{2a^2} \\
+&= \frac{1}{2}
+\end{aligned}$$
 
 ## Hyperbolic Functions
 

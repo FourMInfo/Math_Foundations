@@ -252,6 +252,7 @@ triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Tuple{Float64, Float6
 
 ## Documentation Patterns
 - Use LaTeX for all mathematical notation
+- Use LaTeX syntax for mathematical symbols not Unicode e.g. "^\circ" instead of "°"
 - Use Markdown for explanations
 - After creating or editing a markdown document always review and fix all linting issues, unless the document is a configuration file of some kind
 - Follow the pattern of existing function documentation in src directory
