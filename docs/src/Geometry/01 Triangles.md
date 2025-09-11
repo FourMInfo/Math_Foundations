@@ -164,6 +164,10 @@ Right triangles have special properties and are fundamental to trigonometry.
   - The altitude bisects the base, creating a segment of length $a$.
   - The altitude itself has length $a\sqrt{3}$, leading to the ratios mentioned above.
 
+## Further Information
+
+More information about triangles are found in the trigonometry section of this documentation. Specifically, the sections on [trigonometric functions](../Trigonometry/02 Trigonometric Functions.md) provide deeper insights into the relationships between triangle angles and side lengths.
+
 ## Applications
 
 ### Surveying and Navigation
