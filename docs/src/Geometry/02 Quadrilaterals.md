@@ -31,7 +31,11 @@ There are several types of quadrilaterals, each with its own properties:
 - In concave quadrilaterals, one interior angle is greater than 180^\circ and at least one diagonal lies outside the figure.
 - In convex quadrilaterals, each interior angle is less than or equal to 180^\circ and I can draw both diagonals without them leaving the figure.
 - The adjacent angles of a parallelogram are supplementary (sum to 180 degrees).
+- The opposite angles of a parallelogram are equal.
+- One pair of opposite angles in a kite are equal, the other pair are not.
+- The consecutive angles of a parallelogram are supplementary.
 - The diagonals of a quadrilateral bisect each other if and only if it is a parallelogram.
+- The diagonals of a parallelogram are equal in length.
 - The diagonals of a rectangle and square bisect each other and are equal in length.
 - The diagonals of a rhombus bisect each other at right angles but are not necessarily equal in length.
 - The diagonals of a kite are perpendicular, and one diagonal bisects the other.
@@ -55,15 +59,15 @@ The lengths of the diagonals can be calculated using the properties of the speci
 
 The area formulas for quadrilaterals vary significantly based on their specific properties and the information available:
 
-- **Square:** $A = s^2$, where $s$ is the length of a side.
-- **Rectangle:** $A = l \times w$, where $l$ is the length and $w$ is the width.
-- **Parallelogram:** $A = b \times h$, where $b$ is the base and $h$ is the perpendicular height. Alternatively, $A = ab\sin(C)$, where $a$ and $b$ are adjacent sides and $C$ is the included angle.
-- **Rhombus:** $A = \frac{1}{2}d_1 d_2$, where $d_1$ and $d_2$ are the diagonal lengths. Alternatively, $A = a^2\sin(A)$, where $a$ is the side length and $A$ is any interior angle.
-- **Trapezoid:** $A = \frac{1}{2}(b_1 + b_2)h$, where $b_1$ and $b_2$ are the lengths of the parallel sides and $h$ is the perpendicular distance between them.
-- **Kite:** $A = \frac{1}{2}d_1 d_2$, where $d_1$ and $d_2$ are the diagonal lengths (diagonals are perpendicular in a kite).
+- **Square:** $F = s^2$, where $s$ is the length of a side.
+- **Rectangle:** $F = l \times w$, where $l$ is the length and $w$ is the width.
+- **Parallelogram:** $F = b \times h$, where $b$ is the base and $h$ is the perpendicular height. Alternatively, $F = ab\sin(C)$, where $a$ and $b$ are adjacent sides and $C$ is the included angle.
+- **Rhombus:** $F = \frac{1}{2}d_1 d_2$, where $d_1$ and $d_2$ are the diagonal lengths. Alternatively, $F = a^2\sin(A)$, where $a$ is the side length and $A$ is any interior angle.
+- **Trapezoid:** $F = \frac{1}{2}(b_1 + b_2)h$, where $b_1$ and $b_2$ are the lengths of the parallel sides and $h$ is the perpendicular distance between them.
+- **Kite:** $F = \frac{1}{2}d_1 d_2$, where $d_1$ and $d_2$ are the diagonal lengths (diagonals are perpendicular in a kite). This requires knowledge of both diagonal lengths or we can use the law of cosines to calculate the diagonal lengths if we know the lengths of the sides and all the angles between them.
 - **Concave Quadrilateral:** Area calculation depends on the specific shape. Can be computed by dividing into triangles and using appropriate signs for orientation.
-- **Convex Quadrilateral:** For a general convex quadrilateral with known vertices, use the [Shoelace formula](https://mathworld.wolfram.com/PolygonArea.html): $A = \frac{1}{2}|x_1(y_2-y_4) + x_2(y_3-y_1) + x_3(y_4-y_2) + x_4(y_1-y_3)|$.
-- **General Quadrilateral:** When diagonals and their intersection angle are known: $A = \frac{1}{2}d_1 d_2 \sin(\theta)$, where $d_1$ and $d_2$ are diagonal lengths and $\theta$ is the angle between them. For arbitrary quadrilaterals, [Bretschneider's formula](https://mathworld.wolfram.com/BretschneidersFormula.html) can be used when all four sides and two opposite angles are known.
+- **Convex Quadrilateral:** For a general convex quadrilateral with known vertices, use the [Shoelace formula](https://mathworld.wolfram.com/PolygonArea.html): $F = \frac{1}{2}|x_1(y_2-y_4) + x_2(y_3-y_1) + x_3(y_4-y_2) + x_4(y_1-y_3)|$.
+- **General Quadrilateral:** When diagonals and their intersection angle are known: $F = \frac{1}{2}d_1 d_2 \sin(\theta)$, where $d_1$ and $d_2$ are diagonal lengths and $\theta$ is the angle between them. For arbitrary quadrilaterals, [Bretschneider's formula](https://mathworld.wolfram.com/BretschneidersFormula.html) can be used when all four sides and two opposite angles are known.
 
 ## Applications
 
