@@ -69,6 +69,286 @@ The area formulas for quadrilaterals vary significantly based on their specific 
 - **Convex Quadrilateral:** For a general convex quadrilateral with known vertices, use the [Shoelace formula](https://mathworld.wolfram.com/PolygonArea.html): $F = \frac{1}{2}|x_1(y_2-y_4) + x_2(y_3-y_1) + x_3(y_4-y_2) + x_4(y_1-y_3)|$.
 - **General Quadrilateral:** When diagonals and their intersection angle are known: $F = \frac{1}{2}d_1 d_2 \sin(\theta)$, where $d_1$ and $d_2$ are diagonal lengths and $\theta$ is the angle between them. For arbitrary quadrilaterals, [Bretschneider's formula](https://mathworld.wolfram.com/BretschneidersFormula.html) can be used when all four sides and two opposite angles are known.
 
+### Geometric Proof of Kite Area Formula
+
+```@raw html
+<svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rectangle encompassing the kite -->
+  <rect x="80" y="60" width="240" height="140" 
+        fill="#f5f5dc" 
+        stroke="#555555" 
+        stroke-width="2" 
+        opacity="0.4"/>
+
+  <!-- Kite shape -->
+
+<polygon points="200,60 80,130 200,200 320,130" 
+fill="#87ceeb" 
+stroke="#2f4f4f" 
+stroke-width="3" 
+opacity="0.8"/>
+
+  <!-- Diagonal 1 (vertical) - full length of rectangle -->
+
+<line x1="200" y1="60" x2="200" y2="200" 
+stroke="#b22222" 
+stroke-width="3" 
+stroke-dasharray="5,5"/>
+
+  <!-- Diagonal 2 (horizontal) - full width of rectangle -->
+
+<line x1="80" y1="130" x2="320" y2="130" 
+stroke="#228b22" 
+stroke-width="3" 
+stroke-dasharray="5,5"/>
+
+  <!-- Corner triangles (outside kite, inside rectangle) -->
+
+  <!-- Top left triangle -->
+
+<polygon points="80,60 200,60 80,130" 
+fill="#dda0dd" 
+stroke="#8b7d6b" 
+stroke-width="2" 
+opacity="0.5"/>
+
+  <!-- Top right triangle -->
+
+<polygon points="200,60 320,60 320,130" 
+fill="#dda0dd" 
+stroke="#8b7d6b" 
+stroke-width="2" 
+opacity="0.5"/>
+
+  <!-- Bottom left triangle -->
+
+<polygon points="80,130 80,200 200,200" 
+fill="#dda0dd" 
+stroke="#8b7d6b" 
+stroke-width="2" 
+opacity="0.5"/>
+
+  <!-- Bottom right triangle -->
+
+<polygon points="320,130 320,200 200,200" 
+fill="#dda0dd" 
+stroke="#8b7d6b" 
+stroke-width="2" 
+opacity="0.5"/>
+
+  <!-- Labels for diagonals -->
+
+<text x="210" y="125" fill="#dc143c" font-family="Arial" font-size="14" font-weight="bold">d₁</text>
+<text x="200" y="100" fill="#32cd32" font-family="Arial" font-size="14" font-weight="bold">d₂</text>
+
+  <!-- Dimension labels -->
+
+<text x="325" y="135" fill="#32cd32" font-family="Arial" font-size="12">d₂</text>
+<text x="205" y="55" fill="#dc143c" font-family="Arial" font-size="12">d₁</text>
+
+  <!-- Area formulas and explanations -->
+
+  <text x="50" y="270" fill="#666666" font-family="Arial" font-size="14" font-weight="bold">
+    Rectangle Area = d₁ × d₂
+  </text>
+
+  <text x="50" y="290" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">
+    Kite Area = ½ × d₁ × d₂
+  </text>
+
+  <text x="50" y="310" fill="#9370db" font-family="Arial" font-size="14" font-weight="bold">
+    4 Corner Triangles = ½ × d₁ × d₂
+  </text>
+
+  <!-- Title -->
+
+  <text x="250" y="25" fill="#4682b4" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">
+    Kite Area = Half of Enclosing Rectangle
+  </text>
+
+  <!-- Legend -->
+
+  <rect x="350" y="50" width="15" height="15" fill="#87ceeb" opacity="0.8"/>
+  <text x="370" y="62" fill="#666666" font-family="Arial" font-size="12">Kite</text>
+
+  <rect x="350" y="70" width="15" height="15" fill="#dda0dd" opacity="0.5"/>
+  <text x="370" y="82" fill="#666666" font-family="Arial" font-size="12">Corner Triangles</text>
+
+  <rect x="350" y="90" width="15" height="15" fill="#f5f5dc" opacity="0.4"/>
+  <text x="370" y="102" fill="#666666" font-family="Arial" font-size="12">Rectangle</text>
+
+  <!-- Right angle indicator at intersection -->
+
+<rect x="195" y="125" width="10" height="10" 
+fill="none" 
+stroke="black" 
+stroke-width="1"/>
+</svg>
+```
+
+### Geometric Proof of Trapezoid Area Formula
+
+```@raw html
+<svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Original trapezoid -->
+  <polygon points="100,120 200,120 240,200 80,200" 
+           fill="#87ceeb" 
+           stroke="#2f4f4f" 
+           stroke-width="3" 
+           opacity="0.8"/>
+
+  <!-- Extended top line: original a + additional b -->
+
+<line x1="100" y1="120" x2="200" y2="120" 
+stroke="#32cd32" 
+stroke-width="4"/>
+<line x1="200" y1="120" x2="360" y2="120" 
+stroke="#4169e1" 
+stroke-width="4"/>
+
+  <!-- Extended bottom line: original b + additional a -->
+
+<line x1="80" y1="200" x2="240" y2="200" 
+stroke="#4169e1" 
+stroke-width="4"/>
+<line x1="240" y1="200" x2="340" y2="200" 
+stroke="#32cd32" 
+stroke-width="4"/>
+
+  <!-- Flipped duplicate trapezoid (right side) -->
+
+<polygon points="200,120 360,120 340,200 240,200" 
+fill="#98fb98" 
+stroke="#2f4f4f" 
+stroke-width="3" 
+opacity="0.8"/>
+
+  <!-- Parallelogram outline -->
+
+<polygon points="100,120 360,120 340,200 80,200" 
+fill="none" 
+stroke="#b8860b" 
+stroke-width="4" 
+stroke-dasharray="8,4"/>
+
+  <!-- Left side of parallelogram -->
+
+<line x1="100" y1="120" x2="80" y2="200" 
+stroke="#b8860b" 
+stroke-width="3"/>
+
+  <!-- Right side of parallelogram (parallel to left side) -->
+
+<line x1="360" y1="120" x2="340" y2="200" 
+stroke="#b8860b" 
+stroke-width="3"/>
+
+  <!-- Height line -->
+
+<line x1="150" y1="120" x2="150" y2="200" 
+stroke="#dc143c" 
+stroke-width="3" 
+stroke-dasharray="5,5"/>
+
+  <!-- Labels for original trapezoid dimensions -->
+
+<text x="150" y="115" fill="#32cd32" font-family="Arial" font-size="14" font-weight="bold">a</text>
+<text x="160" y="215" fill="#4169e1" font-family="Arial" font-size="14" font-weight="bold">b</text>
+<text x="160" y="165" fill="#dc143c" font-family="Arial" font-size="14" font-weight="bold">h</text>
+
+  <!-- Labels for extensions -->
+
+<text x="280" y="115" fill="#4169e1" font-family="Arial" font-size="14" font-weight="bold">b</text>
+<text x="290" y="215" fill="#32cd32" font-family="Arial" font-size="14" font-weight="bold">a</text>
+
+  <!-- Parallelogram dimension labels -->
+
+<text x="230" y="110" fill="#b8860b" font-family="Arial" font-size="14" font-weight="bold">a + b</text>
+<text x="210" y="235" fill="#b8860b" font-family="Arial" font-size="14" font-weight="bold">a + b</text>
+
+  <!-- Side dimension labels -->
+
+<text x="150" y="105" fill="#32cd32" font-family="Arial" font-size="12">a</text>
+<text x="160" y="230" fill="#4169e1" font-family="Arial" font-size="12">b</text>
+<text x="60" y="165" fill="#dc143c" font-family="Arial" font-size="12">h</text>
+<text x="280" y="105" fill="#4169e1" font-family="Arial" font-size="12">b</text>
+<text x="290" y="230" fill="#32cd32" font-family="Arial" font-size="12">a</text>
+
+  <!-- Area formulas and explanations -->
+
+  <text x="50" y="270" fill="#b8860b" font-family="Arial" font-size="14" font-weight="bold">
+    Parallelogram Area = (a + b) × h
+  </text>
+
+  <text x="50" y="290" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">
+    Two Trapezoids = (a + b) × h
+  </text>
+
+  <text x="50" y="310" fill="#666666" font-family="Arial" font-size="14" font-weight="bold">
+    ∴ One Trapezoid = ½(a + b) × h
+  </text>
+
+  <!-- Title -->
+
+  <text x="250" y="25" fill="#4682b4" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">
+    Flip the Trapezoid to Form a Parallelogram
+  </text>
+
+  <!-- Legend -->
+
+  <rect x="370" y="50" width="15" height="15" fill="#87ceeb" opacity="0.8"/>
+  <text x="390" y="62" fill="#666666" font-family="Arial" font-size="12">Original Trapezoid</text>
+
+  <rect x="370" y="70" width="15" height="15" fill="#98fb98" opacity="0.8"/>
+  <text x="390" y="82" fill="#666666" font-family="Arial" font-size="12">Flipped Copy</text>
+
+  <rect x="370" y="90" width="15" height="15" fill="none" stroke="#b8860b" stroke-width="2"/>
+  <text x="390" y="102" fill="#666666" font-family="Arial" font-size="12">Parallelogram</text>
+
+  <!-- Explanatory text -->
+
+  <text x="50" y="50" fill="#666666" font-family="Arial" font-size="12">
+    Extend top by b and bottom by a to create equal parallel sides
+  </text>
+  <text x="50" y="65" fill="#666666" font-family="Arial" font-size="12">
+    Right side is flipped copy of original trapezoid
+  </text>
+
+  <!-- Separation line between the two trapezoids -->
+
+<line x1="200" y1="120" x2="240" y2="200" 
+stroke="#333333" 
+stroke-width="2" 
+stroke-dasharray="3,3" 
+opacity="0.7"/>
+
+  <!-- Arrow showing the flip relationship -->
+
+<path d="M 270 160 Q 290 140 310 160" 
+stroke="#666666" 
+stroke-width="2" 
+fill="none" 
+marker-end="url(#arrowhead)"/>
+<text x="285" y="135" fill="#666666" font-family="Arial" font-size="10">flip</text>
+
+  <!-- Arrow marker definition -->
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666666"/>
+    </marker>
+  </defs>
+
+  <!-- Right angle indicator at height -->
+
+<rect x="145" y="195" width="10" height="10" 
+fill="none" 
+stroke="#333333" 
+stroke-width="1"/>
+</svg>
+```
+
 ## Applications
 
 Quadrilaterals are commonly used in various fields such as architecture, engineering, and computer graphics. They form the basis for many structures and designs due to their stability and ease of construction.
