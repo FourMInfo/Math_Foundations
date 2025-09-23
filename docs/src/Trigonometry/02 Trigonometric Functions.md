@@ -282,7 +282,7 @@ $$\begin{aligned}
 &= \frac{c}{2a}
 \end{aligned}$$
 
-So the adjacent interior angles $A$ and $B$ are equal. 
+So the adjacent interior angles $A$ and $B$ are equal.
 
 For the apex angle $C$ opposite the base $c$, we have: $C = 180 - 2A$.
 

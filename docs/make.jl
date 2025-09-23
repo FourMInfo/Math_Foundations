@@ -18,8 +18,9 @@ makedocs(;
             "Algebra/04 Finding Polynomial Roots and Zeros.md"
         ],
         "Geometry" => [
-            "Geometry/01 Triangles.md"
-            # "Geometry/02 Hyperbola.md"  # TODO: Uncomment when ready to show
+            "Geometry/01 Triangles.md",
+            "Geometry/02 Quadrilaterals.md",
+            # "Geometry/03 Hyperbola.md"  # TODO: Uncomment when ready to show
         ],
         # "Linear Algebra" => [  # TODO: Uncomment when ready to show
         #     "Linear Algebra/01 Systems of Equations.md",
