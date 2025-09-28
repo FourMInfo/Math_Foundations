@@ -165,17 +165,23 @@ Polygons can also be classified as regular or irregular:
   <line x1="150" y1="100" x2="180" y2="115" stroke="#006400" stroke-width="1" stroke-dasharray="3,3"/>
 
   <!-- Side length labels for regular hexagon -->
-  <text x="165" y="65" fill="#006400" font-family="Arial" font-size="12">s</text>
-  <text x="190" y="95" fill="#006400" font-family="Arial" font-size="12">s</text>
-  <text x="190" y="125" fill="#006400" font-family="Arial" font-size="12">s</text>
-  <text x="165" y="145" fill="#006400" font-family="Arial" font-size="12">s</text>
-  <text x="110" y="125" fill="#006400" font-family="Arial" font-size="12">s</text>
-  <text x="110" y="95" fill="#006400" font-family="Arial" font-size="12">s</text>
+  <!-- Top-right side: midpoint of (150,70)-(180,85) + offset -->
+  <text x="172" y="75" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
+  <!-- Right side: midpoint of (180,85)-(180,115) + offset -->
+  <text x="188" y="104" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
+  <!-- Bottom-right side: midpoint of (180,115)-(150,130) + offset -->
+  <text x="172" y="129" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
+  <!-- Bottom-left side: midpoint of (150,130)-(120,115) + offset -->
+  <text x="128" y="129" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
+  <!-- Left side: midpoint of (120,115)-(120,85) + offset -->
+  <text x="112" y="104" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
+  <!-- Top-left side: midpoint of (120,85)-(150,70) + offset -->
+  <text x="128" y="75" fill="#006400" font-family="Arial" font-size="12" text-anchor="middle">s</text>
 
   <!-- Angle markers for regular hexagon -->
-  <text x="130" y="80" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
-  <text x="170" y="75" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
-  <text x="185" y="105" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
+  <text x="143" y="83" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
+  <text x="143" y="123" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
+  <text x="120" y="93" fill="#8b4513" font-family="Arial" font-size="10">120°</text>
 
   <!-- Label for regular -->
   <text x="150" y="170" fill="#006400" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">
@@ -196,20 +202,32 @@ Polygons can also be classified as regular or irregular:
            opacity="0.8"/>
 
   <!-- Side length labels for irregular hexagon -->
-  <text x="440" y="55" fill="#b8860b" font-family="Arial" font-size="12">a</text>
-  <text x="485" y="90" fill="#b8860b" font-family="Arial" font-size="12">b</text>
-  <text x="485" y="130" fill="#b8860b" font-family="Arial" font-size="12">c</text>
-  <text x="440" y="150" fill="#b8860b" font-family="Arial" font-size="12">d</text>
-  <text x="390" y="145" fill="#b8860b" font-family="Arial" font-size="12">e</text>
-  <text x="370" y="105" fill="#b8860b" font-family="Arial" font-size="12">f</text>
+  <!-- Side a: midpoint of (420,60)-(470,75) + offset -->
+  <text x="445" y="63" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">a</text>
+  <!-- Side b: midpoint of (470,75)-(490,110) + offset -->
+  <text x="485" y="88" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">b</text>
+  <!-- Side c: midpoint of (490,110)-(460,140) + offset -->
+  <text x="480" y="130" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">c</text>
+  <!-- Side d: midpoint of (460,140)-(410,135) + offset -->
+  <text x="430" y="147" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">d</text>
+  <!-- Side e: midpoint of (410,135)-(380,105) + offset -->
+  <text x="390" y="126" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">e</text>
+  <!-- Side f: midpoint of (380,105)-(420,60) + offset -->
+  <text x="395" y="78" fill="#b8860b" font-family="Arial" font-size="12" text-anchor="middle">f</text>
 
   <!-- Angle markers for irregular hexagon -->
-  <text x="395" y="95" fill="#8b4513" font-family="Arial" font-size="10">α</text>
-  <text x="435" y="70" fill="#8b4513" font-family="Arial" font-size="10">β</text>
-  <text x="475" y="85" fill="#8b4513" font-family="Arial" font-size="10">γ</text>
-  <text x="480" y="125" fill="#8b4513" font-family="Arial" font-size="10">δ</text>
-  <text x="440" y="130" fill="#8b4513" font-family="Arial" font-size="10">ε</text>
-  <text x="405" y="120" fill="#8b4513" font-family="Arial" font-size="10">ζ</text>
+  <!-- α: at vertex (460,77) where sides a and b meet -->
+  <text x="463" y="83" fill="#8b4513" font-family="Arial" font-size="10">α</text>
+  <!-- β: at vertex (490,110) where sides b and c meet -->
+  <text x="480" y="111" fill="#8b4513" font-family="Arial" font-size="10">β</text>
+  <!-- γ: at vertex (460,140) where sides c and d meet -->
+  <text x="458" y="137" fill="#8b4513" font-family="Arial" font-size="10">γ</text>
+  <!-- δ: at vertex (410,135) where sides d and e meet -->
+  <text x="407" y="132" fill="#8b4513" font-family="Arial" font-size="10">δ</text>
+  <!-- ε: at vertex (380,105) where sides f and e meet -->
+  <text x="385" y="108" fill="#8b4513" font-family="Arial" font-size="10">ε</text>
+  <!-- ζ: at vertex (420,60) where sides f and a meet -->
+  <text x="420" y="70" fill="#8b4513" font-family="Arial" font-size="10">ζ</text>
 
   <!-- Label for irregular -->
   <text x="435" y="170" fill="#b8860b" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">
