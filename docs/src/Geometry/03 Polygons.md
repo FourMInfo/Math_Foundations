@@ -96,18 +96,18 @@ Polygons are typically classified into two main categories: convex and concave.
   <text x="435" y="143" fill="#dc143c" font-family="Arial" font-size="12">Y</text>
 
   <!-- Show the interior angle > 180° -->
-  <path d="M 480 68 A 20 20 0 1 0 450 65" 
+  <path d="M 490 90 A 20 20 0 1 0 490 105" 
         stroke="#b8860b" 
         stroke-width="2" 
         fill="none"/>
-  <text x="400" y="60" fill="#b8860b" font-family="Arial" font-size="11">θ &gt; 180°</text>
+  <text x="442" y="78" fill="#b8860b" font-family="Arial" font-size="11">θ &gt; 180°</text>
 
   <!-- Label for concave -->
   <text x="460" y="190" fill="#8b4513" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">
     Concave Polygon
   </text>
   <text x="460" y="210" fill="#666666" font-family="Arial" font-size="12" text-anchor="middle">
-    At least one angle &gt; 180°
+    At least one interior angle &gt; 180°
   </text>
   <text x="460" y="225" fill="#dc143c" font-family="Arial" font-size="12" text-anchor="middle">
     Line XY goes outside
@@ -259,32 +259,12 @@ Polygons can also be classified as regular or irregular:
 
 Polygons have several important properties that are useful in geometry:
 
-1. **Sum of Interior Angles**: The sum of the interior angles of a polygon with N sides is given by the formula:
-   $$
-   \text{Sum of interior angles} = (N - 2) \times 180^\circ
-   $$
-   For example, a triangle (3 sides) has a sum of interior angles equal to $180^\circ$, while a quadrilateral (4 sides) has a sum of $360^\circ$.
-
-2. **Exterior Angles**: The sum of the exterior angles of any polygon is always $360^\circ$, regardless of the number of sides. Each exterior angle is formed by extending one side of the polygon at a vertex. For a regular polygon, each exterior angle can be calculated as:
-   $$
-   \text{Exterior angle} = \frac{360^\circ}{N}
-   $$
-3. **Diagonals**: A diagonal is a line segment connecting two non-adjacent vertices of a polygon. The number of diagonals (D) in a polygon with N sides can be calculated using the formula:
-   $$
-   D = \frac{N(N - 3)}{2}
-   $$
-   For example, a pentagon (5 sides) has 5 diagonals, while a hexagon (6 sides) has 9 diagonals.
-4. **Area**: The area of a polygon can be calculated using various methods depending on the type of polygon. For regular polygons, the area can be calculated using the formula:
-   $$
-   \text{Area} = \frac{1}{4} N s^2 \cot\left(\frac{\pi}{N}\right)
-   $$
-   where $s$ is the length of a side. For irregular polygons, methods such as triangulation or the shoelace formula can be used.
-5. **Perimeter**: The perimeter of a polygon is the total length of its sides. For a polygon with N sides, the perimeter (P) can be calculated as:
-   $$
-   P = s_1 + s_2 + s_3 + ... + s_N
-   $$
-   where $s_1, s_2, ..., s_N$ are the lengths of the sides.
-6. **Symmetry**: Regular polygons exhibit a high degree of symmetry. They have multiple lines of symmetry and rotational symmetry. The number of lines of symmetry in a regular polygon is equal to the number of sides (N).
+1. **Sum of Interior Angles**: The sum of the interior angles of a polygon with N sides is given by the formula: $\text{Sum of interior angles} = (N - 2) \times 180^\circ$. For example, a triangle (3 sides) has a sum of interior angles equal to $180^\circ$, while a quadrilateral (4 sides) has a sum of $360^\circ$.
+2. **Exterior Angles**: The sum of the exterior angles of any polygon is always $360^\circ$, regardless of the number of sides. Each exterior angle is formed by extending one side of the polygon at a vertex. For a regular polygon, each exterior angle can be calculated as: $\text{Exterior angle} = \frac{360^\circ}{N}$
+3. **Diagonals**: A diagonal is a line segment connecting two non-adjacent vertices of a polygon. The number of diagonals (D) in a polygon with N sides can be calculated using the formula: $D = \frac{N(N - 3)}{2}$. For example, a pentagon (5 sides) has 5 diagonals, while a hexagon (6 sides) has 9 diagonals.
+4. **Area**: The area of a polygon can be calculated using various methods depending on the type of polygon. For regular polygons, the area can be calculated using the formula: $\text{Area} = \frac{1}{4} N s^2 \cot\left(\frac{\pi}{N}\right)$ where $s$ is the length of a side. For irregular polygons, methods such as triangulation or the shoelace formula can be used.
+5. **Perimeter**: The perimeter of a polygon is the total length of its sides. For a polygon with N sides, the perimeter $P$ can be calculated as: $P = s_1 + s_2 + s_3 + ... + s_N$ where $s_1, s_2, ..., s_N$ are the lengths of the sides.
+6. **Symmetry**: Regular polygons exhibit a high degree of symmetry. They have multiple lines of symmetry and rotational symmetry. The number of lines of symmetry in a regular polygon is equal to the number of sides $N$.
 
 ## Triangulation
 
@@ -373,13 +353,13 @@ The simplest method is to choose one vertex and connect it to all non-adjacent v
   <text x="165" y="105" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">E</text>
 
   <!-- Triangle labels -->
-  <text x="290" y="110" fill="#8b008b" font-family="Arial" font-size="14" font-weight="bold">△ABC</text>
-  <text x="250" y="150" fill="#006400" font-family="Arial" font-size="14" font-weight="bold">△ACD</text>
-  <text x="210" y="110" fill="#b8860b" font-family="Arial" font-size="14" font-weight="bold">△ADE</text>
+  <text x="270" y="110" fill="#8b008b" font-family="Arial" font-size="14" font-weight="bold">△ABC</text>
+  <text x="225" y="150" fill="#006400" font-family="Arial" font-size="14" font-weight="bold">△ACD</text>
+  <text x="185" y="110" fill="#b8860b" font-family="Arial" font-size="14" font-weight="bold">△ADE</text>
 
   <!-- Diagonal labels -->
-  <text x="275" y="125" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AC</text>
-  <text x="225" y="125" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AD</text>
+  <text x="279" y="125" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AC</text>
+  <text x="227" y="125" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AD</text>
 
   <!-- Step-by-step explanation -->
   <text x="50" y="250" fill="#666666" font-family="Arial" font-size="14" font-weight="bold">
@@ -504,15 +484,15 @@ The simplest method is to choose one vertex and connect it to all non-adjacent v
   <text x="175" y="85" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">F</text>
 
   <!-- Triangle labels -->
-  <text x="285" y="95" fill="#8b008b" font-family="Arial" font-size="12" font-weight="bold">△ABC</text>
-  <text x="275" y="130" fill="#006400" font-family="Arial" font-size="12" font-weight="bold">△ACD</text>
-  <text x="220" y="130" fill="#b8860b" font-family="Arial" font-size="12" font-weight="bold">△ADE</text>
-  <text x="210" y="95" fill="#9370db" font-family="Arial" font-size="12" font-weight="bold">△AEF</text>
+  <text x="273" y="85" fill="#8b008b" font-family="Arial" font-size="12" font-weight="bold">△ABC</text>
+  <text x="255" y="130" fill="#006400" font-family="Arial" font-size="12" font-weight="bold">△ACD</text>
+  <text x="200" y="130" fill="#b8860b" font-family="Arial" font-size="12" font-weight="bold">△ADE</text>
+  <text x="192" y="85" fill="#9370db" font-family="Arial" font-size="12" font-weight="bold">△AEF</text>
 
   <!-- Diagonal labels -->
-  <text x="285" y="105" fill="#dc143c" font-family="Arial" font-size="11" font-weight="bold">AC</text>
+  <text x="288" y="105" fill="#dc143c" font-family="Arial" font-size="11" font-weight="bold">AC</text>
   <text x="255" y="115" fill="#dc143c" font-family="Arial" font-size="11" font-weight="bold">AD</text>
-  <text x="215" y="105" fill="#dc143c" font-family="Arial" font-size="11" font-weight="bold">AE</text>
+  <text x="218" y="105" fill="#dc143c" font-family="Arial" font-size="11" font-weight="bold">AE</text>
 
   <!-- Step-by-step explanation -->
   <text x="50" y="220" fill="#666666" font-family="Arial" font-size="14" font-weight="bold">
@@ -560,7 +540,7 @@ The simplest method is to choose one vertex and connect it to all non-adjacent v
 
   <!-- Note about fan structure -->
   <text x="50" y="340" fill="#4682b4" font-family="Arial" font-size="12" font-style="italic">
-    Note: All triangles share vertex A as a common point
+    Note: All triangles share vertex A as a common point.
   </text>
   <text x="50" y="355" fill="#4682b4" font-family="Arial" font-size="12" font-style="italic">
     This creates a "fan" pattern radiating from A
@@ -625,10 +605,10 @@ Both methods create exactly 2 triangles, as predicted by the formula $N-2 = 4-2 
 
   <!-- Triangle labels Method 1 -->
   <text x="145" y="95" fill="#8b008b" font-family="Arial" font-size="12" font-weight="bold">△ABC</text>
-  <text x="140" y="130" fill="#006400" font-family="Arial" font-size="12" font-weight="bold">△ACD</text>
+  <text x="120" y="130" fill="#006400" font-family="Arial" font-size="12" font-weight="bold">△ACD</text>
 
   <!-- Diagonal label Method 1 -->
-  <text x="155" y="105" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AC</text>
+  <text x="155" y="110" fill="#dc143c" font-family="Arial" font-size="12" font-weight="bold">AC</text>
 
   <!-- Method 1 title -->
   <text x="150" y="190" fill="#4682b4" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">
@@ -676,11 +656,11 @@ Both methods create exactly 2 triangles, as predicted by the formula $N-2 = 4-2 
   <text x="415" y="165" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">D</text>
 
   <!-- Triangle labels Method 2 -->
-  <text x="445" y="95" fill="#b8860b" font-family="Arial" font-size="12" font-weight="bold">△ABD</text>
-  <text x="465" y="125" fill="#9370db" font-family="Arial" font-size="12" font-weight="bold">△BCD</text>
+  <text x="420" y="95" fill="#b8860b" font-family="Arial" font-size="12" font-weight="bold">△ABD</text>
+  <text x="445" y="125" fill="#9370db" font-family="Arial" font-size="12" font-weight="bold">△BCD</text>
 
   <!-- Diagonal label Method 2 -->
-  <text x="455" y="105" fill="#32cd32" font-family="Arial" font-size="12" font-weight="bold">BD</text>
+  <text x="460" y="105" fill="#32cd32" font-family="Arial" font-size="12" font-weight="bold">BD</text>
 
   <!-- Method 2 title -->
   <text x="450" y="190" fill="#4682b4" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">
