@@ -262,7 +262,7 @@ Polygons have several important properties that are useful in geometry:
 1. **Sum of Interior Angles**: The sum of the interior angles of a polygon with N sides is given by the formula: $\text{Sum of interior angles} = (N - 2) \times 180^\circ$. For example, a triangle (3 sides) has a sum of interior angles equal to $180^\circ$, while a quadrilateral (4 sides) has a sum of $360^\circ$.
 2. **Exterior Angles**: The sum of the exterior angles of any polygon is always $360^\circ$, regardless of the number of sides. Each exterior angle is formed by extending one side of the polygon at a vertex. For a regular polygon, each exterior angle can be calculated as: $\text{Exterior angle} = \frac{360^\circ}{N}$
 3. **Diagonals**: A diagonal is a line segment connecting two non-adjacent vertices of a polygon. The number of diagonals (D) in a polygon with N sides can be calculated using the formula: $D = \frac{N(N - 3)}{2}$. For example, a pentagon (5 sides) has 5 diagonals, while a hexagon (6 sides) has 9 diagonals.
-4. **Area**: The area of a polygon can be calculated using various methods depending on the type of polygon. For regular polygons, the area can be calculated using the formula: $\text{Area} = \frac{1}{4} N s^2 \cot\left(\frac{\pi}{N}\right)$ where $s$ is the length of a side. For irregular polygons, methods such as triangulation or the shoelace formula can be used.
+4. **Area**: The area of a polygon can be calculated using various methods depending on the type of polygon. For regular polygons, the area can be calculated using the formula: $\text{Area} = \frac{1}{4} N s^2 \cot\left(\frac{\pi}{N}\right)$ where $s$ is the length of a side. If you circumscribe the regular polygon with a circle of radius $r$ (the distance from the center to a vertex), the area can also be expressed as: $\text{Area} = \frac{1}{2} N r^2 \sin\left(\frac{2\pi}{N}\right)$. For irregular polygons, methods such as triangulation or the shoelace formula can be used.
 5. **Perimeter**: The perimeter of a polygon is the total length of its sides. For a polygon with N sides, the perimeter $P$ can be calculated as: $P = s_1 + s_2 + s_3 + ... + s_N$ where $s_1, s_2, ..., s_N$ are the lengths of the sides.
 6. **Symmetry**: Regular polygons exhibit a high degree of symmetry. They have multiple lines of symmetry and rotational symmetry. The number of lines of symmetry in a regular polygon is equal to the number of sides $N$.
 
@@ -760,3 +760,4 @@ To verify your triangulation is correct:
 - Using known triangle properties to solve unknown polygon properties
 
 The power of triangulation lies in its ability to reduce complex polygonal problems to collections of simple triangle problems, using only the basic geometric tools we've already developed.
+
