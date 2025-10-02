@@ -761,3 +761,76 @@ To verify your triangulation is correct:
 
 The power of triangulation lies in its ability to reduce complex polygonal problems to collections of simple triangle problems, using only the basic geometric tools we've already developed.
 
+## Cyclic Quadrilaterals
+
+A quadrilateral can be inscribed in a circle ([cyclic quadrilateral](https://mathworld.wolfram.com/CyclicQuadrilateral.html)) if and only if the sum of each pair of opposite angles is $180^\circ$. This property is useful in various geometric proofs and calculations.
+
+```@raw html
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="300" y="25" fill="#4682b4" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">
+    Cyclic Quadrilateral Inscribed in a Circle
+  </text>
+  <!-- Circle -->
+  <circle cx="300" cy="150" r="100" 
+          fill="#f0f8ff" 
+          stroke="#2f4f4f"
+          stroke-width="3" 
+          opacity="0.3"/>
+  <!-- Quadrilateral ABCD -->
+  <polygon points="227,80 377,80 235,230 360,228" 
+           fill="#e6f3ff" 
+           stroke="#2f4f4f" 
+           stroke-width="3" 
+           opacity="0.5"/>
+  <!-- Sides -->
+  <line x1="227" y1="80" x2="377" y2="80" 
+        stroke="#2f4f4f" 
+        stroke-width="2"/>
+  <line x1="377" y1="80" x2="360" y2="230" 
+        stroke="#2f4f4f" 
+        stroke-width="2"/>
+  <line x1="360" y1="230" x2="235" y2="230" 
+        stroke="#2f4f4f" 
+        stroke-width="2"/>
+  <line x1="235" y1="230" x2="227" y2="80" 
+        stroke="#2f4f4f" 
+        stroke-width="2"/>
+  <!-- Diagonals -->
+  <line x1="227" y1="80" x2="360" y2="230" 
+        stroke="#dc143c" 
+        stroke-width="2" 
+        stroke-dasharray="8,4"/>
+  <line x1="377" y1="80" x2="235" y2="230" 
+        stroke="#32cd32" 
+        stroke-width="2" 
+        stroke-dasharray="8,4"/>
+  <!-- Vertices -->
+  <circle cx="227" cy="80" r="5" fill="#2f4f4f"/>
+  <circle cx="377" cy="80" r="5" fill="#2f4f4f"/>
+  <circle cx="235" cy="230" r="5" fill="#2f4f4f"/>
+  <circle cx="360" cy="230" r="5" fill="#2f4f4f"/>
+  <!-- Vertex labels -->
+  <text x="215" y="72" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">A</text>
+  <text x="377" y="72" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">B</text>
+  <text x="227" y="248" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">C</text>
+  <text x="360" y="248" fill="#2f4f4f" font-family="Arial" font-size="16" font-weight="bold">D</text>
+  <!-- Angle labels -->
+  <text x="230" y="95" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">∠A</text>
+  <text x="355" y="95" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">∠B</text>
+  <text x="235" y="222" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">∠C</text>
+  <text x="340" y="222" fill="#4682b4" font-family="Arial" font-size="14" font-weight="bold">∠D</text>
+  <!-- Angle sum property -->
+  <text x="300" y="280" fill="#666666" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">
+    Property: ∠A + ∠C = 180° and ∠B + ∠D = 180°
+  </text>
+</svg>
+```
+
+### Calculating Area of a Cyclic Quadrilateral
+
+The area of a cyclic quadrilateral can be calculated using [Brahmagupta's formula](https://mathworld.wolfram.com/BrahmaguptasFormula.html), which is an extension of Heron's formula for triangles. If a cyclic quadrilateral has side lengths $a$, $b$, $c$, and $d$, the area $K$ can be calculated as follows:
+$$K = \sqrt{(s-a)(s-b)(s-c)(s-d)}$$
+where $s$ is the semiperimeter:
+$$s = \frac{a + b + c + d}{2}$$
+This formula is particularly useful for finding the area when the side lengths are known, without needing to know the angles or the height of the quadrilateral.
