@@ -10,11 +10,139 @@
 - **[Isosceles](https://mathworld.wolfram.com/IsoscelesTriangle.html):** Two sides equal
 - **[Scalene](https://mathworld.wolfram.com/ScaleneTriangle.html):** All sides different
 
+```@raw html
+<svg width="700" height="220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Equilateral Triangle -->
+  <g id="equilateral">
+    <!-- Triangle with base at bottom -->
+    <polygon points="50,150 150,150 100,50" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Tick marks for all three equal sides -->
+    <!-- Bottom side (perpendicular to base) -->
+    <line x1="100" y1="145" x2="100" y2="155" stroke="blue" stroke-width="2"/>
+    <!-- Left side -->
+    <line x1="70" y1="95" x2="80" y2="105" stroke="blue" stroke-width="2"/>
+    <!-- Right side -->
+    <line x1="120" y1="105" x2="130" y2="95" stroke="blue" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="100" y="180" text-anchor="middle" font-size="16" font-weight="bold">Equilateral</text>
+    <text x="100" y="195" text-anchor="middle" font-size="12">(all sides equal)</text>
+  </g>
+  
+  <!-- Isosceles Triangle -->
+  <g id="isosceles">
+    <!-- Triangle with base at bottom -->
+    <polygon points="280,150 400,150 340,50" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Double tick marks for two equal sides (left and right) -->
+    <!-- Left side -->
+    <line x1="305" y1="95" x2="315" y2="105" stroke="red" stroke-width="2"/>
+    <line x1="310" y1="90" x2="320" y2="100" stroke="red" stroke-width="2"/>
+    <!-- Right side -->
+    <line x1="360" y1="100" x2="370" y2="90" stroke="red" stroke-width="2"/>
+    <line x1="365" y1="105" x2="375" y2="95" stroke="red" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="340" y="180" text-anchor="middle" font-size="16" font-weight="bold">Isosceles</text>
+    <text x="340" y="195" text-anchor="middle" font-size="12">(two sides equal)</text>
+  </g>
+  
+  <!-- Scalene Triangle -->
+  <g id="scalene">
+    <!-- Triangle with base at bottom -->
+    <polygon points="520,150 650,150 570,40" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Side length labels -->
+    <text x="540" y="90" text-anchor="middle" font-size="12" fill="gray">a</text>
+    <text x="615" y="90" text-anchor="middle" font-size="12" fill="gray">b</text>
+    <text x="585" y="165" text-anchor="middle" font-size="12" fill="gray">c</text>
+    
+    <!-- Label -->
+    <text x="585" y="190" text-anchor="middle" font-size="16" font-weight="bold">Scalene</text>
+    <text x="585" y="205" text-anchor="middle" font-size="12">(all sides different)</text>
+  </g>
+</svg>
+```
+
 ### By Angle Measure
 
 - **[Acute](https://mathworld.wolfram.com/AcuteTriangle.html):** All angles less than 90°
 - **[Right](https://mathworld.wolfram.com/RightTriangle.html):** One angle equals 90°
 - **[Obtuse](https://mathworld.wolfram.com/ObtuseTriangle.html):** One angle greater than 90°
+
+```@raw html
+<svg width="700" height="220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Acute Triangle -->
+  <g id="acute">
+    <!-- Triangle with base at bottom, all angles < 90° -->
+    <polygon points="50,150 150,150 100,50" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Angle marks (small arcs) -->
+    <!-- Bottom left angle (from base to left side) - concave -->
+    <path d="M 60,150 Q 63,143 57,140" fill="none" stroke="green" stroke-width="1.5"/>
+    <text x="65" y="145" font-size="10" fill="green">60°</text>
+    
+    <!-- Bottom right angle (from right side to base) - concave -->
+    <path d="M 143,140 Q 137,143 140,150" fill="none" stroke="green" stroke-width="1.5"/>
+    <text x="122" y="145" font-size="10" fill="green">60°</text>
+    
+    <!-- Top angle - concave -->
+    <path d="M 95,60 Q 100,63 105,60" fill="none" stroke="green" stroke-width="1.5"/>
+    <text x="93" y="75" font-size="10" fill="green">60°</text>
+    
+    <!-- Label -->
+    <text x="100" y="180" text-anchor="middle" font-size="16" font-weight="bold">Acute</text>
+    <text x="100" y="195" text-anchor="middle" font-size="12">(all angles &lt; 90°)</text>
+  </g>
+  
+  <!-- Right Triangle -->
+  <g id="right">
+    <!-- Triangle with base at bottom, right angle at bottom left -->
+    <polygon points="280,150 400,150 280,50" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Right angle square symbol -->
+    <rect x="280" y="140" width="10" height="10" fill="none" stroke="red" stroke-width="2"/>
+    <text x="285" y="135" font-size="10" fill="red">90°</text>
+    
+    <!-- Other angles - concave arcs -->
+    <!-- Bottom right 45° angle (from base to hypotenuse) -->
+    <path d="M 380,150 Q 378,143 383,138" fill="none" stroke="blue" stroke-width="1.5"/>
+    <text x="365" y="145" font-size="10" fill="blue">45°</text>
+    
+    <!-- Top 45° angle (from vertical side to hypotenuse) -->
+    <path d="M 280,60 Q 282,65 288,58" fill="none" stroke="blue" stroke-width="1.5"/>
+    <text x="282" y="72" font-size="10" fill="blue">45°</text>
+    
+    <!-- Label -->
+    <text x="340" y="180" text-anchor="middle" font-size="16" font-weight="bold">Right</text>
+    <text x="340" y="195" text-anchor="middle" font-size="12">(one angle = 90°)</text>
+  </g>
+  
+  <!-- Obtuse Triangle -->
+  <g id="obtuse">
+    <!-- Triangle with base at bottom, obtuse angle at top, wider spread -->
+    <polygon points="490,150 680,150 560,85" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Obtuse angle at top - shorter arc touching the legs -->
+    <path d="M 552,90 Q 560,95 570,90" fill="none" stroke="purple" stroke-width="2"/>
+    <text x="552" y="104" font-size="10" fill="purple">120°</text>
+    
+    <!-- Acute angles at base - concave arcs -->
+    <!-- Bottom left angle (from base to left leg) -->
+    <path d="M 510,150 Q 513,143 505,138" fill="none" stroke="orange" stroke-width="1.5"/>
+    <text x="514" y="145" font-size="10" fill="orange">40°</text>
+    
+    <!-- Bottom right angle (from right leg to base) -->
+    <path d="M 660,137 Q 654,143 658,150" fill="none" stroke="orange" stroke-width="1.5"/>
+    <text x="640" y="145" font-size="10" fill="orange">20°</text>
+    
+    <!-- Label -->
+    <text x="585" y="180" text-anchor="middle" font-size="16" font-weight="bold">Obtuse</text>
+    <text x="585" y="195" text-anchor="middle" font-size="12">(one angle &gt; 90°)</text>
+  </g>
+</svg>
+```
 
 ## Triangle Properties
 
