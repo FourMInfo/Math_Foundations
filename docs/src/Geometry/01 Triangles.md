@@ -2,6 +2,18 @@
 
 [Triangles](https://mathworld.wolfram.com/Triangle.html) are three-sided polygons that form the foundation of much geometric and trigonometric study.
 
+<!-- TODO: Remaining SVG Diagrams to Add:
+- Diagram 5: Triangle Centers (4 diagrams):
+  - Circumcenter (perpendicular bisectors + circumcircle)
+  - Incenter (angle bisectors + incircle)
+  - Centroid (medians intersection)
+  - Orthocenter (altitudes intersection)
+- Diagram 6: Right triangle with Pythagorean theorem - after line 112
+- Diagram 7: Special right triangles (2 triangles):
+  - 45°-45°-90° triangle (ratio 1:1:√2) - after line 164
+  - 30°-60°-90° triangle (ratio 1:√3:2) - after line 174
+-->
+
 ## Types of Triangles
 
 ### By Side Length
@@ -177,6 +189,69 @@ A [cevian](https://mathworld.wolfram.com/Cevian.html) is a line segment that joi
 - **[Median](https://mathworld.wolfram.com/TriangleMedian.html):** Cevian from vertex to midpoint of opposite side
 - **[Altitude](https://mathworld.wolfram.com/Altitude.html):** Cevian perpendicular to opposite side  
 - **[Angle bisector](https://mathworld.wolfram.com/AngleBisector.html):** Cevian that bisects the angle at a vertex
+
+```@raw html
+<svg width="750" height="240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Median -->
+  <g id="median">
+    <!-- Triangle with base at bottom -->
+    <polygon points="50,200 150,200 100,80" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Median from top vertex to midpoint of base -->
+    <line x1="100" y1="80" x2="100" y2="200" stroke="blue" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <!-- Mark the midpoint -->
+    <circle cx="100" cy="200" r="3" fill="blue"/>
+    <text x="100" y="218" text-anchor="middle" font-size="10" fill="blue">M (midpoint)</text>
+    
+    <!-- Mark equal segments on base -->
+    <line x1="75" y1="205" x2="75" y2="195" stroke="green" stroke-width="2"/>
+    <line x1="125" y1="205" x2="125" y2="195" stroke="green" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="100" y="235" text-anchor="middle" font-size="16" font-weight="bold">Median</text>
+  </g>
+  
+  <!-- Altitude -->
+  <g id="altitude">
+    <!-- Triangle with base at bottom -->
+    <polygon points="250,200 380,200 320,80" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Altitude from top vertex perpendicular to base -->
+    <line x1="320" y1="80" x2="320" y2="200" stroke="red" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <!-- Right angle symbol at base -->
+    <rect x="315" y="190" width="10" height="10" fill="none" stroke="red" stroke-width="2"/>
+    
+    <!-- Mark the foot of altitude -->
+    <circle cx="320" cy="200" r="3" fill="red"/>
+    <text x="320" y="218" text-anchor="middle" font-size="10" fill="red">H (foot)</text>
+    
+    <!-- Label -->
+    <text x="315" y="235" text-anchor="middle" font-size="16" font-weight="bold">Altitude</text>
+  </g>
+  
+  <!-- Angle Bisector -->
+  <g id="angle-bisector">
+    <!-- Triangle with base at bottom -->
+    <polygon points="470,200 600,200 520,80" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Angle bisector from top vertex -->
+    <line x1="520" y1="80" x2="535" y2="200" stroke="purple" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <!-- Mark equal angles at top vertex -->
+    <path d="M 512,95 Q 519,98 522,91" fill="none" stroke="orange" stroke-width="1.5"/>
+    <path d="M 522,93 Q 525,98 530,95" fill="none" stroke="orange" stroke-width="1.5"/>
+    
+    <!-- Mark the point on base -->
+    <circle cx="535" cy="200" r="3" fill="purple"/>
+    <text x="535" y="218" text-anchor="middle" font-size="10" fill="purple">D</text>
+    
+    <!-- Label -->
+    <text x="535" y="235" text-anchor="middle" font-size="16" font-weight="bold">Angle Bisector</text>
+  </g>
+</svg>
+```
 
 ### Ceva's Theorem
 
