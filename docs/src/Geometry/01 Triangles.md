@@ -3,11 +3,6 @@
 [Triangles](https://mathworld.wolfram.com/Triangle.html) are three-sided polygons that form the foundation of much geometric and trigonometric study.
 
 <!-- TODO: Remaining SVG Diagrams to Add:
-- Diagram 5: Triangle Centers (4 diagrams):
-  - Circumcenter (perpendicular bisectors + circumcircle)
-  - Incenter (angle bisectors + incircle)
-  - Centroid (medians intersection)
-  - Orthocenter (altitudes intersection)
 - Diagram 6: Right triangle with Pythagorean theorem - after line 112
 - Diagram 7: Special right triangles (2 triangles):
   - 45°-45°-90° triangle (ratio 1:1:√2) - after line 164
@@ -277,9 +272,149 @@ For more information, see: [Menelaus' Theorem - Wolfram MathWorld](https://mathw
 - **[Circumcenter](https://mathworld.wolfram.com/Circumcenter.html):** The point equidistant from all vertices, the center of the circumcircle.
 - **[Perpendicular bisectors](https://mathworld.wolfram.com/PerpendicularBisector.html):** The lines passing through the midpoint of each side of a triangle and which are perpendicular to the given side. The three perpendicular bisectors intersect at the circumcenter.
 - **[Incircle](https://mathworld.wolfram.com/Incircle.html):** The circle that is tangent to all three sides of a triangle.
-- **[Incenter](https://mathworld.wolfram.com/Incenter.html):** The interior point for which distances to the sides of the triangle are equal. The three angle bisectors intersect at the incenter.
+- **[Incenter](https://mathworld.wolfram.com/Incenter.html):** The center of the incircle. Hence it is also the interior point for which distances to the sides of the triangle are equal. The three angle bisectors intersect at the incenter.
 - **[Centroid](https://mathworld.wolfram.com/TriangleCentroid.html):** The point where the three triangle medians intersect, also known as the center of mass or barycenter.
 - **[Orthocenter](https://mathworld.wolfram.com/Orthocenter.html):** The point where the altitudes of a triangle intersect.
+
+```@raw html
+<svg width="800" height="280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circumcenter -->
+  <g id="circumcenter">
+    <!-- Triangle with base at bottom -->
+    <polygon points="50,220 150,220 100,100" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Tick marks showing equal segments on each side -->
+    <!-- Base: single tick on each half -->
+    <line x1="75" y1="223" x2="75" y2="217" stroke="green" stroke-width="2"/>
+    <line x1="125" y1="223" x2="125" y2="217" stroke="green" stroke-width="2"/>
+    
+    <!-- Left side: double ticks on each half -->
+    <line x1="60" y1="187" x2="65" y2="192" stroke="green" stroke-width="2"/>
+    <line x1="63" y1="185" x2="68" y2="190" stroke="green" stroke-width="2"/>
+    <line x1="82" y1="133" x2="87" y2="138" stroke="green" stroke-width="2"/>
+    <line x1="85" y1="131" x2="90" y2="136" stroke="green" stroke-width="2"/>
+    
+    <!-- Right side: triple ticks on each half -->
+    <line x1="110" y1="136" x2="115" y2="131" stroke="green" stroke-width="2"/>
+    <line x1="112" y1="138" x2="117" y2="133" stroke="green" stroke-width="2"/>
+    <line x1="114" y1="140" x2="119" y2="135" stroke="green" stroke-width="2"/>
+    <line x1="132" y1="190" x2="137" y2="185" stroke="green" stroke-width="2"/>
+    <line x1="134" y1="192" x2="139" y2="187" stroke="green" stroke-width="2"/>
+    <line x1="136" y1="194" x2="141" y2="189" stroke="green" stroke-width="2"/>
+    
+    <!-- Perpendicular bisectors (dashed lines) -->
+    <!-- Perpendicular bisector of base (vertical through midpoint) -->
+    <line x1="100" y1="220" x2="100" y2="130" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- Right angle symbol at base - left side vertical, top side horizontal touching bisector at x=100 -->
+    <path d="M 95,220 L 95,210 L 100,210" fill="none" stroke="blue" stroke-width="1.5"/>
+    
+    <!-- Perpendicular bisector of left side (through midpoint 75,160) -->
+    <line x1="50" y1="150" x2="110" y2="175" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- Right angle symbol - using path to draw only inner 3 sides of rotated square -->
+    <path d="M 71,160 L 71,164 L 79,164 L 79,160" fill="none" stroke="blue" stroke-width="1.5" transform="rotate(-67 75 160)"/>
+    
+    <!-- Perpendicular bisector of right side (through midpoint 125,160) -->
+    <line x1="90" y1="175" x2="150" y2="150" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- Right angle symbol - using path to draw only inner 3 sides of rotated square -->
+    <path d="M 121,160 L 121,164 L 129,164 L 129,160" fill="none" stroke="blue" stroke-width="1.5" transform="rotate(67 125 160)"/>
+    
+    <!-- Circumcenter point -->
+    <circle cx="100" cy="170" r="4" fill="red"/>
+    <text x="100" y="160" text-anchor="middle" font-size="10" fill="red" font-weight="bold">O</text>
+    
+    <!-- Circumcircle -->
+    <circle cx="100" cy="170" r="70.7" fill="none" stroke="purple" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="100" y="275" text-anchor="middle" font-size="14" font-weight="bold">Circumcircle/Circumcenter</text>
+  </g>
+  
+  <!-- Incenter -->
+  <g id="incenter">
+    <!-- Triangle with base at bottom -->
+    <polygon points="250,220 350,220 300,100" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Angle bisectors (dashed lines) -->
+    <!-- From top vertex to incenter -->
+    <line x1="300" y1="100" x2="300" y2="185" stroke="orange" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom left vertex to incenter -->
+    <line x1="250" y1="220" x2="300" y2="185" stroke="orange" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom right vertex to incenter -->
+    <line x1="350" y1="220" x2="300" y2="185" stroke="orange" stroke-width="1.5" stroke-dasharray="3,3"/>
+    
+    <!-- Incenter point -->
+    <circle cx="300" cy="185" r="4" fill="red"/>
+    <text x="300" y="175" text-anchor="middle" font-size="10" fill="red" font-weight="bold">I</text>
+    
+    <!-- Incircle -->
+    <circle cx="300" cy="185" r="35" fill="none" stroke="green" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="300" y="275" text-anchor="middle" font-size="14" font-weight="bold">Incenter</text>
+  </g>
+  
+  <!-- Centroid -->
+  <g id="centroid">
+    <!-- Triangle with base at bottom -->
+    <polygon points="450,220 550,220 500,100" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Tick marks showing equal segments on each side -->
+    <!-- Base: single tick on each half -->
+    <line x1="475" y1="223" x2="475" y2="217" stroke="green" stroke-width="2"/>
+    <line x1="525" y1="223" x2="525" y2="217" stroke="green" stroke-width="2"/>
+    
+    <!-- Left side: double ticks on each half -->
+    <line x1="460" y1="187" x2="465" y2="192" stroke="green" stroke-width="2"/>
+    <line x1="463" y1="185" x2="468" y2="190" stroke="green" stroke-width="2"/>
+    <line x1="482" y1="133" x2="487" y2="138" stroke="green" stroke-width="2"/>
+    <line x1="485" y1="131" x2="490" y2="136" stroke="green" stroke-width="2"/>
+    
+    <!-- Right side: triple ticks on each half -->
+    <line x1="510" y1="136" x2="515" y2="131" stroke="green" stroke-width="2"/>
+    <line x1="512" y1="138" x2="517" y2="133" stroke="green" stroke-width="2"/>
+    <line x1="514" y1="140" x2="519" y2="135" stroke="green" stroke-width="2"/>
+    <line x1="532" y1="190" x2="537" y2="185" stroke="green" stroke-width="2"/>
+    <line x1="534" y1="192" x2="539" y2="187" stroke="green" stroke-width="2"/>
+    <line x1="536" y1="194" x2="541" y2="189" stroke="green" stroke-width="2"/>
+    
+    <!-- Medians (dashed lines) -->
+    <!-- From top vertex to midpoint of base -->
+    <line x1="500" y1="100" x2="500" y2="220" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom left vertex to midpoint of right side -->
+    <line x1="450" y1="220" x2="525" y2="160" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom right vertex to midpoint of left side -->
+    <line x1="550" y1="220" x2="475" y2="160" stroke="blue" stroke-width="1.5" stroke-dasharray="3,3"/>
+    
+    <!-- Centroid point -->
+    <circle cx="500" cy="180" r="4" fill="red"/>
+    <text x="500" y="170" text-anchor="middle" font-size="10" fill="red" font-weight="bold">G</text>
+    
+    <!-- Label -->
+    <text x="500" y="275" text-anchor="middle" font-size="14" font-weight="bold">Centroid</text>
+  </g>
+  
+  <!-- Orthocenter -->
+  <g id="orthocenter">
+    <!-- Triangle with base at bottom -->
+    <polygon points="650,220 750,220 680,100" fill="none" stroke="black" stroke-width="2"/>
+    
+    <!-- Altitudes (dashed lines) -->
+    <!-- From top vertex perpendicular to base -->
+    <line x1="680" y1="100" x2="680" y2="220" stroke="purple" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom left vertex perpendicular to right side -->
+    <line x1="650" y1="220" x2="680" y2="185" stroke="purple" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <!-- From bottom right vertex perpendicular to left side -->
+    <line x1="750" y1="220" x2="680" y2="185" stroke="purple" stroke-width="1.5" stroke-dasharray="3,3"/>
+    
+    <!-- Orthocenter point -->
+    <circle cx="680" cy="185" r="4" fill="red"/>
+    <text x="680" y="175" text-anchor="middle" font-size="10" fill="red" font-weight="bold">H</text>
+    
+    <!-- Label -->
+    <text x="700" y="275" text-anchor="middle" font-size="14" font-weight="bold">Orthocenter</text>
+  </g>
+</svg>
+```
 
 ## Area Calculations
 
