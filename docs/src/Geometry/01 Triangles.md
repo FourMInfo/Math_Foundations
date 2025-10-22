@@ -448,6 +448,42 @@ Right triangles have special properties and are fundamental to trigonometry.
 - **[Right Triangle](https://mathworld.wolfram.com/RightTriangle.html):** A triangle with one angle equal to 90°.
 - **[Cathetes and Hypotenuse](https://mathworld.wolfram.com/RightTriangle.html):** The two sides forming the right angle are called the cathetes or catheti, and the side opposite the right angle is called the hypotenuse.
 - **[Pythagorean Theorem](https://mathworld.wolfram.com/PythagoreanTheorem.html):** For a right triangle with legs $a$, $b$ and hypotenuse $c$: $$a^2 + b^2 = c^2$$
+
+```@raw html
+<div style="text-align: center;">
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Right triangle (3-4-5) -->
+  <polygon points="200,300 200,180 320,300" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Right angle indicator -->
+  <path d="M 200,290 L 210,290 L 210,300" fill="none" stroke="black" stroke-width="1"/>
+  
+  <!-- Square on leg a (vertical, side = 120) -->
+  <rect x="80" y="180" width="120" height="120" fill="lightblue" stroke="blue" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Square on leg b (horizontal, side = 120) -->
+  <rect x="200" y="300" width="120" height="120" fill="lightgreen" stroke="green" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Square on hypotenuse c (rotated, side = 170) -->
+  <!-- Hypotenuse from (200,180) to (320,300), rotated 45 degrees around (200,180) -->
+  <rect x="200" y="10" width="170" height="170" fill="lightcoral" stroke="red" stroke-width="2" opacity="0.6" transform="rotate(45 200 180)"/>
+  
+  <!-- Labels for sides -->
+  <text x="190" y="240" font-size="18" text-anchor="middle" font-weight="bold">a</text>
+  <text x="260" y="315" font-size="18" text-anchor="middle" font-weight="bold">b</text>
+  <text x="270" y="230" font-size="18" text-anchor="middle" font-weight="bold">c</text>
+  
+  <!-- Labels for squares -->
+  <text x="140" y="240" font-size="16" text-anchor="middle" fill="darkblue" font-weight="bold">a²</text>
+  <text x="260" y="360" font-size="16" text-anchor="middle" fill="darkgreen" font-weight="bold">b²</text>
+  <text x="310" y="170" font-size="16" text-anchor="middle" fill="darkred" font-weight="bold">c²</text>
+  
+  <!-- Formula below -->
+  <text x="200" y="30" font-size="20" text-anchor="middle" font-weight="bold">a² + b² = c²</text>
+</svg>
+</div>
+```
+
 - **[Pythagorean Triples](https://mathworld.wolfram.com/PythagoreanTriple.html):** a triple of positive integers a,  b, and c such that a right triangle exists with legs $a$,$b$ and hypotenuse $c$. This is equivalent to finding positive integers $a$,$b$ and $c$ satisfying the Pythagorean Theorem:
   - **Examples:**
     - 1: $(3, 4, 5)$
