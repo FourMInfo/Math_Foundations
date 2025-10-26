@@ -2,13 +2,6 @@
 
 [Triangles](https://mathworld.wolfram.com/Triangle.html) are three-sided polygons that form the foundation of much geometric and trigonometric study.
 
-<!-- TODO: Remaining SVG Diagrams to Add:
-- Diagram 6: Right triangle with Pythagorean theorem - after line 112
-- Diagram 7: Special right triangles (2 triangles):
-  - 45°-45°-90° triangle (ratio 1:1:√2) - after line 164
-  - 30°-60°-90° triangle (ratio 1:√3:2) - after line 174
--->
-
 ## Types of Triangles
 
 ### By Side Length
