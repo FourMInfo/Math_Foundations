@@ -517,6 +517,67 @@ Right triangles have special properties and are fundamental to trigonometry.
 
 ### Special Right Triangles
 
+```@raw html
+<div style="text-align: center;">
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 45-45-90 Triangle -->
+  <!-- Right angle at bottom left, equal legs of 120 -->
+  <polygon points="100,250 100,130 220,250" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Right angle indicator -->
+  <path d="M 100,240 L 110,240 L 110,250" fill="none" stroke="black" stroke-width="1"/>
+
+  <!-- 45° angle arcs commented out since Claude couldn't get it correct -->
+  <!-- Bottom right angle (45°) -->
+  <!--<path d="M 210,250 Q 205,240 200,235" fill="none" stroke="purple" stroke-width="2"/>-->
+  <!-- Top angle (45°) -->
+  <!--<path d="M 100,140 Q 110,145 115,150" fill="none" stroke="purple" stroke-width="2"/>-->
+  
+  <!-- Side labels for 45-45-90 -->
+  <text x="90" y="195" font-size="16" text-anchor="middle" font-weight="bold">a</text>
+  <text x="160" y="265" font-size="16" text-anchor="middle" font-weight="bold">a</text>
+  <text x="185" y="195" font-size="16" text-anchor="middle" font-weight="bold">a√2</text>
+  
+  <!-- Angle labels -->
+  <text x="195" y="245" font-size="14" text-anchor="middle" fill="purple">45°</text>
+  <text x="113" y="158" font-size="14" text-anchor="middle" fill="purple">45°</text>
+  <!--<text x="108" y="245" font-size="14" text-anchor="middle">90°</text>-->
+  
+  <!-- Title -->
+  <text x="160" y="30" font-size="18" text-anchor="middle" font-weight="bold">45°-45°-90° Triangle</text>
+  <text x="160" y="50" font-size="14" text-anchor="middle" fill="darkblue">Ratio: 1 : 1 : √2</text>
+  
+  
+  <!-- 30-60-90 Triangle -->
+  <!-- Right angle at bottom left -->
+  <polygon points="450,250 450,100 590,250" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Right angle indicator -->
+  <path d="M 450,240 L 460,240 L 460,250" fill="none" stroke="black" stroke-width="1"/>
+  
+  <!-- Angle arcs since Claude couldn't get it correct -->
+  <!-- 60° angle at bottom right -->
+  <!--<path d="M 575,250 Q 565,235 555,225" fill="none" stroke="orange" stroke-width="2"/>-->
+  <!-- 30° angle at top -->
+  <!--<path d="M 450,115 Q 465,120 475,130" fill="none" stroke="green" stroke-width="2"/>-->
+
+  <!-- Side labels for 30-60-90 -->
+  <text x="430" y="180" font-size="16" text-anchor="middle" font-weight="bold">a√3</text>
+  <text x="520" y="265" font-size="16" text-anchor="middle" font-weight="bold">a</text>
+  <text x="540" y="180" font-size="16" text-anchor="middle" font-weight="bold">2a</text>
+  
+  <!-- Angle labels -->
+  <text x="565" y="245" font-size="14" text-anchor="middle" fill="orange">60°</text>
+  <text x="463" y="135" font-size="14" text-anchor="middle" fill="green">30°</text>
+  <!--<text x="458" y="245" font-size="14" text-anchor="middle">90°</text>-->
+  
+  <!-- Title -->
+  <text x="520" y="30" font-size="18" text-anchor="middle" font-weight="bold">30°-60°-90° Triangle</text>
+  <text x="520" y="50" font-size="14" text-anchor="middle" fill="darkblue">Ratio: 1 : √3 : 2</text>
+</svg>
+</div>
+```
+
 #### [Isosceles Right Triangle](https://mathworld.wolfram.com/IsoscelesRightTriangle.html)
 
 - Angles are 45°-45°-90°
