@@ -21,6 +21,7 @@ makedocs(;
             "Geometry/01 Triangles.md",
             "Geometry/02 Quadrilaterals.md",
             "Geometry/03 Polygons.md",
+            "Geometry/04 Circles.md",
             # "Geometry/04 Hyperbola.md"  # TODO: Uncomment when ready to show
         ],
         # "Linear Algebra" => [  # TODO: Uncomment when ready to show
