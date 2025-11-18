@@ -5,12 +5,14 @@
 ## Basic Definitions
 
 - **[Circle](https://mathworld.wolfram.com/Circle.html):** The set of all points in a plane at a fixed distance (radius) from a center point
+  - **Alternative definition:** Three points that do not lie on a common straight line (i.e., they form a triangle) uniquely define a plane circle (the [circumcircle](https://mathworld.wolfram.com/Circumcircle.html) of the triangle)
 - **[Center](https://mathworld.wolfram.com/Center.html):** The fixed point from which all points on the circle are equidistant
 - **[Radius](https://mathworld.wolfram.com/Radius.html):** The distance from the center to any point on the circle, denoted by $r$
 - **[Diameter](https://mathworld.wolfram.com/Diameter.html):** A line segment passing through the center with endpoints on the circle, denoted by $d = 2r$
 - **[Chord](https://mathworld.wolfram.com/Chord.html):** A line segment with both endpoints on the circle
 - **[Arc](https://mathworld.wolfram.com/Arc.html):** A portion of the circle's circumference between two points
 - **[Circumference](https://mathworld.wolfram.com/Circumference.html):** The total distance around the circle, denoted by $C$
+- **[Degree](https://mathworld.wolfram.com/Degree.html):** $1^\circ$ is 1/360 of a complete rotation around a circle
 
 ## Fundamental Measurements
 
@@ -73,7 +75,31 @@ A &= \sum \frac{1}{2} \times \text{base} \times \text{height} \\
   - **Major arc:** The longer arc between two points (greater than $180^\circ$)
   - **Semicircle:** An arc that is exactly half the circle ($180^\circ$)
 
-- **Arc Length:** For an arc [subtending](https://mathworld.wolfram.com/Subtend.html) angle $\theta$ (in radians) at the center:
+### Angle Measurement: Radians and Degrees
+
+#### Definitions
+- **[Radian](https://mathworld.wolfram.com/Radian.html):** A unit of angular measure where one radian is the angle [subtended](https://mathworld.wolfram.com/Subtend.html) at the center of a circle by an arc equal in length to the radius
+  - The radian is the natural unit for measuring angles in mathematics
+  - A full circle contains $2\pi$ radians
+  - One radian ≈ 57.2958°
+  - One degree = $\frac{1}{360}*2\pi = \frac{\pi}{180}$ radians
+
+- **Conversion between radians and degrees:**
+  - To convert from degrees to radians: $\theta_{\text{radians}} = \theta_{\text{degrees}} \times \frac{\pi}{180}$
+  - To convert from radians to degrees: $\theta_{\text{degrees}} = \theta_{\text{radians}} \times \frac{180}{\pi}$
+
+#### Common Angles
+
+| Degrees | Radians |
+|:-------:|:-------:|
+| $90^\circ$ | $\frac{\pi}{2}$ |
+| $180^\circ$ | $\pi$ |
+| $270^\circ$ | $\frac{3\pi}{2}$ |
+| $360^\circ$ | $2\pi$ |
+
+### Arc Length
+
+- **Arc Length:** For an arc subtending angle $\theta$ (in radians) at the center:
   $$s = r\theta$$
   
   For angle in degrees:
@@ -88,7 +114,7 @@ A &= \sum \frac{1}{2} \times \text{base} \times \text{height} \\
   - For angle in degrees:
     $$A_{\text{sector}} = \frac{\pi r^2 \theta}{360}$$
 
-- **[Segment](https://mathworld.wolfram.com/CircularSegment.html):** The region bounded by a chord and the arc it subtends
+- **[Segment](https://mathworld.wolfram.com/CircularSegment.html):** The region bounded by a chord and the arc it subtends[subtending](https://mathworld.wolfram.com/Subtend.html)
   - Area of segment:
     $$A_{\text{segment}} = A_{\text{sector}} - A_{\text{triangle}} = \frac{1}{2}r^2(\theta - \sin\theta)$$
   
@@ -181,4 +207,5 @@ represents a circle when the coefficients of $x^2$ and $y^2$ are equal. Converti
 
 More information about circles and their properties can be found in:
 
+- [Triangles](../Geometry/01 Triangles.md) for circumcircles and incircles
 - [Trigonometry](../Trigonometry/02 Trigonometric Functions.md) for the unit circle and angle relationships
