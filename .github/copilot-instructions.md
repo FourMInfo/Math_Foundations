@@ -298,9 +298,20 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 
 **Mathematical Notation:**
 - Use LaTeX: `$$` for display equations, inline with `$...$`
+- **CRITICAL**: `$$` display blocks in Documenter.jl MUST NOT have blank lines between delimiters and content
+  - ✅ **CORRECT**: `$$\begin{aligned}...content...\end{aligned}$$` (no newlines)
+  - ❌ **WRONG**: `$$\ncontent\n$$` (newlines break parser and cause cascade errors)
+  - ✅ **ALSO WORKS**: `$$equation$$` inline on same line
+- **Bullet point style**: List items starting with `-` must begin with text, then LaTeX math
+  - ✅ **CORRECT**: `- $a$ is the semi-major axis`
+  - ❌ **WRONG**: `- semi-major axis: $a$`
+- **Equation placement style**: Prefer inline equations with "where:" at end of sentence, followed by list
+  - ✅ **CORRECT**: `For an ellipse: $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ where:`
+  - ❌ **AVOID**: Blank line, then equation block, then blank line, then "where:"
 - LaTeX syntax for symbols: `^\circ` not `°`, `\frac{}{}` for fractions
 - Label variables clearly: "where: $r$ = radius, $θ$ = angle"
 - Use aligned equations: `\begin{aligned}...\end{aligned}` for multi-step derivations
+- Use square brackets `[x, y]` for point coordinates consistently across documentation
 
 **MathWorld Links:**
 - Link every new mathematical term on first mention
