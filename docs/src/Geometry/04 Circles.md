@@ -18,9 +18,7 @@
 
 ### Circumference
 
-The circumference of a circle is the distance around it, given by: $$C = 2\pi r = \pi d$$
-
-where:
+The circumference of a circle is the distance around it, given by: $$C = 2\pi r = \pi d$$ where:
 
 - circumference: $C$
 - radius: $r$
@@ -35,9 +33,7 @@ where:
 
 ### Area
 
-The area enclosed by a circle is: $$A = \pi r^2$$
-
-where:
+The area enclosed by a circle is: $$A = \pi r^2$$ where:
 
 - area: $A$
 - radius: $r$
@@ -99,11 +95,9 @@ A &= \sum \frac{1}{2} \times \text{base} \times \text{height} \\
 
 ### Arc Length
 
-- **Arc Length:** For an arc subtending angle $\theta$ (in radians) at the center:
-  $$s = r\theta$$
-  
-  For angle in degrees:
-  $$s = \frac{\pi r \theta}{180}$$
+- **Arc Length:** The length of an arc subtended by a central angle $\theta$ in a circle of radius $r$ is given by:
+  - For angle $\theta$ (in radians): $$s = r\theta$$
+  - For angle $\theta$ (in degrees): $$s = \frac{\pi r \theta}{180}$$
 
 ### Sectors and Segments
 
@@ -111,14 +105,14 @@ A &= \sum \frac{1}{2} \times \text{base} \times \text{height} \\
   - Area of sector with central angle $\theta$ (in radians):
     $$A_{\text{sector}} = \frac{1}{2}r^2\theta$$
   
-  - For angle in degrees:
+  - Area of sector with central angle $\theta$ (in degrees):
     $$A_{\text{sector}} = \frac{\pi r^2 \theta}{360}$$
 
-- **[Segment](https://mathworld.wolfram.com/CircularSegment.html):** The region bounded by a chord and the arc it subtends[subtending](https://mathworld.wolfram.com/Subtend.html)
-  - Area of segment:
+- **[Segment](https://mathworld.wolfram.com/CircularSegment.html):** The region bounded by a chord and the arc it subtends
+  - Area of segment with central angle $\theta$ (in radians):
     $$A_{\text{segment}} = A_{\text{sector}} - A_{\text{triangle}} = \frac{1}{2}r^2(\theta - \sin\theta)$$
-  
-  where $\theta$ is in radians
+  - Area of segment with central angle $\theta$ (in degrees):
+    $$A_{\text{segment}} = \frac{\pi r^2 \theta}{360} - \frac{1}{2}r^2\sin\left(\frac{\pi \theta}{180}\right)$$
 
 ## Circle Equations
 
