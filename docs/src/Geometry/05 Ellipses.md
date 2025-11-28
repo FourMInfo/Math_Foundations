@@ -8,16 +8,16 @@ An [ellipse](https://mathworld.wolfram.com/Ellipse.html) is a curve that is the 
 
 An ellipse is defined by two fixed points $F_1$ and $F_2$ (the foci), separated by distance $2c$, such that for any point $P$ on the ellipse: $r_1 + r_2 = 2a$ where:
 
-- $r_1$ is the distance from $P$ to $F_1$
-- $r_2$ is the distance from $P$ to $F_2$
-- $a$ is the semi-major axis (half the longest diameter)
+- The distance from $P$ to $F_1$ is $r_1$
+- The distance from $P$ to $F_2$ is $r_2$
+- The semi-major axis (half the longest diameter) is $a$
 
 ### Standard Equation
 
 For an ellipse centered at the origin with axes aligned to the coordinate axes: $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ where:
 
-- $a$ is the semi-major axis (assuming $a \geq b$)
-- $b$ is the semi-minor axis
+- The semi-major axis (assuming $a \geq b$) is $a$
+- The semi-minor axis is $b$
 - The relationship $b^2 = a^2 - c^2$ connects the semi-minor axis to the distance between foci
 
 ### Translated Ellipse
@@ -30,8 +30,8 @@ For an ellipse centered at point $[h, k]$: $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}
 
 The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how "stretched" the ellipse is: $e = \frac{c}{a} = \sqrt{1 - \frac{b^2}{a^2}}$ where $0 \leq e < 1$:
 
-- $e = 0$ gives a circle (special case)
-- $e \to 1$ gives an increasingly elongated ellipse
+- A circle (special case) has $e = 0$
+- An increasingly elongated ellipse has $e \to 1$
 
 ### Foci
 
@@ -45,13 +45,19 @@ $$\begin{aligned}b &= a\sqrt{1-e^2} \\ c &= ae \\ a^2 &= b^2 + c^2\end{aligned}$
 
 ## Parametric Form
 
-Ellipses can be expressed parametrically, similar to circles but with different scalings: $$\begin{aligned}x(t) &= a\cos(t) \\ y(t) &= b\sin(t)\end{aligned}$$ where $t \in (0, 2\pi)$ is the parameter.
+Ellipses can be expressed parametrically, similar to circles but with different scalings:
 
-For a translated ellipse centered at $[h, k]$: $$\begin{aligned}x(t) &= h + a\cos(t) \\ y(t) &= k + b\sin(t)\end{aligned}$$
+$$\begin{aligned}x(t) &= a\cos(t) \\ y(t) &= b\sin(t)\end{aligned}$$ where $t \in (0, 2\pi)$ is the parameter.
+
+For a translated ellipse centered at $[h, k]$:
+
+$$\begin{aligned}x(t) &= h + a\cos(t) \\ y(t) &= k + b\sin(t)\end{aligned}$$
 
 ## Polar Form (Focus at Origin)
 
-When using polar coordinates with the origin at a focus: $$r = \frac{a(1-e^2)}{1 + e\cos\theta}$$
+When using polar coordinates with the origin at a focus:
+
+$$r = \frac{a(1-e^2)}{1 + e\cos\theta}$$
 
 This form is particularly useful in orbital mechanics, where celestial bodies follow elliptical orbits with the central body at one focus (Kepler's First Law).
 
