@@ -298,13 +298,27 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 
 **Mathematical Notation:**
 - Use LaTeX: `$$` for display equations, inline with `$...$`
-- **CRITICAL**: `$$` display blocks in Documenter.jl MUST NOT have blank lines between delimiters and content
-  - ✅ **CORRECT**: `$$\begin{aligned}...content...\end{aligned}$$` (no newlines)
-  - ❌ **WRONG**: `$$\ncontent\n$$` (newlines break parser and cause cascade errors)
-  - ✅ **ALSO WORKS**: `$$equation$$` inline on same line
+- **CRITICAL**: `$$` display blocks in Documenter.jl must have `$$` directly attached to content (no blank lines or return after opening or before closing)
+  - ✅ **CORRECT** (multi-line aligned block):
+    ```
+    $$\begin{aligned}
+    b &= a\sqrt{1-e^2} \\
+    c &= ae \\
+    a^2 &= b^2 + c^2
+    \end{aligned}$$
+    ```
+  - ✅ **CORRECT** (single equation): `$$equation$$`
+  - ❌ **WRONG** (blank lines or return between `$$` and content):
+    ```
+    $$
+
+    content
+
+    $$
+    ```
 - **Bullet point style**: List items starting with `-` must begin with text, then LaTeX math
-  - ✅ **CORRECT**: `- $a$ is the semi-major axis`
-  - ❌ **WRONG**: `- semi-major axis: $a$`
+  - ✅ **CORRECT**: `- The semi-major axis is $a$`
+  - ❌ **WRONG**: `- $a$ is the semi-major axis`
 - **Equation placement style**: Prefer inline equations with "where:" at end of sentence, followed by list
   - ✅ **CORRECT**: `For an ellipse: $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ where:`
   - ❌ **AVOID**: Blank line, then equation block, then blank line, then "where:"
