@@ -64,75 +64,8 @@ Cancelling $2$ and then squaring both sides gives  equation $x^2 + y^2 = r^2$, w
 
 ### Midpoint Equation
 
-#### Deriving the Midpoint Equation
+The standard form of the ellipse centered at the origin with foci on the x-axis can be simplified to: $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$ where:
 
-By squaring and rearranging the standard form for the ellipse, we can derive the simplified midpoint equation. Starting from the standard form:
-
-$$\sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2r$$
-
-Isolate one of the square roots:
-
-$$\sqrt{(x + c)^2 + y^2} = 2r - \sqrt{(x - c)^2 + y^2}$$
-
-Now square both sides:
-
-$$(x + c)^2 + y^2 = (2r - \sqrt{(x - c)^2 + y^2})^2$$
-
-Expanding the right side:
-
-$$(x + c)^2 + y^2 = 4r^2 - 4r\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$
-
-Cancel $y^2$ from both sides and rearrange:
-
-$$4r\sqrt{(x - c)^2 + y^2} = 4r^2 + (x - c)^2 - (x + c)^2$$
-
-Simplifying the right side:
-
-$$4r\sqrt{(x - c)^2 + y^2} = 4r^2 - 4cx$$
-
-Divide both sides by $4r$:
-
-$$\sqrt{(x - c)^2 + y^2} = r - \frac{cx}{r}$$
-
-Now square both sides again:
-
-$$(x - c)^2 + y^2 = \left(r - \frac{cx}{r}\right)^2$$
-
-Expanding the right side:
-
-$$(x - c)^2 + y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2}$$
-
-Rearranging gives:
-
-$$y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2} - (x - c)^2$$
-
-Expanding $(x - c)^2$:
-
-$$y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2} - (x^2 - 2cx + c^2)$$
-
-Simplifying:
-
-$$y^2 = r^2 - x^2 + \frac{c^2x^2}{r^2} - c^2$$
-
-Combining like terms:
-
-$$y^2 = (r^2 - c^2) - x^2\left(1 - \frac{c^2}{r^2}\right)$$
-
-Factoring:
-
-$$y^2 = (r^2 - c^2) - x^2\frac{r^2 - c^2}{r^2}$$
-
-Dividing both sides by $(r^2 - c^2)$:
-
-$$\frac{y^2}{r^2 - c^2} + \frac{x^2}{r^2} = 1$$
-
-Finally,since  $b^2 = r^2 - c^2$, we have the simplified midpoint equation form of the ellipse equation (using the more standard $a$ for semi-major axis and $b$ for semi-minor axis):
-
-$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
-
-#### Summary Characteristics of Standard Form and Midpoint Equation
-
-This equation describes an ellipse centered at the origin with:
 - The semi-major axis (assuming $a \geq b$) is $a$
 - The semi-minor axis is $b$
 - The relationship $b^2 = a^2 - c^2$ connects the semi-minor axis to the distance between foci
@@ -151,15 +84,17 @@ Some additional notes:
 - If points are given on an ellipse to be constructed, unlike a  circle, three points are generally not enough to define an ellipse. Four suitable points are needed.
 - Ellipses are symmetrical figures with respect to the major and minor axes.
 
+The full (and quite complex) derivation of the midpoint equation is provided in the Appendix at the end of this document.
+
 ### Translated Ellipse
 
 For an ellipse centered at point $[h, k]$: $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$
 
-## Key Parameters
+## Key Parameters of an Ellipse
 
 ### Eccentricity
 
-The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how "stretched" the ellipse is: $e = \frac{c}{a} = \sqrt{1 - \frac{b^2}{a^2}}$ where $0 \leq e < 1$:
+The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how "stretched" the ellipse is: $e = \frac{c}{a} = \sqrt{1 - \frac{b^2}{a^2}}$ where $0 \leq e < 1:
 
 - A circle (special case) has $e = 0$
 - An increasingly elongated ellipse has $e \to 1$
@@ -169,6 +104,7 @@ The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how
 The foci are located at distance $c$ from the center along the major axis: $c = ae = \sqrt{a^2 - b^2}$
 
 For a horizontal major axis centered at origin: $F_1 = [-c, 0]$ and $F_2 = [c, 0]$
+For a vertical major axis centered at origin: $F_1 = [0, -c]$ and $F_2 = [0, c]$
 
 ### Relationship Between Parameters
 
@@ -176,9 +112,10 @@ $$\begin{aligned}
 b &= a\sqrt{1-e^2} \\
 c &= ae \\
 a^2 &= b^2 + c^2
+a = \sqrt{b^2 + c^2}
 \end{aligned}$$
 
-## Parametric Form
+## Parametric Form of an Ellipse
 
 Ellipses can be expressed parametrically, similar to circles but with different scalings:
 
@@ -194,13 +131,13 @@ x(t) &= h + a\cos(t) \\
 (t) &= k + b\sin(t)
 \end{aligned}$$
 
-## Polar Form (Focus at Origin)
+## Polar Form
 
-When using polar coordinates with the origin at one of the foci:
-
-$$r(\theta) = \frac{a(1 - e^2)}{1 + e\cos(\theta)}$$ where $r$ is the distance from the chosen focus and $\theta$ is the angle from the major axis.
+The most common form uses polar coordinates with the origin at one of the foci: $$r(\theta) = \frac{a(1 - e^2)}{1 + e\cos(\theta)}$$ where $r$ is the distance from the chosen focus and $\theta$ is the angle from the major axis.
 
 This form is particularly useful in orbital mechanics, where celestial bodies follow elliptical orbits with the central body at one focus (Kepler's First Law).
+
+There is also a polar form with the center at the origin, but it is less commonly used: $$r(\theta) = \frac{ab}{\sqrt{(b\cos(\theta))^2 + (a\sin(\theta))^2}}$$
 
 ## Geometric Properties
 
@@ -212,8 +149,7 @@ This can be seen as a scaled version of a circle's area, where the circle of rad
 
 ### Perimeter
 
-The perimeter (circumference) of an ellipse cannot be expressed in elementary functions. It is given by the complete [elliptic integral of the second kind](https://mathworld.wolfram.com/CompleteEllipticIntegraloftheSecondKind.html): $$p = 4aE(e)$$
-where $E(e)$ is the complete elliptic integral with modulus $e$ (the eccentricity).
+The perimeter (circumference) of an ellipse cannot be expressed in elementary functions. It is given by the complete [elliptic integral of the second kind](https://mathworld.wolfram.com/CompleteEllipticIntegraloftheSecondKind.html): $$p = 4aE(e)$$ where $E(e)$ is the complete elliptic integral with modulus $e$ (the eccentricity).
 
 #### Approximations
 
@@ -319,3 +255,69 @@ If endpoints of a segment move along two perpendicular lines, a fixed point on t
 
 - [Circles](04 Circles.md) - Special case of ellipse
 - [Conic Sections](https://mathworld.wolfram.com/ConicSection.html)
+
+## Appendix: Derivation of Standard Form Equation
+
+By squaring and rearranging the standard form for the ellipse, we can derive the simplified midpoint equation. Starting from the standard form:
+
+$$\sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2r$$
+
+Isolate one of the square roots:
+
+$$\sqrt{(x + c)^2 + y^2} = 2r - \sqrt{(x - c)^2 + y^2}$$
+
+Now square both sides:
+
+$$(x + c)^2 + y^2 = (2r - \sqrt{(x - c)^2 + y^2})^2$$
+
+Expanding the right side:
+
+$$(x + c)^2 + y^2 = 4r^2 - 4r\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$
+
+Cancel $y^2$ from both sides and rearrange:
+
+$$4r\sqrt{(x - c)^2 + y^2} = 4r^2 + (x - c)^2 - (x + c)^2$$
+
+Simplifying the right side:
+
+$$4r\sqrt{(x - c)^2 + y^2} = 4r^2 - 4cx$$
+
+Divide both sides by $4r$:
+
+$$\sqrt{(x - c)^2 + y^2} = r - \frac{cx}{r}$$
+
+Now square both sides again:
+
+$$(x - c)^2 + y^2 = \left(r - \frac{cx}{r}\right)^2$$
+
+Expanding the right side:
+
+$$(x - c)^2 + y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2}$$
+
+Rearranging gives:
+
+$$y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2} - (x - c)^2$$
+
+Expanding $(x - c)^2$:
+
+$$y^2 = r^2 - 2cx + \frac{c^2x^2}{r^2} - (x^2 - 2cx + c^2)$$
+
+Simplifying:
+
+$$y^2 = r^2 - x^2 + \frac{c^2x^2}{r^2} - c^2$$
+
+Combining like terms:
+
+$$y^2 = (r^2 - c^2) - x^2\left(1 - \frac{c^2}{r^2}\right)$$
+
+Factoring:
+
+$$y^2 = (r^2 - c^2) - x^2\frac{r^2 - c^2}{r^2}$$
+
+Dividing both sides by $(r^2 - c^2)$:
+
+$$\frac{y^2}{r^2 - c^2} + \frac{x^2}{r^2} = 1$$
+
+Finally,since  $b^2 = r^2 - c^2$, we have the simplified midpoint equation form of the ellipse equation (using the more standard $a$ for semi-major axis and $b$ for semi-minor axis):
+
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
