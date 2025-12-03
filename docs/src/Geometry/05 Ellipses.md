@@ -94,7 +94,7 @@ For an ellipse centered at point $[h, k]$: $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}
 
 ### Eccentricity
 
-The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how "stretched" the ellipse is: $e = \frac{c}{a} = \sqrt{1 - \frac{b^2}{a^2}}$ where $0 \leq e < 1:
+The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how "stretched" the ellipse is: $e = \frac{c}{a} = \sqrt{1 - \frac{b^2}{a^2}}$ where $0 \leq e < 1$:
 
 - A circle (special case) has $e = 0$
 - An increasingly elongated ellipse has $e \to 1$
@@ -103,8 +103,7 @@ The [eccentricity](https://mathworld.wolfram.com/Eccentricity.html) measures how
 
 The foci are located at distance $c$ from the center along the major axis: $c = ae = \sqrt{a^2 - b^2}$
 
-For a horizontal major axis centered at origin: $F_1 = [-c, 0]$ and $F_2 = [c, 0]$
-For a vertical major axis centered at origin: $F_1 = [0, -c]$ and $F_2 = [0, c]$
+For a horizontal major axis centered at origin: $F_1 = [-c, 0]$ and $F_2 = [c, 0]$. For a vertical major axis centered at origin: $F_1 = [0, -c]$ and $F_2 = [0, c]$
 
 ### Relationship Between Parameters
 
@@ -149,17 +148,18 @@ This can be seen as a scaled version of a circle's area, where the circle of rad
 
 ### Perimeter
 
-The perimeter (circumference) of an ellipse cannot be expressed in elementary functions. It is given by the complete [elliptic integral of the second kind](https://mathworld.wolfram.com/CompleteEllipticIntegraloftheSecondKind.html): $$p = 4aE(e)$$ where $E(e)$ is the complete elliptic integral with modulus $e$ (the eccentricity).
+The perimeter (circumference) of an ellipse cannot be expressed in elementary functions and requires us of integral calculus and knowledge of elliptical integrals](https://mathworld.wolfram.com/EllipticIntegral.html). This is outside the scope of this document.
 
-#### Approximations
-
-Several useful approximations exist for the perimeter:
+There are, however, several useful approximations for the perimeter:
 
 **Ramanujan's Approximation** (very accurate): $$p \approx \pi(a+b)\left(1 + \frac{3h}{10 + \sqrt{4-3h}}\right)$$ where $h = \frac{(a-b)^2}{(a+b)^2}$
 
 **Simpler Approximation**: $$p \approx \pi\sqrt{2(a^2 + b^2)}$$
 
-**Ramanujan's Second Form**: $$p \approx \pi[3(a+b) - \sqrt{(a+3b)(3a+b)}]$$
+**Another Approximation**: $$p \approx \pi \left(1.5 (a+b) - \sqrt{ab}\right)$$
+
+**Ramanujan's Second Form**: $$p \approx \pi\left(3(a+b) - \sqrt{(a+3b)(3a+b)}\right)$$
+
 ### Curvature
 
 The curvature at parameter $t$ is: $$\kappa(t) = \frac{ab}{(b^2\cos^2 t + a^2\sin^2 t)^{3/2}}$$
