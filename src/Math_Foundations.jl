@@ -1,7 +1,7 @@
 module Math_Foundations
 
 using Reexport
-@reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials
+@reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials, GeometryBasics
 
 # Configure plotting for both interactive and headless environments
 if haskey(ENV, "CI") || get(ENV, "GKSwstype", "") == "100"
