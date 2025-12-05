@@ -22,7 +22,10 @@ makedocs(;
             "Geometry/02 Quadrilaterals.md",
             "Geometry/03 Polygons.md",
             "Geometry/04 Circles.md",
-            # "Geometry/04 Hyperbola.md"  # TODO: Uncomment when ready to show
+            "Geometry/05 Ellipses.md",
+        #   "Geometry/06 Hyperbola.md" TODO: Uncomment when ready to show,
+        #   "Geometry/07 Parabola.md" TODO: Uncomment when ready to show
+
         ],
         # "Linear Algebra" => [  # TODO: Uncomment when ready to show
         #     "Linear Algebra/01 Systems of Equations.md",
