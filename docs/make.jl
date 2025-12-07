@@ -27,10 +27,6 @@ makedocs(;
         #   "Geometry/07 Parabola.md" TODO: Uncomment when ready to show
 
         ],
-        # "Linear Algebra" => [  # TODO: Uncomment when ready to show
-        #     "Linear Algebra/01 Systems of Equations.md",
-        #     "Linear Algebra/02 Systems of Linear Equations.md"
-        # ],
         "Trigonometry" => [
             "Trigonometry/01 Angles & Measurements.md",
             "Trigonometry/02 Trigonometric Functions.md",
