@@ -66,7 +66,7 @@ Cancelling $2$ and then squaring both sides gives  equation $x^2 + y^2 = r^2$, w
 
 The standard form of the ellipse centered at the origin with foci on the x-axis can be simplified to: $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$ where:
 
-- $x$ and $y$ are the coordinates $[x,y]$ of any point on the ellipse
+- The $x$ and $y$ are the coordinates $[x,y]$ of any point on the ellipse
 - The semi-major axis (assuming $a \geq b$) is $a$
 - The semi-minor axis is $b$
 - The relationship $b^2 = a^2 - c^2$ connects the semi-minor axis to the distance between foci
