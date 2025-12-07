@@ -24,9 +24,9 @@ An ellipse can be defined as the set of all points $P$ (the [locus](https://math
 - **Vertices:** The endpoints of the major axis, located at a distance $a$ from the center
 - **Co-Vertices:** The endpoints of the minor axis, located at a distance $b$ from the center
 
-### Standard Form Equation
+## Standard Form Equation
 
-#### Derivation of Standard Form
+### Derivation Using Distance Definition
 
 Let's derive the standard form of the ellipse equation using the Pythagorean theorem and the distance definition. An ellipse is formed from the set of all points $[x, y]$ for which the sum $r_1 + r_2$ of the distances to two fixed points $A = [a_1, a_2]$ and $B = [b_1, b_2]$ (called focal points) has a constant value $2r$. Using the Pythagorean theorem we get:
 
@@ -51,7 +51,7 @@ b &= \sqrt{r^2 - c^2} \\
 
 Thus point $N_1 = [0, \sqrt{r^2 - c^2}]$ and $N_2 = [0, -\sqrt{r^2 - c^2}]$. The minor vertices form the minor axis of the ellipse and $b = \sqrt{r^2 - c^2}$ denotes the minor axis radius.
 
-#### Circle as Special Case
+### Circle as Special Case
 
 When the two foci coincide at the center ($c = 0$), the elliptic equation becomes:
 
@@ -62,7 +62,7 @@ $$\begin{aligned}
 
 Cancelling $2$ and then squaring both sides gives  equation $x^2 + y^2 = r^2$, which is the standard equation of a circle with radius $r$ centered at the origin.
 
-### Midpoint Equation
+### Simplified Standard Form
 
 The standard form of the ellipse centered at the origin with foci on the x-axis can be simplified to: $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$ where:
 
@@ -87,7 +87,7 @@ Some additional notes:
 
 The full (and quite complex) derivation of the midpoint equation is provided in the Appendix at the end of this document.
 
-### Translated Ellipse
+### Translated Ellipse Equation
 
 For an ellipse centered at point $[h, k]$: $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$
 
@@ -259,7 +259,7 @@ If endpoints of a segment move along two perpendicular lines, a fixed point on t
 
 ## Appendix: Derivation of Standard Form Equation
 
-By squaring and rearranging the standard form for the ellipse, we can derive the simplified midpoint equation. Starting from the standard form:
+By squaring and rearranging the standard form for the ellipse, we can derive the simplified form of the equation. Starting from the standard form:
 
 $$\sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2r$$
 
