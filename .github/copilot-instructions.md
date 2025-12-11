@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Julia scientific computing project** using DrWatson for reproducibility. Implements mathematical foundations (algebra, geometry, trigonometry) with visualization, comprehensive testing, and cross-repository documentation deployment.
+**Julia basic maths project** using DrWatson for reproducibility. Implements mathematical foundations (algebra, geometry, trigonometry) with visualization, comprehensive testing, and cross-repository documentation deployment.
 
 ### Core Architecture
 
@@ -19,14 +19,15 @@
 All code uses `@reexport` pattern and exports both computational + plotting functions:
 
 ```julia
-# src/Math_Foundations.jl
+# Main module uses @reexport for clean interface
 using Reexport
 @reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials
 
-# Export computational functions (no plotting)
+# Comprehensive exports for all functions
+# Pure computational functions (no plotting dependencies)
 export calculate_parabola_roots_quadratic, calculate_parabola_roots_polynomial, calculate_parabola_roots_amrvw
 
-# Export integrated plotting functions (computation + visualization)
+# Integrated plotting functions (computation + visualization)
 export plot_parabola_roots_quadratic, plot_hyperbola, plot_hyperbola_axes_direct
 
 # Always export new functions in main module
@@ -186,14 +187,14 @@ CI=true julia --project=. test/runtests.jl
 julia --project=. docs/make.jl
 ```
 
-### Julia Compilation
-
-**CRITICAL**: First runs take 15-30 seconds for precompilation - DO NOT cancel early!
-
-- **First Run**: `Precompiling DrWatson... 3 dependencies successfully precompiled in 17 seconds`
-- **Subsequent Runs**: Near-instant once cache exists
-- **Applies to**: ALL Julia commands including tests
-
+## Julia Compilation Considerations
+- **Be Patient with First Runs**: Julia often needs to precompile packages and rebuild project cache on first run. when running a Julia command in the CLI for the first time, it may take a while to precompile the packages and build the project cache, so you won't see the results of running the command for a while.
+- **Typical First Run**: May take 15-30 seconds for precompilation before tests actually start
+- **Example Expected Output**: `Precompiling DrWatson... 3 dependencies successfully precompiled in 17 seconds`
+- **Subsequent Runs**: Much faster once cache is built
+- **Don't Cancel Early**: Allow time for compilation phase to complete
+- **IMPORTANT**: This applies to ALL Julia commands including CI testing with `CI=true julia --project=. test/runtests.jl`
+- 
 ### CI/CD Pipeline
 
 - **Tests**: Run on all PRs (`.github/workflows/CI.yml`)
@@ -325,7 +326,9 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 - LaTeX syntax for symbols: `^\circ` not `°`, `\frac{}{}` for fractions
 - Label variables clearly: "where: $r$ = radius, $θ$ = angle"
 - Use aligned equations: `\begin{aligned}...\end{aligned}` for multi-step derivations
-- Use square brackets `[x, y]` for point coordinates consistently across documentation
+- **Square brackets in LaTeX math**: Use `\lbrack` and `\rbrack` instead of `[` and `]` inside math expressions to avoid markdown link interpretation errors
+  - ✅ **CORRECT**: `$\mathbf{v} = \lbrack v_1, v_2 \rbrack$`
+  - ❌ **WRONG**: `$\mathbf{v} = [v_1, v_2]$` (markdown interprets `[v_1, v_2]` as a link)
 
 **MathWorld Links:**
 - Link every new mathematical term on first mention
