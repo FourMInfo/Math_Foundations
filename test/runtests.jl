@@ -1,6 +1,9 @@
 using DrWatson, Test
 @quickactivate "Math_Foundations"
 
+# Set headless mode for CI before loading module
+ENV["GKSwstype"] = "100"
+
 # Load the Math_Foundations package
 using Math_Foundations
 

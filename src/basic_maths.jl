@@ -1,6 +1,6 @@
 using Symbolics
 using Nemo
-using Plots; gr
+using Plots
 using Latexify
 using LaTeXStrings
 using Dates

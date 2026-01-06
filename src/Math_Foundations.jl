@@ -3,19 +3,8 @@ module Math_Foundations
 using Reexport
 @reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials, GeometryBasics
 
-# Configure plotting for both interactive and headless environments
-# Simplified initialization - avoid async issues in notebooks
-let
-    headless = haskey(ENV, "CI") || get(ENV, "GKSwstype", "") == "100"
-    if headless
-        ENV["GKSwstype"] = "100"
-    end
-    try
-        headless ? gr(show=false) : gr()
-    catch
-        # Silently ignore GR initialization errors - backend will be configured on first plot
-    end
-end
+# GR backend is set explicitly in plotting functions (e.g., plot_parabola calls gr())
+# For CI headless mode: set ENV["GKSwstype"] = "100" in test/runtests.jl BEFORE loading this module
 
 # Exports...
 export nth_root
