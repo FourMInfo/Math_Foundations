@@ -77,6 +77,21 @@ end
 - Use LaTeX math in docstrings
 - Include examples showing typical usage
 
+### Documentation & Comments
+
+- Include detailed comments explaining mathematical concepts
+- Use clear variable names (e.g., `a₂`, `a₁`, `a₀` for polynomial coefficients)
+- Document return types and edge cases in comments
+- Explain mathematical formulas in comments
+- Maintain consistency with mathematical notation
+
+### Code Organization
+
+- **Single Source File**: Core functions in `basic_maths.jl`, main module in `Math_Foundations.jl`
+- **Consistent Naming**: `calculate_*` for pure computation, `plot_*` for visualization
+- **Export Everything**: All public functions exported from main module
+- **Separate Concerns**: Computational logic separated from plotting logic
+
 ## Function Signature Patterns
 
 ### Mathematical Functions

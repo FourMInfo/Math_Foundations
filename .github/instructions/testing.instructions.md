@@ -57,8 +57,31 @@ end
         result = plot_parabola_roots_quadratic(1.0, 0.0, -4.0)
         @test typeof(result) == Vector{Float64}  # Real roots
     catch e
+        # Only catch plotting-related errors, not computational errors
+        if contains(string(e), "display") || contains(string(e), "GKS") || isa(e, ArgumentError)
+            @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+            @test typeof(calculate_parabola_roots_quadratic(1.0, 0.0, -4.0)) == Vector{ComplexF64}
+        else
+            rethrow(e)  # Re-throw computational errors — these should fail the test
+        end
+    end
+end
+```
+
+### CI-Compatible Plotting with Environment Detection
+
+```julia
+# Alternative pattern: skip plotting entirely in CI
+if get(ENV, "CI", "false") == "true" || get(ENV, "GITHUB_ACTIONS", "false") == "true"
+    # In CI, just test that the function exists
+    @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+else
+    # Local testing - allow plotting but capture any display issues
+    try
+        result = plot_parabola_roots_quadratic(1.0, 0.0, -4.0)
+        @test typeof(result) == Vector{Float64}
+    catch e
         @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
-        @test typeof(calculate_parabola_roots_quadratic(1.0, 0.0, -4.0)) == Vector{ComplexF64}
     end
 end
 ```
@@ -69,6 +92,7 @@ end
 - **No try-catch for math**: Computational tests should fail on mathematical errors
 - **try-catch for plots**: Only use for CI-safe visualization testing
 - **Edge cases**: Test positive/negative, zero, special values
+- **Numerical Precision**: Use `atol=1e-10` for floating-point comparisons
 - Use `@test_throws` for expected errors, `@test_broken` for known failures
 
 ## Plotting in Tests
