@@ -1,6 +1,11 @@
+using Pkg
+
+Pkg.activate(@__DIR__)
+Pkg.develop(path=joinpath(@__DIR__, ".."))
+Pkg.instantiate()
+
 CI = get(ENV, "CI", nothing) == "true" || get(ENV, "GITHUB_TOKEN", nothing) !== nothing
-using DrWatson, Documenter, Dates
-# using Documenter
+using Documenter, Dates
 using Math_Foundations
 
 @info "Building Documentation"

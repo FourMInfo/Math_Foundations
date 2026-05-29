@@ -1,0 +1,6 @@
+[deps]
+Math_Foundations = "27a7a001-4557-47fa-93d4-b76916053e56"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.10"
