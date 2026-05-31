@@ -28,11 +28,11 @@ jobs:
           - x64
     steps:
       - uses: actions/checkout@v5
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v3
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
-      - uses: julia-actions/cache@v1
+      - uses: julia-actions/cache@v3
       - name: Instantiate workspace
         run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - name: Run tests
@@ -57,12 +57,12 @@ jobs:
           else
             echo "docs_changed=false" >> $GITHUB_OUTPUT
           fi
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v3
         if: steps.docs-changes.outputs.docs_changed == 'true'
         with:
           version: '1'
           arch: x64
-      - uses: julia-actions/cache@v1
+      - uses: julia-actions/cache@v3
         if: steps.docs-changes.outputs.docs_changed == 'true'
       - name: Instantiate docs workspace
         if: steps.docs-changes.outputs.docs_changed == 'true'
@@ -111,7 +111,7 @@ jobs:
           
       - name: Setup Julia
         if: steps.docs-changes.outputs.docs_changed == 'true'
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v3
         with:
           version: '1'
           arch: x64
@@ -119,7 +119,7 @@ jobs:
       # Enhanced caching for docs job
       - name: Cache Julia packages (docs)
         if: steps.docs-changes.outputs.docs_changed == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.julia
@@ -130,7 +130,7 @@ jobs:
             julia-docs-${{ runner.os }}-
             julia-${{ runner.os }}-
             
-      - uses: julia-actions/cache@v1
+      - uses: julia-actions/cache@v3
         if: steps.docs-changes.outputs.docs_changed == 'true'
         continue-on-error: true
         
