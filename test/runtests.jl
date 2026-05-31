@@ -1,5 +1,4 @@
-using DrWatson, Test
-@quickactivate "Math_Foundations"
+using Test
 
 # Set headless mode for CI before loading module
 ENV["GKSwstype"] = "100"

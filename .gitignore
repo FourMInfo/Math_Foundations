@@ -32,6 +32,9 @@ deps/src/
 docs/build/
 docs/site/
 
+# Julia manifests are regenerated locally as needed and should not be committed
+**/Manifest.toml
+
 ################################################################################
 #                               Jupyter Notebook                               #
 ################################################################################
@@ -414,7 +417,6 @@ $RECYCLE.BIN/
 ## Acknowledgements
 # Many thanks to `https://gitignore.io/`, written and maintained by Joe Blau, which contributed much material to this gitignore file.
 
-/Manifest.toml
 
 ################################################################################
 #                            Documentation Build                              #
@@ -430,3 +432,5 @@ docs/build/
 #                            DMiscellaneous                                   #
 ################################################################################
 Claude.md
+
+/Linear_Algebra/docs/src/Linear Algebra Old/04 Nonlinear Systens

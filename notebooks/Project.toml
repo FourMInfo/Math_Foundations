@@ -1,0 +1,12 @@
+[deps]
+Bonito = "824d6782-a2ef-11e9-3a09-e5662e0c26f8"
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+ImageShow = "4e3cecfd-b093-5904-9786-8bbb286a6a31"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+Math_Foundations = "27a7a001-4557-47fa-93d4-b76916053e56"
+Meshes = "eacbb407-ea5a-433e-ab97-5258b1ca43fa"
+WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
+
+[compat]
+julia = "1.10"
