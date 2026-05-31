@@ -33,10 +33,10 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v1
-      - uses: julia-actions/julia-buildpkg@v1
+      - name: Instantiate workspace
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - name: Run tests
-        run: >
-          julia --project=. --color=yes test/runtests.jl
+        run: julia --project=. --color=yes -e 'using Pkg; Pkg.test()'
 
   docs-build:
     name: Build Documentation
@@ -64,11 +64,12 @@ jobs:
           arch: x64
       - uses: julia-actions/cache@v1
         if: steps.docs-changes.outputs.docs_changed == 'true'
-      - uses: julia-actions/julia-buildpkg@v1
+      - name: Instantiate docs workspace
         if: steps.docs-changes.outputs.docs_changed == 'true'
+        run: julia --project=docs -e 'using Pkg; Pkg.develop(path="."); Pkg.instantiate()'
       - name: Build documentation
         if: steps.docs-changes.outputs.docs_changed == 'true'
-        run: julia --project=. --color=yes docs/make.jl
+        run: julia --project=docs --color=yes docs/make.jl
       - name: Skip docs build (no relevant changes)
         if: steps.docs-changes.outputs.docs_changed == 'false'
         run: echo "No docs or src changes detected, skipping docs build."
@@ -124,7 +125,7 @@ jobs:
             ~/.julia
             ~/.julia/compiled
             ~/.julia/packages
-          key: julia-docs-${{ runner.os }}-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
+          key: julia-docs-${{ runner.os }}-${{ hashFiles('Project.toml', 'docs/Project.toml', 'test/Project.toml') }}
           restore-keys: |
             julia-docs-${{ runner.os }}-
             julia-${{ runner.os }}-
@@ -133,20 +134,20 @@ jobs:
         if: steps.docs-changes.outputs.docs_changed == 'true'
         continue-on-error: true
         
-      - uses: julia-actions/julia-buildpkg@v1
+      - name: Instantiate docs workspace
         if: steps.docs-changes.outputs.docs_changed == 'true'
+        run: julia --project=docs -e 'using Pkg; Pkg.develop(path="."); Pkg.instantiate()'
         continue-on-error: true
         
       # Retry build for docs if needed
       - name: Retry docs build on failure
         if: failure() && steps.docs-changes.outputs.docs_changed == 'true'
         run: |
-          julia --project=. -e "using Pkg; Pkg.instantiate()"
+          julia --project=docs -e "using Pkg; Pkg.develop(path=\".\"); Pkg.instantiate()"
 
       - name: Generate documentation and deploy
         if: steps.docs-changes.outputs.docs_changed == 'true'
-        run: >
-          julia --project=. --color=yes docs/make.jl
+        run: julia --project=docs --color=yes docs/make.jl
         env: # needed for pushing to gh-pages branch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
