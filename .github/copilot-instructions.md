@@ -14,27 +14,63 @@
 - **`docs/`**: Documenter.jl deploying to `https://study.fourm.info/math_foundations/` (cross-repo to `math_tech_study`)
 - **`notebooks/`**: Jupyter notebooks for exploration (not tested in CI)
 
+## Julia Workspace Layout
+
+This repository uses a Julia workspace. The root `Project.toml` has a `[workspace]` table listing
+member environments. Each member has its own `Project.toml` and `Manifest.toml`:
+
+| Path | Purpose |
+|---|---|
+| `Project.toml` | Root package — defines `Math_Foundations` as a library |
+| `test/Project.toml` | Test-only deps (`Test`, etc.) — workspace member |
+| `docs/Project.toml` | Docs deps (`Documenter`) — workspace member; uses `Pkg.develop(path=".")` |
+| `notebooks/Project.toml` | Notebook superset (Makie stack + root deps) — **not** a workspace member |
+
+The `notebooks/` environment is intentionally excluded from the workspace `projects` list because
+it is a developer-only interactive environment, not a dependency of any other member.
+
+All `Manifest.toml` files are gitignored. They are regenerated locally by `Pkg.instantiate()`.
+
+### Adding a New Workspace Member
+
+If you add a new subdirectory environment (e.g. `scripts/`):
+1. Create `scripts/Project.toml` with a `name`, `uuid` (generated via `uuidgen`), and `[deps]`
+2. Add `"scripts"` to the `projects` list in the root `Project.toml` `[workspace]` table
+3. Never hard-code UUIDs — always generate them with `uuidgen` on the command line
+
+### Project.toml Header Convention
+
+Every named `Project.toml` (root and workspace members that are packages) must have:
+
+```toml
+name = "PackageName"
+uuid = "<output of uuidgen>"
+version = "0.1.0"
+```
+
+Non-package member environments (like `test/` and `docs/`) do not need `name`/`uuid`.
+
 ## Key Workflows
 
 ### Local Development
 
 ```bash
-# Run tests
-julia --project=. test/runtests.jl
+# Run tests (uses test/ workspace member environment)
+julia --project=. -e 'using Pkg; Pkg.test()'
 
 # CI mode (headless plotting)
-CI=true julia --project=. test/runtests.jl
+CI=true julia --project=. -e 'using Pkg; Pkg.test()'
 
-# Build documentation
-julia --project=. docs/make.jl
+# Build documentation (uses docs/ workspace member environment)
+julia --project=docs docs/make.jl
 ```
 
-**IMPORTANT**: Always run `julia --project=. docs/make.jl` after making changes to documentation files in `docs/src/`. This allows the user to preview changes in the browser immediately without running the build manually.
+**IMPORTANT**: Always run `julia --project=docs docs/make.jl` after making changes to documentation files in `docs/src/`. This allows the user to preview changes in the browser immediately without running the build manually.
 
 ## Julia Compilation Considerations
 - **Be Patient with First Runs**: Julia often needs to precompile packages and rebuild project cache on first run. When running a Julia command in the CLI for the first time, it may take a while to precompile the packages and build the project cache, so you won't see the results of running the command for a while.
 - **Typical First Run**: May take 15-30 seconds for precompilation before tests actually start
-- **Example Expected Output**: `Precompiling DrWatson... 3 dependencies successfully precompiled in 17 seconds`
+- **Example Expected Output**: `Precompiling Math_Foundations... 3 dependencies successfully precompiled in 17 seconds`
 - **Subsequent Runs**: Much faster once cache is built
 - **Don't Cancel Early**: Allow time for compilation phase to complete
 - **IMPORTANT**: This applies to ALL Julia commands including CI testing with `CI=true julia --project=. test/runtests.jl`
