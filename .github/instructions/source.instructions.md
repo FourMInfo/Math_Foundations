@@ -36,15 +36,23 @@ else
 end
 ```
 
-## Coding Standards
+## Julia Coding Standards
 
 ### Mathematical Functions
+1. Use Unicode symbols for coefficients where established (`a₂`, `a₁`, `a₀`)
+2. Return stable numeric types for root results (typically `ComplexF64` where needed)
+3. Handle negative and edge cases consistently (for example `nth_root` behavior by parity)
+4. Always export new public functions in `src/Math_Foundations.jl`
+5. Keep the computational/integrated split: `calculate_*` (pure math) + `plot_*` (integrated)
+6. Preserve CI-safe plotting behavior in integrated functions
+7. Use clear variable naming consistent with mathematical notation
 
-- Use Unicode symbols for coefficients: `a₂, a₁, a₀` (type `a\_2<tab>` in Julia)
-- Return `ComplexF64` for roots (even if imaginary part is zero)
-- Handle negative numbers correctly (see `nth_root` — odd roots return negative reals, even roots return complex)
-- Always export new functions in `src/Math_Foundations.jl`
-- Follow pattern: `calculate_*` (pure math) + `plot_*` (integrated)
+### Function Categories
+- **Algebraic Roots**: Quadratic, polynomial, and AMRVW-based root workflows
+- **Conic Geometry**: Hyperbola and parabola-related computations and plotting
+- **Financial Math**: Accrual/interest helper calculations
+- **Helper Utilities**: Supporting math functions used across lessons
+- **Symbolic Functions**: Symbolics-backed equation construction and manipulation
 
 ### Function Design Pattern
 
@@ -71,14 +79,7 @@ function plot_parabola_roots_quadratic(a₂, a₁=0.0, a₀=0.0)
 end
 ```
 
-### Docstrings
-
-- Required for all exported functions with signature and description
-- Use LaTeX math in docstrings
-- Include examples showing typical usage
-
 ### Documentation & Comments
-
 - Include detailed comments explaining mathematical concepts
 - Use clear variable names (e.g., `a₂`, `a₁`, `a₀` for polynomial coefficients)
 - Document return types and edge cases in comments
@@ -86,17 +87,52 @@ end
 - Maintain consistency with mathematical notation
 
 ### Code Organization
-
-- **Single Source File**: Core functions in `basic_maths.jl`, main module in `Math_Foundations.jl`
+- **Primary Source File**: Core functions in `basic_maths.jl`, main module in `Math_Foundations.jl`
 - **Consistent Naming**: `calculate_*` for pure computation, `plot_*` for visualization
 - **Export Everything**: All public functions exported from main module
 - **Separate Concerns**: Computational logic separated from plotting logic
+
+## Dependencies & Libraries
+
+**Main Dependencies**: Symbolics, Nemo, Plots, Latexify, LaTeXStrings, AMRVW, Polynomials
+
+### Mathematical Libraries Used
+- **Symbolics.jl**: For `@variables` and symbolic manipulation
+  - Pattern: `@variables x`, symbolic equation construction from coefficients
+  - Use `substitute`/`value` and `build_function` patterns when numeric evaluation is needed
+- **Polynomials.jl**: Polynomial representation and root finding
+- **AMRVW.jl**: Alternative polynomial root pipeline
+- **Nemo.jl**: Number-theory and algebra tooling used by selected workflows
+- **Plots.jl/GR**: Visualization backend with CI-safe headless configuration
+- **Latexify.jl + LaTeXStrings.jl**: Math expression formatting for plots/docs
+
+## Project-Specific Conventions
+
+### Mathematical Operations
+- **Coefficient notation**: Keep coefficient naming consistent (`a₂`, `a₁`, `a₀`)
+- **Root output**: Preserve root output contracts per function family
+- **Symbolic-first workflows**: Keep symbolic and numeric paths explicit where both are supported
+- **Plotting safety**: Plot functions should fail gracefully in CI/headless runs
+- **Coordinate assumptions**: Document coordinate/sign conventions in function comments
+
+### Function Naming Patterns
+- **Computational functions**: `calculate_*`
+- **Integrated plotting functions**: `plot_*`
+- **Financial utilities**: domain-specific naming (`accrued*`)
+- **Geometry helpers**: explicit conic/geometric naming (`hyperbola*`, `parabola*`)
 
 ## Function Signature Patterns
 
 ### Mathematical Functions
 ```julia
 nth_root(x, n) -> Number                  # Returns complex for even roots of negative numbers
+```
+
+### Core Computational Patterns
+```julia
+calculate_parabola_roots_quadratic(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
+calculate_parabola_roots_polynomial(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
+calculate_parabola_roots_amrvw(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
 ```
 
 ### Plotting Functions
@@ -119,31 +155,3 @@ accrued(i::Real, p::Real, c::Int64) -> Float64
 ```julia
 triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Tuple{Float64, Float64}
 ```
-
-## Dependencies & Libraries
-
-**Heavy Dependencies**: Nemo (~500MB), GLMakie, WGLMakie (main Project.toml)
-**Optimized Tests**: Minimal dependencies in `test/Project.toml` for CI speed
-
-### Key Mathematical Libraries
-
-- **Symbolics.jl**: Symbolic variables (`@variables x`) for equation manipulation
-  - Create variables: `@variables x; f = a₂*x^2 + a₁*x + a₀`
-  - Simplify expressions: `simplify(expr, expand=true)`
-  - **Extract numeric values** (two methods):
-    1. **substitute + value**: `substitute(expr, x => π/4; fold=Val(true))` then `Symbolics.value(result)`
-    2. **build_function**: `f = build_function(expr, x, expression=Val{false})` creates callable Julia function
-  - Use `fold=Val(true)` with substitute to simplify after substitution
-  - Use `expression=Val{false}` with build_function to avoid eval requirement
-- **Polynomials.jl**: Polynomial operations and root finding
-  - Create: `p = Polynomial([a₀, a₁, a₂])`
-  - Solve: `roots(p)`
-- **AMRVW.jl**: Alternative root finding: `AMRVW.roots([a₀, a₁, a₂])`
-- **Nemo.jl**: Number theory (verify usage patterns before adding new tests)
-- **Plots.jl/GR**: Plotting with automatic CI headless mode
-
-## Project-Specific Conventions
-
-- **DrWatson Integration**: Use `projectdir()`, `srcdir()` for paths (except in tests)
-- **Mathematical Notation**: Use Unicode symbols (a₂, a₁, a₀) in function parameters
-- **Documentation**: Use LaTeX math notation with Latexify.jl integration

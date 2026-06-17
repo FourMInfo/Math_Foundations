@@ -10,7 +10,7 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 **Document Organization:**
 - Start with concept overview and [MathWorld](https://mathworld.wolfram.com/) link in opening paragraph
 - Use hierarchical headings: `##` for major topics, `###` for subtopics
-- Group related concepts logically (e.g., "By Side Length", "By Angle Measure" for geometry)
+- Group related concepts logically (e.g., by operation type, by geometric meaning)
 - Include real-world applications section
 
 **Content Style:**
@@ -20,7 +20,7 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 - **Multiple representations**: Equations, tables, visual aids (SVG diagrams when helpful)
 - **Context matters**: Explain _why_ concepts are important, not just _what_ they are
   - Example: "Arc length is crucial for engineering, navigation, physics..."
-- **Derivations**: Show mathematical reasoning step-by-step (see Hyperbola derivation)
+- **Derivations**: Show mathematical reasoning step-by-step (see hyperbola and polynomial derivation sections)
 
 ## Mathematical Notation
 
@@ -81,12 +81,6 @@ mathengine = Documenter.MathJax3(Dict(
 - Documenter.jl converts some `$$` blocks to `\[...\]` in generated HTML (especially in list items or new paragraphs)
 - Without both delimiters, MathJax won't process `\[...\]` blocks and they render as literal text
 
-**To switch from KaTeX to MathJax3:**
-1. Add `mathengine` parameter to `Documenter.HTML()` in `docs/make.jl`
-2. Include both delimiter styles in `displayMath`
-3. Load desired packages (ams, mathtools, physics) via `:loader` and `"packages"`
-4. Clean rebuild: `rm -rf docs/build && julia --project=. docs/make.jl`
-
 ## MathWorld Links
 
 - Link every new mathematical term on first mention
@@ -96,8 +90,8 @@ mathengine = Documenter.MathJax3(Dict(
 
 ## Visual Elements
 
-- SVG diagrams for geometric concepts (see Triangles, Polygons)
-- Tables for reference data (degree/radian conversions, common values)
+- SVG diagrams for geometric concepts
+- Tables for reference data (common values, conversions)
 - Consistent styling in diagrams (colors, labels, annotations)
 
 ## Markdown Conventions
@@ -123,23 +117,17 @@ When linking to a specific section in another document, use standard markdown li
 - Parentheses in section names are preserved in the anchor
 
 **Examples:**
-- ✅ **CORRECT**: `[Solving Equations](../Algebra/03 Solving Equations.md#Solving-Equations)`
-- ❌ **WRONG**: `[Section](../Algebra/03%20Solving%20Equations.md#section)` (wrong: `%20` and lowercase)
+- ✅ **CORRECT**: `[Coordinate Independent Operations](../Geometry/01 Points and Coordinates.md#Coordinate-Independent-Operations)`
+- ✅ **CORRECT**: `[Linear Independence (Geometric View)](../Geometry/01 Points and Coordinates.md#Linear-Independence-(Geometric-View))`
+- ❌ **WRONG**: `[Section](../Geometry/01%20Points%20and%20Coordinates.md#section)` (wrong: `%20` and lowercase)
 - ❌ **WRONG**: `[Section](@ref "Section Name")` (`@ref` is for docstrings, not cross-document links)
-
-**Best practice for cross-references:**
-- Include context about which document contains the section: "see [Section Name](path#anchor) in Document Name"
-- Verify the section heading spelling and capitalization before creating the link
-- Test the link by building docs (`julia --project=. docs/make.jl`) and clicking in browser
 
 ## Documentation Structure
 
-- **Topics**: Organized by Algebra, Geometry, Trigonometry in `docs/src/`
-- **Cross-Repository Deployment**: Deploys to `FourMInfo/math_tech_study` repository
-- **URL**: Available at `https://study.fourm.info/math_foundations/`
-- **Docstrings**: Required for all exported functions with signature and description
-- **Examples**: Include in docstrings showing typical usage
-- **LaTeX math**: Use Latexify.jl integration for equations in docs and plot titles
+- **Cross-Repository Deployment**: Deploys to math_tech_study repository
+- **Subdirectory Pattern**: Available at study.fourm.info/math_foundations/
+- **Auto-docs Integration**: Uses `@autodocs` for automatic function documentation
+- **Mathematical Notation**: Supports LaTeX rendering in documentation
 
 ## Building Documentation
 

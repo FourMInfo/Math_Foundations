@@ -3,59 +3,27 @@ applyTo: 'notebooks/**'
 ---
 # Notebook Conventions
 
-## Notebook Environment
+## Setup Pattern
 
-Notebooks use a dedicated environment at `notebooks/` that is a superset of the root project.
-It includes the full Makie stack (GLMakie, WGLMakie, Bonito, Meshes, ImageShow) on top of all
-root dependencies. It is separate from the root, `test/`, and `docs/` environments.
-
-### Setup Pattern
-
-All notebooks should start with:
+All notebooks should start with the standard setup cell:
 
 ```julia
-# Set up Revise.jl for automatic code reloading
-# This only needs to be run once at the beginning of your notebook session
-using Revise
-
-# Load the package
 using Math_Foundations
 ```
 
-`Revise` and `DrWatson` are loaded automatically via `~/.julia/config/startup.jl` on the
-developer's machine when running Julia interactively, but notebooks must not depend on this
-— it is machine-specific and will not work for anyone who clones the repo without that file.
-The Jupyter kernel runs in a separate process that does not share the REPL's loaded modules,
-so `using Revise` must be called explicitly in the setup cell even though startup.jl loaded
-it in the REPL.
-
-### Running the Notebooks Environment (REPL)
-
-To start Julia with the notebooks environment active from the repo root:
-
-```bash
-julia --project=./notebooks
-```
-
-`startup.jl` detects the explicit `--project` flag and skips its `quickactivate(".")` call, so
-the notebooks environment is preserved correctly. Alternatively, `cd` into `notebooks/` first
-and run `julia` normally — `quickactivate(".")` will find `notebooks/Project.toml` directly.
-
-### Adding Packages to the Notebooks Environment
-
-```bash
-julia --project=./notebooks -e 'using Pkg; Pkg.add("PackageName")'
-```
-
-Or interactively in the notebooks REPL:
-
-```julia
-] add PackageName
-```
+If you use Revise locally, load it explicitly in the notebook setup cell as needed.
 
 ## Notebook Guidelines
 
 - Notebooks are for exploration and study, not tested in CI
+- The `notebooks/` environment is **not** a workspace member. After cloning (or removing `notebooks/Manifest.toml`), run once in the `notebooks/` directory to set it up:
+  ```julia-repl
+  julia --project=./notebooks
+  # then in Pkg mode (press ]):
+  pkg> dev ..
+  pkg> instantiate
+  ```
+  This creates `notebooks/Manifest.toml` (gitignored) that resolves `Math_Foundations` from local source. Do not commit `notebooks/Manifest.toml`.
 - Use `println()` for output to make results clear when re-running cells
 - Include explanatory markdown cells between code cells
 - Use Unicode variable names consistent with the source code (e.g., `a₂`, `a₁`, `a₀`)
@@ -66,6 +34,17 @@ Or interactively in the notebooks REPL:
 - Plots render inline in Jupyter notebooks
 - No need for headless mode configuration
 - Use the same plotting functions from the package (`plot_parabola_roots_quadratic`, `plot_hyperbola`, etc.)
+
+## Math Display
+
+Use `LaTeXStrings`/`Latexify` patterns from the package and docs for clean notebook rendering of mathematical expressions.
+
+### Common patterns
+
+```julia
+using LaTeXStrings
+L"x^2 + y^2 = r^2"
+```
 
 ## Julia Kernel Gotchas
 
@@ -108,7 +87,7 @@ Julia always runs `~/.julia/config/startup.jl` at process startup — this appli
 and Jupyter kernels alike. However, `atreplinit do repl ... end` blocks only fire when Julia
 initialises an interactive REPL object. IJulia never creates one; it sets up its own I/O event
 loop instead. As a result, any `using` statements inside an `atreplinit` block in `startup.jl`
-(such as `using Revise`) are silently skipped in the Jupyter kernel.
+are silently skipped in the Jupyter kernel.
 
 **Consequence:** every package needed in a notebook must be loaded explicitly in the setup cell,
 even if `startup.jl` loads it for interactive REPL sessions.

@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-**Julia basic maths project** using DrWatson for reproducibility. Implements mathematical foundations (algebra, geometry, trigonometry) with visualization, comprehensive testing, and cross-repository documentation deployment.
+**Julia basic maths project** using a Julia workspace for reproducibility. Implements mathematical foundations (algebra, geometry, trigonometry) with visualization, comprehensive testing, and cross-repository documentation deployment.
 
 ### Core Architecture
 
@@ -21,15 +21,16 @@ member environments. Each member has its own `Project.toml` and `Manifest.toml`:
 
 | Path | Purpose |
 |---|---|
-| `Project.toml` | Root package — defines `Math_Foundations` as a library |
-| `test/Project.toml` | Test-only deps (`Test`, etc.) — workspace member |
-| `docs/Project.toml` | Docs deps (`Documenter`) — workspace member; uses `Pkg.develop(path=".")` |
+| `Project.toml` | Root package — defines `Math_Foundations` as a library (uuid `27a7a001-4557-47fa-93d4-b76916053e56`) |
+| `test/Project.toml` | Test-only deps (`Math_Foundations`, `Test`) — workspace member |
+| `docs/Project.toml` | Docs deps (`Documenter`, `Dates`, `Math_Foundations`) — workspace member; uses `Pkg.develop(path=".")` |
 | `notebooks/Project.toml` | Notebook superset (Makie stack + root deps) — **not** a workspace member |
 
 The `notebooks/` environment is intentionally excluded from the workspace `projects` list because
 it is a developer-only interactive environment, not a dependency of any other member.
 
 All `Manifest.toml` files are gitignored. They are regenerated locally by `Pkg.instantiate()`.
+The `notebooks/Manifest.toml` requires an additional one-time step — see [Notebook Setup](#notebook-setup) below.
 
 ### Adding a New Workspace Member
 
@@ -58,59 +59,52 @@ Non-package member environments (like `test/` and `docs/`) do not need `name`/`u
 # Run tests (uses test/ workspace member environment)
 julia --project=. -e 'using Pkg; Pkg.test()'
 
-# CI mode (headless plotting)
-CI=true julia --project=. -e 'using Pkg; Pkg.test()'
-
 # Build documentation (uses docs/ workspace member environment)
 julia --project=docs docs/make.jl
 ```
 
 **IMPORTANT**: Always run `julia --project=docs docs/make.jl` after making changes to documentation files in `docs/src/`. This allows the user to preview changes in the browser immediately without running the build manually.
 
+### Notebook Setup
+
+`notebooks/` is not a workspace member, so `Math_Foundations` is not auto-resolved. After cloning (or after removing `notebooks/Manifest.toml`), run once in the notebooks directory:
+
+```julia-repl
+# Start Julia with the notebooks project
+julia --project=./notebooks
+
+# Then in the REPL Pkg mode (press ])
+pkg> dev ..
+pkg> instantiate
+```
+
+This creates `notebooks/Manifest.toml` (gitignored) with `path = ".."` pointing at the root package. Subsequent `julia --project=./notebooks` invocations will resolve `Math_Foundations` from the local source.
+
 ## Julia Compilation Considerations
-- **Be Patient with First Runs**: Julia often needs to precompile packages and rebuild project cache on first run. When running a Julia command in the CLI for the first time, it may take a while to precompile the packages and build the project cache, so you won't see the results of running the command for a while.
-- **Typical First Run**: May take 15-30 seconds for precompilation before tests actually start
-- **Example Expected Output**: `Precompiling Math_Foundations... 3 dependencies successfully precompiled in 17 seconds`
+
+- **Be Patient with First Runs**: Julia often needs to precompile packages on first run; allow 15-30 seconds before tests actually start
+- **Example Expected Output**: `Precompiling Math_Foundations... N dependencies successfully precompiled in 17 seconds`
 - **Subsequent Runs**: Much faster once cache is built
-- **Don't Cancel Early**: Allow time for compilation phase to complete
-- **IMPORTANT**: This applies to ALL Julia commands including CI testing with `CI=true julia --project=. test/runtests.jl`
+- **Don't Cancel Early**: Allow time for compilation to complete
 
 ## Git Best Practices
 
 - **Never use `git add .`** - Always stage files explicitly by name to avoid accidentally committing development files, notebooks, or temporary files
 - Use `git add <specific-file-path>` to stage only the intended files for commit
-- **Feature branch naming**: Use descriptive, purpose-driven names that enable GitHub auto-suggestions:
-  - ✅ Good: `feature/add-fourm-site-explanation`, `fix/sidebar-center-alignment`, `docs/add-copilot-instructions`
+- **Feature branch naming**: Use descriptive, purpose-driven names:
+  - ✅ Good: `milestone/workspace-restructure-math-foundations-phase-4`, `fix/sidebar-center-alignment`
   - ❌ Avoid: `feature/update-content`, `fix/stuff`, `branch1`
 
 ### Pull Request Creation
-- **ALWAYS check all commits on the branch first**: Run `git log main..HEAD --oneline` before writing the PR description to capture every commit, not just the most recent one. A PR includes the entire branch history since it diverged from `main`.
+
+- **ALWAYS check all commits on the branch first**: Run `git log main..HEAD --oneline` before writing the PR description
 - **ALWAYS push changes first**: Use `git push origin BRANCH_NAME` before creating PR
 - **Do NOT use `gh pr create`** - The GitHub CLI command doesn't work properly in this environment
-- **Use GitHub web interface with URL parameters**: Create links with embedded title and description for auto-fill
-- **PR Link Format with Parameters**: 
+- **Use GitHub web interface with URL parameters**:
   ```
   https://github.com/FourMInfo/Math_Foundations/compare/main...BRANCH_NAME?title=Your+PR+Title&body=Your+PR+Description
   ```
 - **Always provide fallback copy-paste content**: Include separate, copyable title and description in case URL parameters don't work
-- **Include comprehensive descriptions**: Detail all changes, test coverage, and architectural improvements
-- **Reference issue numbers**: Link to related issues when applicable
-
-#### PR Creation Template:
-```markdown
-## 🔗 Clickable PR Link:
-[Your PR Title](https://github.com/FourMInfo/Math_Foundations/compare/main...BRANCH_NAME?title=Your+PR+Title&body=Your+PR+Description)
-
-## 📝 Copy-Paste Title:
-Your PR Title
-
-## 📋 Copy-Paste Description:
-Your comprehensive PR description with:
-- Summary of changes
-- Technical details
-- Testing completed
-- Related issues
-```
 
 ## Azure Integration
 
@@ -145,20 +139,7 @@ Your comprehensive PR description with:
     - Highlight any potential risks or trade-offs associated with the changes
 - If you encounter a situation where you need to make assumptions, clearly state those assumptions and their implications
 - When discussing project architecture or design decisions, provide a rationale for each decision made
-    - Discuss how the design aligns with project goals and coding standards
-    - Highlight any trade-offs considered during the design process
 - If you need to reference external resources or documentation, provide clear links and context for their relevance
-- When discussing project conventions or standards, ensure they are clearly documented and easily accessible
-- If you encounter a situation where you need to deviate from established conventions, clearly explain the reasoning behind the deviation
 - Always strive for clarity and precision in communication, especially when discussing technical details
 - If you need to ask for clarification, do so in a way that encourages open dialogue and collaboration
-    - Use open-ended questions to encourage discussion
-    - Avoid leading questions that may bias the response
 - When providing feedback on code or design, focus on constructive criticism that helps improve the overall quality
-    - Highlight both strengths and areas for improvement
-    - Provide specific examples to illustrate points
-- If you encounter a situation where you need to make a judgment call, clearly outline the criteria used to make that judgment
-    - Discuss any relevant factors considered in the decision-making process
-- When discussing project goals or objectives, ensure they are clearly defined and measurable
-- If you need to prioritize tasks or features, clearly explain the reasoning behind the prioritization
-    - Discuss how priorities align with project goals and timelines
