@@ -19,74 +19,15 @@ Documentation in `docs/src/` explains general math concepts (not code). Follow t
 - **Build progressively**: Simple concepts → complex relationships → applications
 - **Multiple representations**: Equations, tables, visual aids (SVG diagrams when helpful)
 - **Context matters**: Explain _why_ concepts are important, not just _what_ they are
-  - Example: "Arc length is crucial for engineering, navigation, physics..."
-- **Derivations**: Show mathematical reasoning step-by-step (see hyperbola and polynomial derivation sections)
+  - Example: "Projections are fundamental to least-squares approximation, computer graphics, and data compression"
+- **Derivations**: Show mathematical reasoning step-by-step (see projection and transformation matrix derivations)
 
-## Mathematical Notation
+## Mathematical Notation, MathJax3 & MathWorld Links
 
-- Use LaTeX: `$$` for display equations, inline with `$...$`
-- **CRITICAL**: `$$` display blocks in Documenter.jl must have `$$` directly attached to content (no blank lines or return after opening or before closing)
-  - ✅ **CORRECT** (multi-line aligned block):
-    ```
-    $$\begin{aligned}
-    b &= a\sqrt{1-e^2} \\
-    c &= ae \\
-    a^2 &= b^2 + c^2
-    \end{aligned}$$
-    ```
-  - ✅ **CORRECT** (single equation): `$$equation$$`
-  - ❌ **WRONG** (blank lines or return between `$$` and content):
-    ```
-    $$
-
-    content
-
-    $$
-    ```
-- **Bullet point style**: List items starting with `-` must begin with **text**, then LaTeX math. LaTeX commands immediately after `-` render incorrectly (misaligned or broken formatting)
-  - ✅ **CORRECT**: `- The semi-major axis is $a$`
-  - ✅ **CORRECT**: `- stretch the vector: $\lvert c \rvert \gt 1$`
-  - ❌ **WRONG**: `- $a$ is the semi-major axis` (LaTeX immediately after dash)
-  - ❌ **WRONG**: `- $\mathbf{e}_1 = \lbrack 1, 0 \rbrack$ (points along x-axis)` (LaTeX starts the line)
-- **Equation placement style**: Prefer inline equations with "where:" at end of sentence, followed by list
-  - ✅ **CORRECT**: `For an ellipse: $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ where:`
-  - ❌ **AVOID**: Blank line, then equation block, then blank line, then "where:"
-- LaTeX syntax for symbols: `^\circ` not `°`, `\frac{}{}` for fractions
-- Label variables clearly: "where: $r$ = radius, $θ$ = angle"
-- Use aligned equations: `\begin{aligned}...\end{aligned}` for multi-step derivations
-- **Square brackets in LaTeX math**: Use `\lbrack` and `\rbrack` instead of `[` and `]` inside math expressions to avoid markdown link interpretation errors
-  - ✅ **CORRECT**: `$\mathbf{v} = \lbrack v_1, v_2 \rbrack$`
-  - ❌ **WRONG**: `$\mathbf{v} = [v_1, v_2]$` (markdown interprets `[v_1, v_2]` as a link)
-- **Absolute value notation**: Use `\lvert` and `\rvert` instead of `|` to avoid markdown pipe interpretation
-  - ✅ **CORRECT**: `$\lvert c \rvert > 1$`
-  - ❌ **WRONG**: `$|c| > 1$` (pipe may be interpreted as table delimiter)
-
-## MathJax3 Configuration
-
-This project uses MathJax3 for math rendering (not the default KaTeX). Key configuration in `docs/make.jl`:
-
-```julia
-mathengine = Documenter.MathJax3(Dict(
-    :loader => Dict("load" => ["[tex]/physics", "[tex]/ams"]),
-    :tex => Dict(
-        "packages" => ["base", "ams", "mathtools"],
-        "inlineMath" => [["\$", "\$"]],
-        "displayMath" => [["\$\$", "\$\$"], ["\\[", "\\]"]],
-    ),
-)),
-```
-
-**Critical**: The `displayMath` array must include **both** `$$...$$` AND `\[...\]` delimiters because:
-- Markdown source uses `$$...$$` for display math
-- Documenter.jl converts some `$$` blocks to `\[...\]` in generated HTML (especially in list items or new paragraphs)
-- Without both delimiters, MathJax won't process `\[...\]` blocks and they render as literal text
-
-## MathWorld Links
-
-- Link every new mathematical term on first mention
-- Format: `[Term](https://mathworld.wolfram.com/Term.html)`
-- Verify URLs before adding (use fetch_webpage)
-- Compare multiple URLs to choose most appropriate
+See the `documenter-jl-conventions` skill for:
+- LaTeX formatting rules (`$$` display blocks, bullet point style, `\lbrack`, `\lvert`)
+- MathJax3 configuration for `docs/make.jl`
+- MathWorld linking convention
 
 ## Visual Elements
 
@@ -102,30 +43,14 @@ mathengine = Documenter.MathJax3(Dict(
 - Code blocks with language tags: ````julia` for Julia examples
 - Follow the pattern of existing function documentation in src directory
 
-## Cross-Document Section Links (Documenter.jl)
+## Cross-Document Links
 
-When linking to a specific section in another document, use standard markdown link syntax with the full file path and section anchor:
-
-```markdown
-[Display Text](../Folder/Document Name.md#Section-Heading)
-```
-
-**CRITICAL rules for section anchors:**
-- Section anchors must **exactly match** the heading text with proper capitalization
-- Spaces in **file names** remain as spaces (not `%20`)
-- Spaces in **section anchors** become hyphens (`-`)
-- Parentheses in section names are preserved in the anchor
-
-**Examples:**
-- ✅ **CORRECT**: `[Coordinate Independent Operations](../Geometry/01 Points and Coordinates.md#Coordinate-Independent-Operations)`
-- ✅ **CORRECT**: `[Linear Independence (Geometric View)](../Geometry/01 Points and Coordinates.md#Linear-Independence-(Geometric-View))`
-- ❌ **WRONG**: `[Section](../Geometry/01%20Points%20and%20Coordinates.md#section)` (wrong: `%20` and lowercase)
-- ❌ **WRONG**: `[Section](@ref "Section Name")` (`@ref` is for docstrings, not cross-document links)
+See `documenter-jl-conventions` skill for section anchor rules and examples.
 
 ## Documentation Structure
 
 - **Cross-Repository Deployment**: Deploys to math_tech_study repository
-- **Subdirectory Pattern**: Available at study.fourm.info/math_foundations/
+- **Subdirectory Pattern**: Available at study.fourm.info/linear_algebra/
 - **Auto-docs Integration**: Uses `@autodocs` for automatic function documentation
 - **Mathematical Notation**: Supports LaTeX rendering in documentation
 

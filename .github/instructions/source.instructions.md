@@ -10,148 +10,129 @@ All code uses `@reexport` pattern and exports both computational + plotting func
 ```julia
 # Main module uses @reexport for clean interface
 using Reexport
-@reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials
+@reexport using GeometryBasics, Plots, LinearAlgebra, RationalRoots, Symbolics
 
 # Comprehensive exports for all functions
 # Pure computational functions (no plotting dependencies)
-export calculate_parabola_roots_quadratic, calculate_parabola_roots_polynomial, calculate_parabola_roots_amrvw
-
+export calculate_param_line
 # Integrated plotting functions (computation + visualization)
-export plot_parabola_roots_quadratic, plot_hyperbola, plot_hyperbola_axes_direct
-
-# Always export new functions in main module
+export distance_2_points, center_of_gravity, barycentric_coord, plot_param_line
 ```
 
-## Automatic CI/Interactive Detection
+## CI/Interactive Detection
 
-Module auto-configures at load time — no manual intervention needed:
-
-```julia
-# src/Math_Foundations.jl - Runs on module load
-if haskey(ENV, "CI") || get(ENV, "GKSwstype", "") == "100"
-    ENV["GKSwstype"] = "100"  # Headless plotting
-    gr(show=false)
-else
-    gr()  # Interactive plotting
-end
-```
+Module auto-configures at load time using `GKSwstype`. See the `julia-coding-conventions` skill for the canonical pattern. The check goes in the main module file (`Linear_Algebra.jl`) after the `@reexport` block.
 
 ## Julia Coding Standards
 
-### Mathematical Functions
-1. Use Unicode symbols for coefficients where established (`a₂`, `a₁`, `a₀`)
-2. Return stable numeric types for root results (typically `ComplexF64` where needed)
-3. Handle negative and edge cases consistently (for example `nth_root` behavior by parity)
-4. Always export new public functions in `src/Math_Foundations.jl`
-5. Keep the computational/integrated split: `calculate_*` (pure math) + `plot_*` (integrated)
-6. Preserve CI-safe plotting behavior in integrated functions
-7. Use clear variable naming consistent with mathematical notation
+### Linear Algebra Functions
+1. Use GeometryBasics.Point2f for 2D points consistently
+2. Use regular Arrays ([Float64]) for vectors in calculations
+3. Handle both symbolic and numeric matrix operations
+4. Degrees vs radians: `rotation_matrix(d)` takes degrees, `rotation_matrix_ns(θ)` takes radians
+5. Matrix functions return 2x2 matrices for 2D transformations
+6. Always export new functions in main module
+7. Use clear parameter naming (θ for angles, v/w for vectors, p/q for points)
 
 ### Function Categories
-- **Algebraic Roots**: Quadratic, polynomial, and AMRVW-based root workflows
-- **Conic Geometry**: Hyperbola and parabola-related computations and plotting
-- **Financial Math**: Accrual/interest helper calculations
-- **Helper Utilities**: Supporting math functions used across lessons
-- **Symbolic Functions**: Symbolics-backed equation construction and manipulation
+- **Basic Operations**: Distance, center of gravity, barycentric coordinates
+- **Vector Operations**: Angle calculations, orthogonality, projections, reflections
+- **Line Geometry**: Parametric/implicit conversions, distance calculations, intersections
+- **Matrix Transformations**: Projection, rotation, stretch, reflection matrices
+- **Symbolic Functions**: Provide both symbolic and numeric versions
 
 ### Function Design Pattern
 
 ```julia
-# Pure computational function
-function calculate_parabola_roots_quadratic(a₂, a₁=0.0, a₀=0.0)
-    discriminant = a₁^2 - 4 * a₂ * a₀
-    root1 = (-a₁ + sqrt(Complex(discriminant))) / (2 * a₂)
-    root2 = (-a₁ - sqrt(Complex(discriminant))) / (2 * a₂)
-    return [root1, root2]  # Always returns ComplexF64
+# Pure computational function (no plotting dependencies)
+function calculate_param_line(p::Point2f, q::Point2f, n::Int64)
+    points = Vector{Point2f}(undef, n)
+    for i in 1:n
+        t = (i - 1) / (n - 1)
+        points[i] = Point2f(p .+ t .* (q .- p))
+    end
+    return points
 end
 
-# Integrated plotting function
-function plot_parabola_roots_quadratic(a₂, a₁=0.0, a₀=0.0)
-    all_roots = calculate_parabola_roots_quadratic(a₂, a₁, a₀)
+# Integrated plotting function (computation + visualization)
+function plot_param_line(p::Point2f, q::Point2f, n::Int64)
+    points = calculate_param_line(p, q, n)
     try
-        @variables x
-        f = a₂ * x^2 + a₁ * x + a₀
-        plot_parabola(f, all_roots, a₂, a₁, a₀, "Quadratic")
+        scatter!(Tuple.(points), markersize=5)
     catch e
         !haskey(ENV, "CI") && @warn "Plotting failed: $e"
     end
-    return [real(r) for r in all_roots if abs(imag(r)) < 1e-10]
+    return points
 end
 ```
 
 ### Documentation & Comments
-- Include detailed comments explaining mathematical concepts
-- Use clear variable names (e.g., `a₂`, `a₁`, `a₀` for polynomial coefficients)
-- Document return types and edge cases in comments
+- Include detailed comments explaining geometric concepts
+- Use clear variable names (e.g., `p1`, `p2` for points, `v`, `w` for vectors)
+- Document angle conventions (degrees vs radians) in function comments
 - Explain mathematical formulas in comments
 - Maintain consistency with mathematical notation
 
 ### Code Organization
-- **Primary Source File**: Core functions in `basic_maths.jl`, main module in `Math_Foundations.jl`
-- **Consistent Naming**: `calculate_*` for pure computation, `plot_*` for visualization
+- **Two-File Structure**: Basic operations in `linear_algebra_basic.jl`, matrices in `linear_algebra_transform.jl`
+- **Consistent Naming**: Functions end with descriptive suffixes (`_matrix`, `_line`, `_coord`)
+- **Symbolic Variants**: Provide `_symbolic` versions for algebraic manipulation
 - **Export Everything**: All public functions exported from main module
-- **Separate Concerns**: Computational logic separated from plotting logic
+- **Follow Math_Foundations Pattern**: Separate computational logic from plotting
 
 ## Dependencies & Libraries
 
-**Main Dependencies**: Symbolics, Nemo, Plots, Latexify, LaTeXStrings, AMRVW, Polynomials
+**Main Dependencies**: GeometryBasics, Plots, LinearAlgebra, RationalRoots, Symbolics
 
 ### Mathematical Libraries Used
-- **Symbolics.jl**: For `@variables` and symbolic manipulation
-  - Pattern: `@variables x`, symbolic equation construction from coefficients
-  - Use `substitute`/`value` and `build_function` patterns when numeric evaluation is needed
-- **Polynomials.jl**: Polynomial representation and root finding
-- **AMRVW.jl**: Alternative polynomial root pipeline
-- **Nemo.jl**: Number-theory and algebra tooling used by selected workflows
-- **Plots.jl/GR**: Visualization backend with CI-safe headless configuration
-- **Latexify.jl + LaTeXStrings.jl**: Math expression formatting for plots/docs
+- **GeometryBasics.jl**: For Point2f types and geometric primitives
+- **LinearAlgebra.jl**: For `norm()`, `dot()`, matrix operations
+- **Symbolics.jl**: For `@variables` in symbolic matrix functions
+  - Pattern: `@variables θ`, `@variables λ₁` for symbolic parameters
+  - Use `Symbolics.value.(substitute.(expr, var => value))` for evaluation
+- **Plots.jl**: For visualization functions (`scatter!`, `plot!`, `display`)
+- **RationalRoots.jl**: For rational approximations
 
 ## Project-Specific Conventions
 
 ### Mathematical Operations
-- **Coefficient notation**: Keep coefficient naming consistent (`a₂`, `a₁`, `a₀`)
-- **Root output**: Preserve root output contracts per function family
-- **Symbolic-first workflows**: Keep symbolic and numeric paths explicit where both are supported
-- **Plotting safety**: Plot functions should fail gracefully in CI/headless runs
-- **Coordinate assumptions**: Document coordinate/sign conventions in function comments
+- **Point Types**: Use `Point2f(x, y)` for 2D points consistently
+- **Vector Types**: Use `[Float64]` arrays for vector calculations
+- **Angle Conventions**: Document whether functions expect degrees or radians
+- **Matrix Size**: All 2D transformation matrices are 2x2
+- **Coordinate Systems**: Standard mathematical coordinate system (not screen coordinates)
 
 ### Function Naming Patterns
-- **Computational functions**: `calculate_*`
-- **Integrated plotting functions**: `plot_*`
-- **Financial utilities**: domain-specific naming (`accrued*`)
-- **Geometry helpers**: explicit conic/geometric naming (`hyperbola*`, `parabola*`)
+- **Distance Functions**: `distance_*` (e.g., `distance_2_points`, `distance_to_implicit_line`)
+- **Matrix Functions**: `*_matrix` (e.g., `rotation_matrix`, `projection_matrix`)
+- **Line Functions**: `*_line` (e.g., `explicit_line`, `parametric_to_implicit_line`)
+- **Coordinate Functions**: `*_coord` (e.g., `barycentric_coord`)
 
 ## Function Signature Patterns
 
-### Mathematical Functions
+### Basic Linear Algebra
 ```julia
-nth_root(x, n) -> Number                  # Returns complex for even roots of negative numbers
+distance_2_points(p::Point, q::Point) -> Float64
+center_of_gravity(p::Point, q::Point, t) -> Point
+vector_angle_cos(p::Vector, q::Vector) -> Float64
+orthproj(v::Vector, w::Vector) -> Vector
+# Pure computational functions (no plotting dependencies)
+calculate_param_line(p::Point, q::Point, n::Int64) -> Vector{Point2f}
+# Integrated plotting functions (computation + visualization)
+plot_param_line(p::Point, q::Point, n::Int64) -> Vector{Point2f}
 ```
 
-### Core Computational Patterns
+### Matrix Transformations
 ```julia
-calculate_parabola_roots_quadratic(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
-calculate_parabola_roots_polynomial(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
-calculate_parabola_roots_amrvw(a₂, a₁=0.0, a₀=0.0) -> Vector{ComplexF64}
+rotation_matrix(d::Number) -> Matrix      # Takes degrees
+rotation_matrix_ns(θ::Number) -> Matrix   # Takes radians
+projection_matrix(x::Vector) -> Matrix
+reflection_matrix(U::Vector) -> Matrix
 ```
 
-### Plotting Functions
+### Line Operations
 ```julia
-plot_parabola_roots_amrvw(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> Vector{ComplexF64}
-plot_parabola_roots_polynomial(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> Vector{ComplexF64}
-plot_parabola_roots_quadratic(a₂::Float64, a₁::Float64=0.0, a₀::Float64=0.0) -> Vector{ComplexF64}
-plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0) -> Plot
-plot_hyperbola_axes_varx(a::Float64, b::Float64) -> Plot
-plot_hyperbola_axes_direct(a::Float64, b::Float64) -> Plot
-```
-
-### Financial Functions
-```julia
-accrued_apr(i::Real, p::Real, c::Int64) -> Float64
-accrued(i::Real, p::Real, c::Int64) -> Float64
-```
-
-### Geometric Functions
-```julia
-triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Tuple{Float64, Float64}
+parametric_to_implicit_line(p::Point, v::Vector) -> (Float64, Float64, Float64)
+distance_to_implicit_line(a::Number, b::Number, c::Number, r::Point) -> Float64
+foot_of_line(P::Point, v::Vector, R::Point) -> Tuple(Point, Float64)
 ```

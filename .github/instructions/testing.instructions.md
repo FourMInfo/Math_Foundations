@@ -8,22 +8,16 @@ applyTo: 'test/**'
 The CI testing strategy consists of three components:
 
 ### 1. Module-Level Headless Detection
-Configure plotting environment in the main module (`Math_Foundations.jl`) at load time:
-```julia
-# Automatic CI detection and headless configuration
-if haskey(ENV, "CI") || get(ENV, "GKSwstype", "") == "100"
-    ENV["GKSwstype"] = "100"  # Force headless mode
-    gr(show=false)              # Disable plot display
-end
-```
+Configured in the main module (`Linear_Algebra.jl`) at load time. See `julia-coding-conventions` skill for the canonical GKSwstype pattern.
 
 ### 2. Manual GKS Configuration in Tests
 Set `ENV["GKSwstype"] = "100"` in test files before loading the module:
 ```julia
 # In test files - Configure headless mode before loading module
 ENV["GKSwstype"] = "100"  # Force headless plotting for CI
-using Test
-using Math_Foundations
+using DrWatson, Test
+@quickactivate "Linear_Algebra"
+using Linear_Algebra
 ```
 
 ### 3. Separated Computational/Plotting Logic with Robust Testing
@@ -31,13 +25,13 @@ using Math_Foundations
 - **Plotting functions** (`plot_*`): Test with try-catch fallback for CI compatibility
 - **Integration testing**: Verify both computation and visualization work together
 
-## Test Setup
+## Test Setup (Uses @quickactivate)
 ```julia
-# Configure headless mode before loading module
-ENV["GKSwstype"] = "100"
-using Test
-# Load the Math_Foundations package
-using Math_Foundations
+# Tests use DrWatson @quickactivate pattern
+using DrWatson, Test
+@quickactivate "Linear_Algebra"
+# Load the Linear_Algebra package
+using Linear_Algebra
 ```
 
 ## CI-Compatible Plotting Pattern
@@ -45,15 +39,15 @@ using Math_Foundations
 # Environment detection for plotting tests
 if get(ENV, "CI", "false") == "true" || get(ENV, "GITHUB_ACTIONS", "false") == "true"
     # In CI, just test that the function exists
-    @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+    @test hasmethod(plot_param_line, (typeof(p), typeof(q), Int64))
 else
     # Local testing - allow plotting but capture any display issues
     try
-        result = plot_parabola_roots_quadratic(1.0, 0.0, -4.0)
-        @test typeof(result) == Vector{Float64}
+        points = plot_param_line(p, q, 3)
+        # ... test plotting results
     catch e
         # Graceful fallback for plotting failures
-        @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+        @test hasmethod(plot_param_line, (typeof(p), typeof(q), Int64))
     end
 end
 ```
@@ -62,8 +56,8 @@ end
 
 - **Comprehensive Coverage**: Test coverage includes all mathematical functions
 - **CI-Safe**: Plotting tests work in both local and headless environments
-- **Edge Cases**: Test mathematical edge cases (positive/negative, zero, special values)
-- **Type Testing**: Verify return types for computational and plotting outputs
+- **Edge Cases**: Test mathematical edge cases (orthogonal vectors, zero angles, etc.)
+- **Type Testing**: Verify return types (Point2f, AbstractVector, matrices)
 - **Numerical Precision**: Use `atol=1e-10` for floating-point comparisons
 - Use `@test_throws` for expected errors, `@test_broken` for known failures
 
@@ -74,9 +68,9 @@ Separate computational logic from plotting, test math directly without try-catch
 ```julia
 # Test computational logic directly (NO try-catch - mathematical errors should fail)
 @testset "Pure Computational Tests" begin
-    roots = calculate_parabola_roots_quadratic(1.0, 0.0, -4.0)
-    @test length(roots) == 2
-    @test typeof(roots) == Vector{ComplexF64}
+    points = calculate_param_line(p, q, 3)
+    @test length(points) == 3
+    @test typeof(points) == Vector{Point2f}
     # Test mathematical correctness without plotting dependencies
 end
 
@@ -84,12 +78,13 @@ end
 @testset "Integration Tests" begin
     try
         # Test the plotting function (includes computation + visualization)
-        result = plot_parabola_roots_quadratic(1.0, 0.0, -4.0)
-        @test typeof(result) == Vector{Float64}
+        result = plot_param_line(p, q, 3)
+        @test typeof(result) == Vector{Point2f}
+        @test length(result) == 3
     catch e
         # Only catch plotting-related errors, not computational errors
         if contains(string(e), "display") || contains(string(e), "GKS") || isa(e, ArgumentError)
-            @test hasmethod(plot_parabola_roots_quadratic, (Float64, Float64, Float64))
+            @test hasmethod(plot_param_line, (Point2f, Point2f, Int64))
         else
             # Re-throw computational errors - these should fail the test
             rethrow(e)
@@ -100,15 +95,11 @@ end
 
 ## Test Organization
 
-- **Grouped by Category**: Group tests by function family and behavior
+- **Grouped by Category**: Basic functions, transformation matrices, line geometry, advanced functions
 - **CI Compatibility**: Plotting tests with environment detection
 - **Comprehensive Coverage**: Test both happy path and edge cases
 - **Type Validation**: Verify return types match expectations
-- **Testing Structure**: Modular test files (`test_basic_maths.jl`)
-- **No try-catch for math**: Computational tests should fail on mathematical errors
-- **try-catch for plots**: Only use for CI-safe visualization testing
-- **Numerical Precision**: Use `atol=1e-10` for floating-point comparisons
-- Use `@test_throws` for expected errors, `@test_broken` for known failures
+- **Testing Structure**: Modular test files (`test_linear_algebra_basic.jl`, `test_linear_algebra_transform.jl`)
 
 ## Plotting in Tests
 
@@ -130,10 +121,12 @@ CI=true julia --project=. test/runtests.jl
 
 - **Tests**: Run on all PRs (`.github/workflows/CI.yml`)
 - **Docs Build**: Test on PR (no deploy)
-- **Docs Deploy**: Auto-deploy to `https://study.fourm.info/math_foundations/` on merge to `main`
+- **Docs Deploy**: Auto-deploy to `https://study.fourm.info/linear_algebra/` on merge to `main`
 - **Cross-Repo**: Deploys to `FourMInfo/math_tech_study` subdirectory
 
 ## CI Considerations
 
 - Tests automatically detect CI environment via ENV variables
 - Plotting tests skip gracefully in headless mode
+- 68 tests pass in both local and CI modes (plotting tests with fallbacks)
+- Test execution time: ~15-16 seconds
