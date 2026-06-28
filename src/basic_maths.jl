@@ -55,7 +55,9 @@ function plot_parabola_roots_amrvw(a₂::Float64, a₁::Float64=0.0, a₀::Float
     end
     
     # Return only real roots for backward compatibility
-    real_roots = [real(r) for r in all_roots if abs(imag(r)) < 1e-10]
+    # need to broadcast the Union to ComplexF64 because otherwise imag function will think it has wrong type
+    rc = ComplexF64.(all_roots)
+    real_roots = [real(r) for r in rc if abs(imag(r)) < 1e-10]
     return real_roots
 end
 """
@@ -91,7 +93,9 @@ function plot_parabola_roots_polynomial(a₂::Float64, a₁::Float64=0.0, a₀::
     end
     
     # Return only real roots for backward compatibility
-    real_roots = [real(r) for r in all_roots if abs(imag(r)) < 1e-10]
+    # need to broadcast the Union to ComplexF64 because otherwise imag function will think it has wrong type
+    rc = ComplexF64.(all_roots)
+    real_roots = [real(r) for r in rc if abs(imag(r)) < 1e-10]
     return real_roots
 end
 
@@ -131,7 +135,8 @@ function plot_parabola_roots_quadratic(a₂::Float64, a₁::Float64=0.0, a₀::F
     end
     
     # Return only real roots for backward compatibility
-    real_roots = [real(r) for r in all_roots if abs(imag(r)) < 1e-10]
+    rc = ComplexF64.(all_roots)
+    real_roots = [real(r) for r in rc if abs(imag(r)) < 1e-10]
     return real_roots
 end
 """
@@ -142,7 +147,9 @@ function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::F
     gr()
 
     # Filter to get only real roots for plotting
-    real_roots = [real(r) for r in r3 if abs(imag(r)) < 1e-10]
+    # need to broadcast the Union to ComplexF64 because otherwise imag function will think it has wrong type
+    rc = ComplexF64.(r3)
+    real_roots = [real(r) for r in rc if abs(imag(r)) < 1e-10]
     
     # Sort the roots
     real_roots = sort(real_roots)
