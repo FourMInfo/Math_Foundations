@@ -1,7 +1,7 @@
 module Math_Foundations
 
 using Reexport
-@reexport using Symbolics, Nemo, Plots, Latexify, LaTeXStrings, Dates, AMRVW, Polynomials, GeometryBasics
+@reexport using Symbolics, Nemo, Plots, LaTeXStrings, Dates, AMRVW, Polynomials, GeometryBasics
 
 # GR backend is set explicitly in plotting functions (e.g., plot_parabola calls gr())
 # For CI headless mode: set ENV["GKSwstype"] = "100" in test/runtests.jl BEFORE loading this module

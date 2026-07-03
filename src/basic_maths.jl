@@ -1,7 +1,6 @@
 using Symbolics
 using Nemo
 using Plots
-using Latexify
 using LaTeXStrings
 using Dates
 using AMRVW
