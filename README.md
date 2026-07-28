@@ -55,4 +55,4 @@ package. Subsequent `julia --project=./notebooks` invocations will resolve
 
 Documentation is deployed cross-repo to the Math & Tech Study Hub:
 
-<https://study.fourm.info/math_foundations/dev/>
+<https://fourm.info/math_foundations/dev/>

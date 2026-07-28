@@ -11,7 +11,7 @@
 - **`src/Math_Foundations.jl`**: Main module with CI-aware plotting (auto-detects headless environments)
 - **`src/basic_maths.jl`**: Mathematical library (roots, polynomials, hyperbolas, financial calculations)
 - **`test/`**: 54 tests with separated computational/plotting logic for CI compatibility
-- **`docs/`**: Documenter.jl deploying to `https://study.fourm.info/math_foundations/` (cross-repo to `math_tech_study`)
+- **`docs/`**: Documenter.jl deploying to `https://fourm.info/math_foundations/` (cross-repo to `math_tech_study`)
 - **`notebooks/`**: Jupyter notebooks for exploration (not tested in CI)
 
 ## Julia Workspace Layout
