@@ -139,7 +139,7 @@ function plot_parabola_roots_quadratic(a₂::Float64, a₁::Float64=0.0, a₀::F
     return real_roots
 end
 """
-    plot_parabola(p::Polynomial, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
+    plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
 Plot the parabola using the given polynomial and its roots
 """
 function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::Float64, a₁::Float64, a₀::Float64, str::String)
@@ -170,14 +170,8 @@ function plot_parabola(p, r3::Union{Vector{Float64},Vector{ComplexF64}}, a₂::F
     real_roots
 end
 """
-    plot_hyperbola(n::Integer)
-Plot hyperbola with parameter n
-"""
-
-"""
-    p
     plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
-Plot hyperbola with equation y = a/(x-h) + b, where a,h and k are scaling parameters
+Plot hyperbola with equation y = a/(x-h) + k, where a,h and k are scaling parameters
 """
 function plot_hyperbola(a::Float64=1.0, h::Float64=0.0, k::Float64=0.0)
     # Define ranges for x, avoiding x - h = 0 where function is undefined
@@ -273,7 +267,7 @@ exponential function where a > 0 and x is any Real
 """
 expa2x(a::Real,x::Real) = a>0 ? a^x : println("a must be a positive real")
 """
-    function accrued_apr(i::Real,p::Real,c::Int64) -> Float64
+    accrued_apr(i::Real,p::Real,c::Int64) -> Float64
 i is interest, p is period (1 = one year), c is capital
 return accrued value using daily apr for interest
 """
@@ -283,7 +277,7 @@ function accrued_apr(i::Real,p::Real,c::Int64)
     c * expa2x(apr,p)
 end
 """
-    function accrued(i::Real,p::Real,c::Int64) -> Float64
+    accrued(i::Real,p::Real,c::Int64) -> Float64
 i is interest, p is period (1 = one year), c is capital
 return accrued value
 """
@@ -293,8 +287,7 @@ end
 
 """
     triangle_area_perim(a::Float64, b::Float64, c::Float64) -> Float64
-
-    Calculate  ρ, area and perimeter of a triangle using Heron's formula
+Calculate ρ, area and perimeter of a triangle using Heron's formula
 """
 function triangle_area_perim(a::Float64, b::Float64, c::Float64)
     s = (a + b + c) / 2
