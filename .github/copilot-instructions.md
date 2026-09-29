@@ -24,7 +24,7 @@ member environments. Each member has its own `Project.toml` and `Manifest.toml`:
 | `Project.toml` | Root package — defines `Math_Foundations` as a library (uuid `27a7a001-4557-47fa-93d4-b76916053e56`) |
 | `test/Project.toml` | Test-only deps (`Math_Foundations`, `Test`) — workspace member |
 | `docs/Project.toml` | Docs deps (`Documenter`, `Dates`, `LiveServer`, `Math_Foundations`) — workspace member; uses `Pkg.develop(path=".")`. `LiveServer` is for local live preview (see the `documenter-jl-conventions` skill) |
-| `notebooks/Project.toml` | Notebook superset (`IJulia`, `Math_Foundations`, the Makie stack, `Meshes`, `ImageShow`) — **not** a workspace member |
+| `notebooks/Project.toml` | Notebook superset (`IJulia`, `Revise`, `Math_Foundations`, the Makie stack, `Meshes`, `ImageShow`) — **not** a workspace member |
 
 The `notebooks/` environment is intentionally excluded from the workspace `projects` list because
 it is a developer-only interactive environment, not a dependency of any other member.
