@@ -6,4 +6,4 @@ Math_Foundations = "27a7a001-4557-47fa-93d4-b76916053e56"
 
 [compat]
 Documenter = "1"
-julia = "1.10"
+julia = "1.13"

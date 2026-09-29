@@ -1,84 +1,68 @@
 ---
 applyTo: '**'
 ---
-# Project Ecosystem Context
+# Math_Foundations — Repository-Specific Instructions
 
-## What This Repository Is
+This file is **this repo's own**: it holds everything specific to this repository and is never
+overwritten by propagation from the hub. It can be as detailed as the repo needs. The shared
+conventions every study repo follows are in the other files in `.github/instructions/`
+(`ecosystem`, `source`, `testing`, `docs`, `notebooks`), which are copied unchanged from
+`FourMInfo/math_tech_study/project_resources/instructions/` and must never be edited here. A
+learning that holds for every study repo goes into those hub templates, not into this file.
 
-This is **one subrepository** in a multi-repository Julia math study project. Understanding the broader ecosystem is essential before making changes, especially to CI, documentation configuration, or project structure.
+## This Repository
 
-## The Math & Tech Study Hub
-
-The main website lives at **https://fourm.info** and is built with:
-- **Franklin.jl** (Lanyon template) in a separate GitHub repository: `FourMInfo/math_tech_study`
-- The main site handles the top-level domain, navigation, and study guides
-
-Current subrepositories and their deployed URLs:
-| Repository | Deployed URL |
+| | |
 |---|---|
-| `FourMInfo/Linear_Algebra` | https://fourm.info/linear_algebra/ |
-| `FourMInfo/Math_Foundations` (this repo) | https://fourm.info/math_foundations/ |
-| `FourMInfo/Calculus` | https://fourm.info/calculus/ |
+| GitHub | `FourMInfo/Math_Foundations` |
+| Deployed at | `https://fourm.info/math_foundations/` |
+| `dirname` in `docs/make.jl` | `"math_foundations"` |
+| Subject | Mathematical foundations: algebra, geometry, trigonometry |
 
-Additional subrepositories will be added in the future following the same pattern.
+## Package and Module
 
-## How This Repository Deploys
+- **Main module**: `src/Math_Foundations.jl`
+- **Source files**: listed under "Core Architecture" in `.github/copilot-instructions.md`
+- **Reexported packages**: `Symbolics`, `Nemo`, `Plots`, `LaTeXStrings`, `Dates`, `AMRVW`,
+  `Polynomials`, `GeometryBasics`
+- The module also reexports the `@variables` macro (`eval(:(export @variables))`).
+- **Headless plotting**: tests set `GKSwstype` before loading; the module does no GR
+  configuration at load time. Plotting functions call `gr()` themselves (e.g. `plot_parabola`).
 
-This repo uses **DrWatson.jl** for project structure and **Documenter.jl** for documentation.
+## Subject-Specific Conventions
 
-### Deployment Flow
+### Function Categories
 
+- **Roots**: `nth_root`; quadratic (parabola) roots by three methods — the quadratic formula,
+  `Polynomials.jl`, and `AMRVW.jl` — each as a `calculate_parabola_roots_*` /
+  `plot_parabola_roots_*` pair
+- **Conics**: `plot_hyperbola`, `plot_hyperbola_axes_varx`, `plot_hyperbola_axes_direct`
+- **Exponentials and finance**: `expa2x`, `accrued`, `accrued_apr`
+- **Geometry**: `triangle_area_perim`
+
+### Conventions
+
+- Polynomial coefficients are named by degree: `a₂`, `a₁`, `a₀` (`a₁` and `a₀` default to `0.0`)
+- Root-finding functions return real or complex roots
+  (`Union{Vector{Float64}, Vector{ComplexF64}}`); plots show both cases
+- `plot_parabola`'s polynomial argument is untyped: it is called with both a
+  `Polynomials.Polynomial` and a Symbolics expression
+
+## Tests
+
+- **Test files**: `test_basic_maths.jl`, for `src/basic_maths.jl`
+- Edge cases worth testing: negative discriminants (complex roots), zero leading coefficients,
+  degenerate triangles, non-positive bases in `expa2x`
+
+## Notebooks
+
+Setup cell for this repo:
+
+```julia
+using Revise
+using Math_Foundations
 ```
-Push to main
-    → CI.yml runs deploy-docs job
-    → docs/make.jl builds Documenter site
-    → deploydocs() cross-deploys to FourMInfo/math_tech_study (gh-pages branch)
-    → Appears at fourm.info/math_foundations/
-```
 
-Key facts about `docs/make.jl`:
-- `ENV["GITHUB_REPOSITORY"]` is **deliberately overridden** to `"FourMInfo/math_tech_study"` — this is what causes cross-repository deployment. Do NOT remove or change this.
-- `dirname = "math_foundations"` in `deploydocs()` sets the subdirectory path. Do NOT change this.
-- The `DOCUMENTER_KEY` secret is a deploy key for the `math_tech_study` repository (not this one).
-
-### CI Behaviour
-
-The `.github/workflows/CI.yml` has three jobs:
-1. **test** — runs only on PRs and manual triggers (`workflow_dispatch`), not on pushes to main
-2. **docs-build** — builds (but does not deploy) docs on PRs where `src/` or `docs/` changed
-3. **deploy-docs** — runs on push to main or manual trigger; this is the job that deploys to the site
-
-**CRITICAL**: The `workflow_dispatch` trigger on CI.yml must be preserved. When the Franklin main site redeploys, it can overwrite all subdirectory documentation. The manual trigger allows recovery by redeploying this repo's docs without a code change.
-
-## Why DrWatson
-
-DrWatson is used for **project reproducibility and structure**, not primarily for data management. It provides:
-- `Project.toml` / `Manifest.toml` for exact Julia environment pinning
-- Standard directory layout (`src/`, `test/`, `docs/`, `notebooks/`, `scripts/`, `data/`, `papers/`, `plots/`)
-- `quickactivate` integration in notebooks and scripts
-
-Do NOT remove DrWatson or restructure the directory layout — the CI and docs build depend on it.
-
-## Critical Constraints — Do NOT Do These
-
-| Action | Why It Is Dangerous |
-|---|---|
-| Enable GitHub Pages on this repository | Only `math_tech_study` may have GitHub Pages with the custom domain. Enabling it here will break the domain |
-| Change or remove the `ENV["GITHUB_REPOSITORY"]` override in `docs/make.jl` | Deployment will target the wrong repository |
-| Change `dirname` in `deploydocs()` | The subdirectory path on the live site will break |
-| Remove `workflow_dispatch` from CI.yml | Loses ability to manually recover docs after Franklin site redeploy |
-| Change the `DOCUMENTER_KEY` secret value without also updating the deploy key in `math_tech_study` | Deployment will fail with authentication errors |
-| Reorder or remove jobs in CI.yml without understanding the `needs: test` dependency | Deploy job depends on test passing |
-
-## Relationship to the Main Franklin Site
-
-The main `math_tech_study` repo's GitHub Actions workflow has a **backup/restore mechanism** that preserves subdirectory docs when the Franklin site redeploys. If you add a new subrepository to the ecosystem in the future, the Franklin workflow in `math_tech_study` must be updated to include the new subdirectory name in both its backup and restore steps.
-
-## Local Documentation Preview
-
-```bash
-# Build docs locally (does not deploy)
-julia --project=. docs/make.jl
-
-# The built site is in docs/build/ — open docs/build/index.html in a browser
-```
+Notebook-only packages, loaded in the cells that use them rather than in the setup cell:
+`Makie`, `GLMakie`, `WGLMakie`, `Bonito` and `Meshes` (3D and interactive geometry), and
+`ImageShow`. They are in `notebooks/Project.toml` and are not reexported by the module.
